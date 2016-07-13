@@ -1,0 +1,7 @@
+sudo: false
+language: php
+php:
+  - 7.0
+
+script:
+  - sh -c "cd tests/unit/ && phpunit ."
