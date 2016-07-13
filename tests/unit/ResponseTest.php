@@ -38,7 +38,6 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 					'version' => '2.2.2.6192',
 					'versionstring' => 'Nextcloud Client 2.2.2 (build 6192)',
 					'downloadUrl' => 'https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe',
-					'web' => '',
 				],
 				'macos' => [
 					'version' => '2.2.2.3472',
@@ -57,7 +56,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				false,
 				$config,
 				'<?xml version="1.0"?>
-<owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadUrl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadUrl><web/></owncloudclient>
+<owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadUrl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadUrl></owncloudclient>
 '
 			],
 			[
@@ -67,7 +66,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				true,
 				$config,
 				'<?xml version="1.0"?>
-<owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadUrl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadUrl><web/></owncloudclient>
+<owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadUrl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadUrl></owncloudclient>
 '
 			],
 			[
