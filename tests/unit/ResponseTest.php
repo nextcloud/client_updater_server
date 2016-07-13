@@ -105,7 +105,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 					<title>Nextcloud Client 2.2.2 (build 3472)</title>
 					<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 					<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY="/>
-                                        <sparkle:minimumSystemVersion>10.7.0</sparkle:minimumSystemVersion>
+					<sparkle:minimumSystemVersion>10.7.0</sparkle:minimumSystemVersion>
 				</item></channel>
 			</rss>'
 			],

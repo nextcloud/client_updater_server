@@ -31,8 +31,8 @@ class Response {
 	private $version;
 	/** @var bool */
 	private $isSparkle;
-    /** @var array */
-    private $config;
+	/** @var array */
+	private $config;
 
 	/**
 	 * @param string $oem
@@ -45,12 +45,12 @@ class Response {
 								string $platform,
 								string $version,
 								bool $isSparkle,
-                                array $config) {
+								array $config) {
 		$this->oem = $oem;
-        $this->platform = $platform;
-        $this->version = $version;
-        $this->isSparkle = $isSparkle;
-        $this->config = $config;
+		$this->platform = $platform;
+		$this->version = $version;
+		$this->isSparkle = $isSparkle;
+		$this->config = $config;
 	}
 
 	/**
@@ -58,22 +58,22 @@ class Response {
 	 *
 	 * @return array
 	 */
-    private function getUpdateVersion() : array {
-        if(!isset($this->config[$this->oem])) {
-            return [];
-        }
+	private function getUpdateVersion() : array {
+		if(!isset($this->config[$this->oem])) {
+			return [];
+		}
 
-        if(!isset($this->config[$this->oem][$this->platform])) {
-            return [];
-        }
+		if(!isset($this->config[$this->oem][$this->platform])) {
+			return [];
+		}
 
-        $values = $this->config[$this->oem][$this->platform];
-        if(version_compare($this->version, $values['version']) === -1) {
-            return $values;
-        }
+		$values = $this->config[$this->oem][$this->platform];
+		if(version_compare($this->version, $values['version']) === -1) {
+			return $values;
+		}
 
-        return [];
-    }
+		return [];
+	}
 
 	/**
 	 * Returns the current time stamp
@@ -89,12 +89,12 @@ class Response {
 	 * @param array $updateVersion
 	 * @return string
 	 */
-    private function buildSparkleResponse(array $updateVersion) : string {
+	private function buildSparkleResponse(array $updateVersion) : string {
 		$item = !empty($updateVersion) ? '<item>
 					<title>'.$updateVersion['versionstring'].'</title>
 					<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
 					<enclosure url="'.$updateVersion['downloadUrl'].'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:dsaSignature="'.$updateVersion['signature'].'"/>
-                                        <sparkle:minimumSystemVersion>10.7.0</sparkle:minimumSystemVersion>
+					<sparkle:minimumSystemVersion>10.7.0</sparkle:minimumSystemVersion>
 				</item>' : '';
 		$xml = '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -104,7 +104,7 @@ class Response {
 		<language>en</language>'.$item.'</channel>
 			</rss>';
 		return $xml;
-    }
+	}
 
 	/**
 	 * Builds the generic response for all other OS
@@ -112,12 +112,12 @@ class Response {
 	 * @param array $updateVersion
 	 * @return string
 	 */
-    private function buildRegularResponse(array $updateVersion) : string {
-        $xml = new \SimpleXMLElement('<owncloudclient/>');
+	private function buildRegularResponse(array $updateVersion) : string {
+		$xml = new \SimpleXMLElement('<owncloudclient/>');
 		$updateVersion = array_flip($updateVersion);
-        array_walk_recursive($updateVersion, [$xml, 'addChild']);
-        return $xml->asXML();
-    }
+		array_walk_recursive($updateVersion, [$xml, 'addChild']);
+		return $xml->asXML();
+	}
 
 	/**
 	 * Builds the response for the update request
@@ -125,11 +125,11 @@ class Response {
 	 * @return string
 	 */
 	public function buildResponse() : string {
-        $updateVersion = $this->getUpdateVersion();
-        if($this->isSparkle && $this->platform === 'macos') {
-            return $this->buildSparkleResponse($updateVersion);
-        }
+		$updateVersion = $this->getUpdateVersion();
+		if($this->isSparkle && $this->platform === 'macos') {
+			return $this->buildSparkleResponse($updateVersion);
+		}
 
-        return $this->buildRegularResponse($updateVersion);
+		return $this->buildRegularResponse($updateVersion);
 	}
 }
