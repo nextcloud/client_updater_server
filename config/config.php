@@ -26,8 +26,8 @@ declare(strict_types=1);
  */
 return [
 	'nextcloud' => [
-        'linux' => [
-            'version' => '2.2.2',
+		'linux' => [
+			'version' => '2.2.2',
 			'versionstring' => 'Nextcloud Client 2.2.2',
 			'web' => 'https://nextcloud.com/install/#install-clients',
 		],
