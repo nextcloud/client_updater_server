@@ -35,7 +35,6 @@ return [
 			'version' => '2.2.2.6192',
 			'versionstring' => 'Nextcloud Client 2.2.2 (build 6192)',
 			'downloadUrl' => 'https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe',
-			'web' => '',
 		],
 		'macos' => [
 			'version' => '2.2.2.3472',
