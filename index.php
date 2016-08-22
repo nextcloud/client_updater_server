@@ -35,10 +35,15 @@ header('X-Frame-Options: Sameorigin');
 header('X-Robots-Tag: none');
 
 // Read parameters
-$oem = isset($_GET['oem']) ? (string)$_GET['oem'] : nulL;
+$oem = isset($_GET['oem']) ? (string)$_GET['oem'] : null;
 $platform = isset($_GET['platform']) ? (string)$_GET['platform'] : null;
 $version = isset($_GET['version']) ? (string)$_GET['version'] : null;
 $isSparkle = isset($_GET['sparkle']) ? true : false;
+
+if($oem === null || $platform === null || $version === null) {
+	die();
+}
+
 $config = require_once __DIR__ . '/config/config.php';
 
 // Deliver update
