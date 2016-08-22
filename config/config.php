@@ -25,7 +25,7 @@ declare(strict_types=1);
  * Associiative array of OEM => OS => version
  */
 return [
-	'nextcloud' => [
+	'Nextcloud' => [
 		'linux' => [
 			'version' => '2.2.2',
 			'versionstring' => 'Nextcloud Client 2.2.2',
