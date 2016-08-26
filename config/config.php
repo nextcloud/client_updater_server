@@ -38,10 +38,10 @@ return [
 			'web' => 'https://nextcloud.com/install/#install-clients',
 		],
 		'macos' => [
-			'version' => '2.2.2.3472',
-			'versionstring' => 'Nextcloud Client 2.2.2 (build 3472)',
-			'downloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
-			'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
+			'version' => '2.2.3.4',
+			'versionstring' => 'Nextcloud Client 2.2.3 (build 4)',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.2.3.4.pkg.tbz',
+			'signature' => 'MC4CFQCPtGMiNjpLVd7YUBn3SGwGOyIwiwIVAIHOzliQeJTiq5STcFD1iJyXgThw',
 		],
 	],
 ];
