@@ -32,9 +32,9 @@ return [
 			'web' => 'https://nextcloud.com/install/#install-clients',
 		],
 		'win32' => [
-			'version' => '2.2.2.6192',
-			'versionstring' => 'Nextcloud Client 2.2.2 (build 6192)',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe',
+			'version' => '2.2.3.4',
+			'versionstring' => 'Nextcloud Client 2.2.3 (build 4)',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.2.3.4-setup.exe',
 			'web' => 'https://nextcloud.com/install/#install-clients',
 		],
 		'macos' => [
