@@ -27,21 +27,21 @@ declare(strict_types=1);
 return [
 	'Nextcloud' => [
 		'linux' => [
-			'version' => '2.2.3',
-			'versionstring' => 'Nextcloud Client 2.2.3',
+			'version' => '2.2.4',
+			'versionstring' => 'Nextcloud Client 2.2.4',
 			'web' => 'https://nextcloud.com/install/#install-clients',
 		],
 		'win32' => [
-			'version' => '2.2.3.4',
-			'versionstring' => 'Nextcloud Client 2.2.3 (build 4)',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.2.3.4-setup.exe',
+			'version' => '2.2.4.2',
+			'versionstring' => 'Nextcloud Client 2.2.4 (build 2)',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.2.4.2-setup.exe',
 			'web' => 'https://nextcloud.com/install/#install-clients',
 		],
 		'macos' => [
 			'version' => '2.2.3.4',
-			'versionstring' => 'Nextcloud Client 2.2.3 (build 4)',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.2.3.4.pkg.tbz',
-			'signature' => 'MC4CFQCPtGMiNjpLVd7YUBn3SGwGOyIwiwIVAIHOzliQeJTiq5STcFD1iJyXgThw',
+			'versionstring' => 'Nextcloud Client 2.2.4 (build 1)',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.2.4.1.pkg.tbz',
+			'signature' => 'MCwCFGC3X/fejC/y/3T2X+c8ldDk7pJGAhQoR8v6vtvvV57nIcMNePA+jNRYcw==',
 		],
 	],
 ];
