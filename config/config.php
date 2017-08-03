@@ -27,14 +27,14 @@ declare(strict_types=1);
 return [
 	'Nextcloud' => [
 		'linux' => [
-			'version' => '2.3.1',
-			'versionstring' => 'Nextcloud Client 2.3.1',
+			'version' => '2.3.2',
+			'versionstring' => 'Nextcloud Client 2.3.2',
 			'web' => 'https://nextcloud.com/install/#install-clients',
 		],
 		'win32' => [
-			'version' => '2.3.1.8',
-			'versionstring' => 'Nextcloud Client 2.3.1 (build 3)',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.3.1.8-setup.exe',
+			'version' => '2.3.2.1',
+			'versionstring' => 'Nextcloud Client 2.3.2 (build 1)',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.3.2.1-setup.exe',
 			'web' => 'https://nextcloud.com/install/#install-clients',
 		],
 		'macos' => [
