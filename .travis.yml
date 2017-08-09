@@ -4,4 +4,5 @@ php:
   - 7.0
 
 script:
-  - sh -c "cd tests/unit/ && phpunit ."
+  - composer install
+  - sh -c "cd tests/unit/ && ../../vendor/bin/phpunit ."
