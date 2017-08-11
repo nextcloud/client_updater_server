@@ -29,13 +29,13 @@ return [
 		'linux' => [
 			'version' => '2.3.2',
 			'versionstring' => 'Nextcloud Client 2.3.2',
-			'web' => 'https://nextcloud.com/install/#install-clients',
+			'web' => 'https://nextcloud.com/install/#install-clients?pk_campaign=clientupdate',
 		],
 		'win32' => [
 			'version' => '2.3.2.1',
 			'versionstring' => 'Nextcloud Client 2.3.2 (build 1)',
 			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.3.2.1-setup.exe',
-			'web' => 'https://nextcloud.com/install/#install-clients',
+			'web' => 'https://nextcloud.com/install/#install-clients?pk_campaign=clientupdate',
 		],
 		'macos' => [
 			'version' => '2.2.4.1',
