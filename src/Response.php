@@ -60,7 +60,25 @@ class Response {
 	 */
 	private function getUpdateVersion() : array {
 		if(!isset($this->config[$this->oem])) {
-			return [];
+			if (preg_match('/^[a-zA-Z0-9-_.]+$/', $this->oem) !== 1) {
+				return [];
+			}
+
+			if (!file_exists(__DIR__ . '/../config/' . $this->oem . '.json')) {
+				return [];
+			}
+
+			$content = file_get_contents(__DIR__ . '/../config/' . $this->oem . '.json');
+			if ($content === false) {
+				return [];
+			}
+			$data = json_decode($content, true);
+
+			if (!is_array($data)) {
+				return [];
+			}
+
+			$this->config[$this->oem] = $data;
 		}
 
 		if(!isset($this->config[$this->oem][$this->platform])) {
