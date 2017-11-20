@@ -22,7 +22,7 @@
 declare(strict_types=1);
 
 /**
- * Associiative array of OEM => OS => version
+ * Associative array of OEM => OS => version
  */
 return [
 	'Nextcloud' => [
