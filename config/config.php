@@ -40,7 +40,7 @@ return [
 		'macos' => [
 			'version' => '2.3.3.84',
 			'versionstring' => 'Nextcloud Client 2.3.3 (build 84)',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/prereleases/Mac/Nextcloud-2.3.3.84.pkg.tbz',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.3.3.84.pkg.tbz',
 			'signature' => 'MCwCFC2Eh6z18safmFMsDl9ZVQwHii/ZAhQimp7LkJMUJwgmB4xrTnVrQc/vcQ==',
 		],
 	],
