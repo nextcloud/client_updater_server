@@ -38,10 +38,10 @@ return [
 			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'macos' => [
-			'version' => '2.3.3.84',
-			'versionstring' => 'Nextcloud Client 2.3.3 (build 84)',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.3.3.84.pkg.tbz',
-			'signature' => 'MCwCFC2Eh6z18safmFMsDl9ZVQwHii/ZAhQimp7LkJMUJwgmB4xrTnVrQc/vcQ==',
+			'version' => '2.2.4.1',
+			'versionstring' => 'Nextcloud Client 2.2.4 (build 1)',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.2.4.1.pkg.tbz',
+			'signature' => 'MCwCFGC3X/fejC/y/3T2X+c8ldDk7pJGAhQoR8v6vtvvV57nIcMNePA+jNRYcw==',
 		],
 	],
 ];
