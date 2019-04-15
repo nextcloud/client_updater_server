@@ -29,6 +29,7 @@ class ComposerStaticInit90ffc5ab61d187781e6fedac71b76498
     );
 
     public static $classMap = array (
+        'ClientUpdateServer\\Config' => __DIR__ . '/../..' . '/src/Config.php',
         'ClientUpdateServer\\Response' => __DIR__ . '/../..' . '/src/Response.php',
     );
 
