@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ClientUpdateServer\\Config' => $baseDir . '/src/Config.php',
     'ClientUpdateServer\\Response' => $baseDir . '/src/Response.php',
 );
