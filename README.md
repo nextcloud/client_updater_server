@@ -29,3 +29,6 @@ If the default `config.php` doesn't hold update information for this OEM, the co
   }
 }
 ```
+
+## Developement
+To test this update server locally use `composer start`, which then will run the server on localhost port 1234.
