@@ -27,13 +27,13 @@ declare(strict_types=1);
 return [
 	'Nextcloud' => [
 		'linux' => [
-			'version' => '2.6.0',
-			'versionstring' => 'Nextcloud Client 2.6.0',
+			'version' => '2.6.1',
+			'versionstring' => 'Nextcloud Client 2.6.1',
 			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'win32' => [
-			'version' => '2.6.0',
-			'versionstring' => 'Nextcloud Client 2.6.0',
+			'version' => '2.6.1',
+			'versionstring' => 'Nextcloud Client 2.6.1',
 			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'macos' => [
