@@ -40,7 +40,7 @@ return [
 			'version' => '2.6.1',
 			'versionstring' => 'Nextcloud Client 2.6.1',
 			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.6.1.20191105.pkg.tbz',
-			'signature' => 'MC0CFQCN9QQz8ZnT+ZIVwbicxdOGcb9SDgIUITL4/uUEGlknUMOXzA65mULFeCE=',
+			'signature' => 'MC0CFBMNaeH0YoXX214m8k3AAcZUaGHYAhUAhOgmxc5BoasB3gHTfez7DuPn44w=',
 		],
 	],
 ];
