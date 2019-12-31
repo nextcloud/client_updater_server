@@ -42,7 +42,7 @@ return [
 			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.6.2.20191224.pkg.tbz',
 			'signature' => 'MC0CFQCOID+LO2tm/XrC21cX+jRZ+QQxSAIUeCR3OdQSc5vRBau3uEBIazpcmO0=',
 
-			'web' => 'https://download.nextcloud.com/desktop/releases/Mac/Installer/Nextcloud-2.6.2.20191224.pkg',
+			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 	],
 ];
