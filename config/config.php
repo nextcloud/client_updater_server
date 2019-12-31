@@ -27,20 +27,20 @@ declare(strict_types=1);
 return [
 	'Nextcloud' => [
 		'linux' => [
-			'version' => '2.6.1',
-			'versionstring' => 'Nextcloud Client 2.6.1',
-			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			'version' => '2.6.2',
+			'versionstring' => 'Nextcloud Client 2.6.2',
+			'web' => 'https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-2.6.2-x86_64.AppImage',
 		],
 		'win32' => [
-			'version' => '2.6.1',
-			'versionstring' => 'Nextcloud Client 2.6.1',
-			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			'version' => '2.6.2',
+			'versionstring' => 'Nextcloud Client 2.6.2',
+			'web' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.6.2-setup.exe',
 		],
 		'macos' => [
-			'version' => '2.6.1',
-			'versionstring' => 'Nextcloud Client 2.6.1',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.6.1.20191105.pkg.tbz',
-			'signature' => 'MC0CFBMNaeH0YoXX214m8k3AAcZUaGHYAhUAhOgmxc5BoasB3gHTfez7DuPn44w=',
+			'version' => '2.6.2',
+			'versionstring' => 'Nextcloud Client 2.6.2',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.6.2.20191224.pkg.tbz',
+			'signature' => 'MC0CFQCOID+LO2tm/XrC21cX+jRZ+QQxSAIUeCR3OdQSc5vRBau3uEBIazpcmO0=',
 		],
 	],
 ];
