@@ -23,10 +23,7 @@ namespace Tests;
 
 class ResponseTest extends \PHPUnit_Framework_TestCase {
 
-	/**
-	 * @return array
-	 */
-	public function updateDataProvider() {
+	public function updateDataProvider(): array {
 		$config = [
 			'nextcloud' => [
 				'release' => '2019-02-24 17:05',
@@ -48,7 +45,36 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				],
 			]
 		];
+
+		$configThrottle = $config;
+		$configThrottle['nextcloud']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:m');
+
 		return [
+			// Update segment is already allowed
+			[
+				'nextcloud',
+				'win32',
+				'1.9.0',
+				false,
+				5,
+				$configThrottle,
+				'<?xml version="1.0"?>
+<owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadUrl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadUrl></owncloudclient>
+'
+			],
+			// Update segment is not yet allowed
+			[
+				'nextcloud',
+				'win32',
+				'1.9.0',
+				false,
+				95,
+				$configThrottle,
+				'<?xml version="1.0"?>
+<owncloudclient/>
+'
+			],
+
 			// Updates for client available
 			[
 				'nextcloud',
