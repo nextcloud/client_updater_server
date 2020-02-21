@@ -83,6 +83,7 @@ $oem = isset($_GET['oem']) ? (string)$_GET['oem'] : null;
 $platform = isset($_GET['platform']) ? (string)$_GET['platform'] : null;
 $version = isset($_GET['version']) ? (string)$_GET['version'] : null;
 $isSparkle = isset($_GET['sparkle']) ? true : false;
+$updateSegment = isset($_GET['updatesegment']) ? (int)$_GET['updatesegment'] : -1;
 
 if($oem === null || $platform === null || $version === null) {
 	die();
@@ -96,6 +97,7 @@ $response = new \ClientUpdateServer\Response(
 	$platform,
 	$version,
 	$isSparkle,
+	$updateSegment,
 	$config
 );
 echo $response->buildResponse();

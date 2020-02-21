@@ -39,17 +39,20 @@ class Response {
 	 * @param string $platform
 	 * @param string $version
 	 * @param bool $isSparkle
+	 * @param int $updatesegment
 	 * @param array $config
 	 */
 	public function __construct(string $oem,
 								string $platform,
 								string $version,
 								bool $isSparkle,
+								int $updateSegment,
 								array $config) {
 		$this->oem = $oem;
 		$this->platform = $platform;
 		$this->version = $version;
 		$this->isSparkle = $isSparkle;
+		$this->updateSegment = $updateSegment;
 		$this->config = $config;
 	}
 
@@ -85,12 +88,45 @@ class Response {
 			return [];
 		}
 
-		$values = $this->config[$this->oem][$this->platform];
-		if(version_compare($this->version, $values['version']) === -1) {
-			return $values;
+		$releaseTimeStamp = date_create($this->config[$this->oem]['release']);
+
+		if ($this->updateSegment != -1) {
+			// updateSegment is 0-99, so even fine grained control is possible
+			$elapsedHours = $this->diffInHours(date_create(), $releaseTimeStamp);
+			$chunk = intdiv($this->updateSegment, 10); // 10 chunks
+			$throttle = intdiv($elapsedHours, 10);
+
+			if ($throttle >= $chunk) {
+				$values = $this->config[$this->oem][$this->platform];
+				if(version_compare($this->version, $values['version']) === -1) {
+					return $values;
+				}
+			}
+		} else if (isset($this->config[$this->oem]['release'])) {
+			// TODO remove after complete rollout of 2.6.4
+			// throttle down: starting with 10% increase every 12h by 10% -> after 5d 100%
+			$elapsedHours = $this->diffInHours(date_create(), $releaseTimeStamp);
+			$throttle = intdiv($elapsedHours, 10); // 10 chunks
+
+			if ($throttle >= rand(0, 10)) {
+				$values = $this->config[$this->oem][$this->platform];
+				if(version_compare($this->version, $values['version']) === -1) {
+					return $values;
+				}
+			}
+		} else { // fallback if no updateSegment is provided
+			$values = $this->config[$this->oem][$this->platform];
+			if(version_compare($this->version, $values['version']) === -1) {
+				return $values;
+			}
 		}
 
 		return [];
+	}
+
+	private function diffInHours(\DateTime $date1, \DateTime $date2) : int {
+		$diff = $date2->diff($date1);
+		return $diff->h + ($diff->days * 24);
 	}
 
 	/**
