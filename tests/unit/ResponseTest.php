@@ -23,12 +23,10 @@ namespace Tests;
 
 class ResponseTest extends \PHPUnit_Framework_TestCase {
 
-	/**
-	 * @return array
-	 */
-	public function updateDataProvider() {
+	public function updateDataProvider(): array {
 		$config = [
 			'nextcloud' => [
+				'release' => '2019-02-24 17:05',
 				'linux' => [
 					'version' => '2.2.2',
 					'versionstring' => 'Nextcloud Client 2.2.2',
@@ -47,13 +45,43 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				],
 			]
 		];
+
+		$configThrottle = $config;
+		$configThrottle['nextcloud']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:m');
+
 		return [
+			// Update segment is already allowed
+			[
+				'nextcloud',
+				'win32',
+				'1.9.0',
+				false,
+				5,
+				$configThrottle,
+				'<?xml version="1.0"?>
+<owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadUrl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadUrl></owncloudclient>
+'
+			],
+			// Update segment is not yet allowed
+			[
+				'nextcloud',
+				'win32',
+				'1.9.0',
+				false,
+				95,
+				$configThrottle,
+				'<?xml version="1.0"?>
+<owncloudclient/>
+'
+			],
+
 			// Updates for client available
 			[
 				'nextcloud',
 				'win32',
 				'1.9.0',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadUrl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadUrl></owncloudclient>
@@ -64,6 +92,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'win32',
 				'1.9.0',
 				true,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadUrl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadUrl></owncloudclient>
@@ -74,6 +103,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'linux',
 				'1.9.0',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -84,6 +114,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'macos',
 				'1.9.0',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.3472</version><versionstring>Nextcloud Client 2.2.2 (build 3472)</versionstring><downloadUrl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz</downloadUrl><signature>MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=</signature></owncloudclient>
@@ -94,6 +125,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'macos',
 				'1.9.0',
 				true,
+				-1,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -114,6 +146,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'macos',
 				'1.9.0',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -124,6 +157,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'ramdomOs',
 				'1.9.0',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -135,6 +169,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'win32',
 				'2.2.2.6192',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -145,6 +180,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'win32',
 				'2.2.6192',
 				true,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -155,6 +191,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'linux',
 				'2.2.2',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -165,6 +202,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'macos',
 				'2.2.2.3472',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -175,6 +213,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'macos',
 				'2.2.2.3472',
 				true,
+				-1,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -190,6 +229,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'win32',
 				'2.3',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -200,6 +240,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'win32',
 				'2.3',
 				true,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -210,6 +251,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'linux',
 				'2.3',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -220,6 +262,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'macos',
 				'2.3',
 				false,
+				-1,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -230,6 +273,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 				'macos',
 				'2.3',
 				true,
+				-1,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -249,6 +293,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 	 * @param string $platform
 	 * @param string $version
 	 * @param bool $isSparkle
+	 * @param int $updateSegment
 	 * @param array $config
 	 * @param string $expected
 	 */
@@ -256,10 +301,11 @@ class ResponseTest extends \PHPUnit_Framework_TestCase {
 									  string $platform,
 									  string $version,
 									  bool $isSparkle,
+									  int $updateSegment,
 									  array $config,
 									  string $expected) {
 		$response = $this->getMockBuilder('\ClientUpdateServer\Response')
-			->setConstructorArgs([$oem, $platform, $version, $isSparkle, $config])
+			->setConstructorArgs([$oem, $platform, $version, $isSparkle, $updateSegment, $config])
 			->setMethods(['getCurrentTimeStamp'])
 			->getMock();
 		$response

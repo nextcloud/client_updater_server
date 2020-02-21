@@ -31,25 +31,22 @@ class Response {
 	private $version;
 	/** @var bool */
 	private $isSparkle;
+	/** @var int */
+	private $updateSegment;
 	/** @var array */
 	private $config;
 
-	/**
-	 * @param string $oem
-	 * @param string $platform
-	 * @param string $version
-	 * @param bool $isSparkle
-	 * @param array $config
-	 */
 	public function __construct(string $oem,
 								string $platform,
 								string $version,
 								bool $isSparkle,
+								int $updateSegment,
 								array $config) {
 		$this->oem = $oem;
 		$this->platform = $platform;
 		$this->version = $version;
 		$this->isSparkle = $isSparkle;
+		$this->updateSegment = $updateSegment;
 		$this->config = $config;
 	}
 
@@ -85,9 +82,22 @@ class Response {
 			return [];
 		}
 
-		$values = $this->config[$this->oem][$this->platform];
-		if(version_compare($this->version, $values['version']) === -1) {
-			return $values;
+		$releaseDate = new \DateTime($this->config[$this->oem]['release']);
+		$throttleDate = new \DateTime();
+
+		if ($this->updateSegment === -1) {
+			$this->updateSegment = random_int(0, 99);
+		}
+
+		// updateSegment is 0-99, so even fine grained control would possible
+		$chunks = floor($this->updateSegment / 10);
+		$throttleDate->sub(new \DateInterval('PT' . (12 * $chunks) . 'H'));
+
+		if ($throttleDate >= $releaseDate) {
+			$values = $this->config[$this->oem][$this->platform];
+			if(version_compare($this->version, $values['version']) === -1) {
+				return $values;
+			}
 		}
 
 		return [];

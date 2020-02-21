@@ -26,6 +26,7 @@ declare(strict_types=1);
  */
 return [
 	'Nextcloud' => [
+		'release' => '2019-02-24 17:05',
 		'linux' => [
 			'version' => '2.6.2',
 			'versionstring' => 'Nextcloud Client 2.6.2',
