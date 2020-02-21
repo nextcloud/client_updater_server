@@ -88,33 +88,18 @@ class Response {
 			return [];
 		}
 
-		$releaseTimeStamp = date_create($this->config[$this->oem]['release']);
+		$releaseDate = new \DateTime($this->config[$this->oem]['release']);
+		$throttleDate = new \DateTime();
 
-		if ($this->updateSegment != -1) {
-			// updateSegment is 0-99, so even fine grained control is possible
-			$elapsedHours = $this->diffInHours(date_create(), $releaseTimeStamp);
-			$chunk = intdiv($this->updateSegment, 10); // 10 chunks
-			$throttle = intdiv($elapsedHours, 10);
+		if ($this->updateSegment === -1) {
+			$this->updateSegment = random_int(0, 99);
+		}
 
-			if ($throttle >= $chunk) {
-				$values = $this->config[$this->oem][$this->platform];
-				if(version_compare($this->version, $values['version']) === -1) {
-					return $values;
-				}
-			}
-		} else if (isset($this->config[$this->oem]['release'])) {
-			// TODO remove after complete rollout of 2.6.4
-			// throttle down: starting with 10% increase every 12h by 10% -> after 5d 100%
-			$elapsedHours = $this->diffInHours(date_create(), $releaseTimeStamp);
-			$throttle = intdiv($elapsedHours, 10); // 10 chunks
+		// updateSegment is 0-99, so even fine grained control would possible
+		$chunks = floor($this->updateSegment / 10);
+		$throttleDate->sub(new \DateInterval('PT' . (12 * $chunks) . 'H'));
 
-			if ($throttle >= rand(0, 10)) {
-				$values = $this->config[$this->oem][$this->platform];
-				if(version_compare($this->version, $values['version']) === -1) {
-					return $values;
-				}
-			}
-		} else { // fallback if no updateSegment is provided
+		if ($throttleDate <= $releaseDate) {
 			$values = $this->config[$this->oem][$this->platform];
 			if(version_compare($this->version, $values['version']) === -1) {
 				return $values;
@@ -122,11 +107,6 @@ class Response {
 		}
 
 		return [];
-	}
-
-	private function diffInHours(\DateTime $date1, \DateTime $date2) : int {
-		$diff = $date2->diff($date1);
-		return $diff->h + ($diff->days * 24);
 	}
 
 	/**
