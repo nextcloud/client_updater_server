@@ -31,17 +31,11 @@ class Response {
 	private $version;
 	/** @var bool */
 	private $isSparkle;
+	/** @var int */
+	private $updateSegment;
 	/** @var array */
 	private $config;
 
-	/**
-	 * @param string $oem
-	 * @param string $platform
-	 * @param string $version
-	 * @param bool $isSparkle
-	 * @param int $updatesegment
-	 * @param array $config
-	 */
 	public function __construct(string $oem,
 								string $platform,
 								string $version,
@@ -99,7 +93,7 @@ class Response {
 		$chunks = floor($this->updateSegment / 10);
 		$throttleDate->sub(new \DateInterval('PT' . (12 * $chunks) . 'H'));
 
-		if ($throttleDate <= $releaseDate) {
+		if ($throttleDate >= $releaseDate) {
 			$values = $this->config[$this->oem][$this->platform];
 			if(version_compare($this->version, $values['version']) === -1) {
 				return $values;
