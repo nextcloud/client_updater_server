@@ -26,22 +26,22 @@ declare(strict_types=1);
  */
 return [
 	'Nextcloud' => [
-		'release' => '2019-12-24 17:05',
+		'release' => '2020-03-04 03:43',
 		'linux' => [
-			'version' => '2.6.2',
-			'versionstring' => 'Nextcloud Client 2.6.2',
-			'web' => 'https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-2.6.2-x86_64.AppImage',
+			'version' => '2.6.4',
+			'versionstring' => 'Nextcloud Client 2.6.4',
+			'web' => 'https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-2.6.4-x86_64.AppImage',
 		],
 		'win32' => [
-			'version' => '2.6.2',
-			'versionstring' => 'Nextcloud Client 2.6.2',
-			'web' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.6.2-setup.exe',
+			'version' => '2.6.4',
+			'versionstring' => 'Nextcloud Client 2.6.4',
+			'web' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.6.4-setup.exe',
 		],
 		'macos' => [
-			'version' => '2.6.2',
-			'versionstring' => 'Nextcloud Client 2.6.2',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.6.2.20191224.pkg.tbz',
-			'signature' => 'MC0CFQCOID+LO2tm/XrC21cX+jRZ+QQxSAIUeCR3OdQSc5vRBau3uEBIazpcmO0=',
+			'version' => '2.6.4',
+			'versionstring' => 'Nextcloud Client 2.6.4',
+			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.6.4.20200303.pkg.tbz',
+			'signature' => 'MC0CFFa6a1hWAjxsVrlIHbANvoCyqzHbAhUAoM3QJRzMQWxdmsZx6huddqcqKz4=',
 
 			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
