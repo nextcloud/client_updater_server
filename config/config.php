@@ -26,24 +26,21 @@ declare(strict_types=1);
  */
 return [
 	'Nextcloud' => [
-		'release' => '2020-07-10 19:00',
+		'release' => '2020-09-03 17:00',
 		'linux' => [
-			'version' => '2.6.5',
-			'versionstring' => 'Nextcloud Client 2.6.5',
-			'web' => 'https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-2.6.5-x86_64.AppImage',
+			'version' => '3.0.1',
+			'versionstring' => 'Nextcloud Client 3.0.1',
+			'web' => 'https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-3.0.1-x86_64.AppImage',
 		],
 		'win32' => [
-			'version' => '2.6.5',
-			'versionstring' => 'Nextcloud Client 2.6.5',
-			'web' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.6.5-setup.exe',
+			'version' => '3.0.1',
+			'versionstring' => 'Nextcloud Client 3.0.1',
+			'web' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-3.0.1-setup.exe',
 		],
 		'macos' => [
-			'version' => '2.6.5',
-			'versionstring' => 'Nextcloud Client 2.6.5',
-			'downloadUrl' => 'https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.6.5.20200710.pkg.tbz',
-			'signature' => 'MCwCFCNLFE8e7yka1LqJs6tPa7c2ZBxUAhR6Yp4rK0plJdg56mncXXnLOJ5grA==',
-
-			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			'version' => '3.0.1',
+			'versionstring' => 'Nextcloud Client 3.0.1',
+			'web' => 'https://download.nextcloud.com/desktop/releases/Mac/Installer/Nextcloud-3.0.1.pkg',
 		],
 	],
 ];
