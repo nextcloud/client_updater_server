@@ -21,26 +21,33 @@
 
 declare(strict_types=1);
 
+$url = 'https://download.nextcloud.com/desktop/releases/';
+
+$rel = '2020-09-28 18:00';
+$ver = '3.0.2';
+
+$ver_str = 'Nextcloud Client ' . $ver;
+
 /**
  * Associative array of OEM => OS => version
  */
 return [
 	'Nextcloud' => [
-		'release' => '2020-09-03 17:00',
+		'release' => $rel,
 		'linux' => [
-			'version' => '3.0.1',
-			'versionstring' => 'Nextcloud Client 3.0.1',
-			'web' => 'https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-3.0.1-x86_64.AppImage',
+			'version' => $ver,
+			'versionstring' => $ver_str,
+			'web' => $url . 'Linux/Nextcloud-' . $ver . '-x86_64.AppImage',
 		],
 		'win32' => [
-			'version' => '3.0.1',
-			'versionstring' => 'Nextcloud Client 3.0.1',
-			'web' => 'https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-3.0.1-setup.exe',
+			'version' => $ver,
+			'versionstring' => $ver_str,
+			'web' => $url . 'Windows/Nextcloud-' . $ver . '-setup.exe',
 		],
 		'macos' => [
-			'version' => '3.0.1',
-			'versionstring' => 'Nextcloud Client 3.0.1',
-			'web' => 'https://download.nextcloud.com/desktop/releases/Mac/Installer/Nextcloud-3.0.1.pkg',
+			'version' => $ver,
+			'versionstring' => $ver_str,
+			'web' => $url . 'Mac/Installer/Nextcloud-' . $ver . '.pkg',
 		],
 	],
 ];
