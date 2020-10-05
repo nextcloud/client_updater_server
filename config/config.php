@@ -26,7 +26,17 @@ $ver = '3.0.2';
 
 $ver_str = 'Nextcloud Client ' . $ver;
 
-$url = 'https://github.com/nextcloud/desktop/releases/download/v' . $ver . '/';
+if (version_compare($version, '3.0.3') < 0) {
+	$url = 'https://download.nextcloud.com/desktop/releases/';
+	$linux_url = $url . 'Linux/';
+	$windows_url = $url . 'Windows/';
+	$mac_url = $url . 'Mac/Installer/';
+} else {
+	$url = 'https://github.com/nextcloud/desktop/releases/download/v' . $ver . '/';
+	$linux_url = $url;
+	$windows_url = $url;
+	$mac_url = $url;
+}
 
 /**
  * Associative array of OEM => OS => version
@@ -37,17 +47,20 @@ return [
 		'linux' => [
 			'version' => $ver,
 			'versionstring' => $ver_str,
-			'web' => $url . 'Nextcloud-' . $ver . '-x86_64.AppImage',
+			'downloadurl' => $linux_url . 'Nextcloud-' . $ver . '-x86_64.AppImage',
+			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'win32' => [
 			'version' => $ver,
 			'versionstring' => $ver_str,
-			'web' => $url . 'Nextcloud-' . $ver . '-setup.exe',
+			'downloadurl' => $windows_url . 'Nextcloud-' . $ver . '-setup.exe',
+			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'macos' => [
 			'version' => $ver,
 			'versionstring' => $ver_str,
-			'web' => $url . 'Nextcloud-' . $ver . '.pkg',
+			'downloadurl' => $mac_url . 'Nextcloud-' . $ver . '.pkg',
+			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 	],
 ];
