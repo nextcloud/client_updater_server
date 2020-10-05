@@ -37,17 +37,20 @@ return [
 		'linux' => [
 			'version' => $ver,
 			'versionstring' => $ver_str,
-			'web' => $url . 'Nextcloud-' . $ver . '-x86_64.AppImage',
+			'downloadurl' => $url . 'Nextcloud-' . $ver . '-x86_64.AppImage',
+			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'win32' => [
 			'version' => $ver,
 			'versionstring' => $ver_str,
-			'web' => $url . 'Nextcloud-' . $ver . '-setup.exe',
+			'downloadurl' => $url . 'Nextcloud-' . $ver . '-setup.exe',
+			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'macos' => [
 			'version' => $ver,
 			'versionstring' => $ver_str,
-			'web' => $url . 'Nextcloud-' . $ver . '.pkg',
+			'downloadurl' => $url . 'Nextcloud-' . $ver . '.pkg',
+			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 	],
 ];
