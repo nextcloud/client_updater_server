@@ -21,11 +21,11 @@
 
 declare(strict_types=1);
 
-$rel = '2020-09-28 18:00';
-$ver = '3.0.2';
+$rel = '2020-10-30 12:00';
+$ver = '3.0.3';
 
-$old_rel = '2020-09-03 17:00';
-$old_ver = '3.0.1';
+$old_rel = '2020-09-28 18:00';
+$old_ver = '3.0.2';
 
 // in 90% of the cases ship the old version. Otherwise ship the current version.
 if (rand(0, 9) !== 2) {
