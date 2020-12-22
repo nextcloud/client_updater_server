@@ -47,6 +47,17 @@ if (version_compare($version, '3.0.3') < 0) {
 	$mac_url = $url;
 }
 
+if (version_compare($version, '3.1.0') < 0) {
+    $windows_suffix = '-setup.exe';
+} else {
+    if ($buildArch === 'i386') {
+        $windows_suffix = '-x86.msi';
+    } else {
+        $windows_suffix = '-x64.msi';
+    }
+}
+
+
 /**
  * Associative array of OEM => OS => version
  */
@@ -62,7 +73,7 @@ return [
 		'win32' => [
 			'version' => $ver,
 			'versionstring' => $ver_str,
-			'downloadurl' => $windows_url . 'Nextcloud-' . $ver . '-setup.exe',
+			'downloadurl' => $windows_url . 'Nextcloud-' . $ver . $windows_suffix,
 			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'macos' => [
