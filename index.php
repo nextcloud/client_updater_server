@@ -81,6 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
 // Read parameters
 $oem = isset($_GET['oem']) ? (string)$_GET['oem'] : null;
 $platform = isset($_GET['platform']) ? (string)$_GET['platform'] : null;
+$buildArch = isset($_GET['buildArch']) ? (string)$_GET['buildArch'] : "x86_64";
+$currentArch = isset($_GET['currentArch']) ? (string)$_GET['currentArch'] : "x86_64";
 $version = isset($_GET['version']) ? (string)$_GET['version'] : null;
 $isSparkle = isset($_GET['sparkle']) ? true : false;
 $updateSegment = isset($_GET['updatesegment']) ? (int)$_GET['updatesegment'] : -1;

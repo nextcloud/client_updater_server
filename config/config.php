@@ -21,11 +21,11 @@
 
 declare(strict_types=1);
 
-$rel = '2020-10-30 12:00';
-$ver = '3.0.3';
+$rel = '2020-12-23 12:00';
+$ver = '3.1.1';
 
-$old_rel = '2020-09-28 18:00';
-$old_ver = '3.0.2';
+$old_rel = '2020-10-30 12:00';
+$old_ver = '3.0.3';
 
 // in 90% of the cases ship the old version. Otherwise ship the current version.
 if (rand(0, 9) !== 2) {
@@ -47,6 +47,17 @@ if (version_compare($version, '3.0.3') < 0) {
 	$mac_url = $url;
 }
 
+if (version_compare($version, '3.1.0') < 0) {
+    $windows_suffix = '-setup.exe';
+} else {
+    if ($buildArch === 'i386') {
+        $windows_suffix = '-x86.msi';
+    } else {
+        $windows_suffix = '-x64.msi';
+    }
+}
+
+
 /**
  * Associative array of OEM => OS => version
  */
@@ -62,7 +73,7 @@ return [
 		'win32' => [
 			'version' => $ver,
 			'versionstring' => $ver_str,
-			'downloadurl' => $windows_url . 'Nextcloud-' . $ver . '-setup.exe',
+			'downloadurl' => $windows_url . 'Nextcloud-' . $ver . $windows_suffix,
 			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
 		],
 		'macos' => [
