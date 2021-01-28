@@ -21,8 +21,8 @@
 
 declare(strict_types=1);
 
-$rel = '2020-12-23 12:00';
-$ver = '3.1.1';
+$rel = '2021-01-28 12:00';
+$ver = '3.1.2';
 
 $ver_str = 'Nextcloud Client ' . $ver;
 
