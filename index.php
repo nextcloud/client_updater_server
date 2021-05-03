@@ -86,6 +86,9 @@ $currentArch = isset($_GET['currentArch']) ? (string)$_GET['currentArch'] : "x86
 $version = isset($_GET['version']) ? (string)$_GET['version'] : null;
 $isSparkle = isset($_GET['sparkle']) ? true : false;
 $updateSegment = isset($_GET['updatesegment']) ? (int)$_GET['updatesegment'] : -1;
+$osRelease = isset($_GET['osRelease']) ? (string)$_GET['osRelease'] : '';
+$osVersion = isset($_GET['osVersion']) ? (string)$_GET['osVersion'] : '';
+$kernelVersion = isset($_GET['kernelVersion']) ? (string)$_GET['kernelVersion'] : '';
 
 if($oem === null || $platform === null || $version === null) {
 	die();
@@ -100,6 +103,9 @@ $response = new \ClientUpdateServer\Response(
 	$version,
 	$isSparkle,
 	$updateSegment,
+	$osRelease,
+	$osVersion,
+	$kernelVersion,
 	$config
 );
 echo $response->buildResponse();

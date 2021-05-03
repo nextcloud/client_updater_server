@@ -33,6 +33,12 @@ class Response {
 	private $isSparkle;
 	/** @var int */
 	private $updateSegment;
+	/** @var string */
+	private $osRelease;
+	/** @var string */
+	private $osVersion;
+	/** @var string */
+	private $kernelVersion;
 	/** @var array */
 	private $config;
 
@@ -41,12 +47,18 @@ class Response {
 								string $version,
 								bool $isSparkle,
 								int $updateSegment,
+								string $osRelease,
+								string $osVersion,
+								string $kernelVersion,
 								array $config) {
 		$this->oem = $oem;
 		$this->platform = $platform;
 		$this->version = $version;
 		$this->isSparkle = $isSparkle;
 		$this->updateSegment = $updateSegment;
+		$this->osRelease = $osRelease;
+		$this->osVersion = $osVersion;
+		$this->kernelVersion = $kernelVersion;
 		$this->config = $config;
 	}
 
@@ -89,12 +101,39 @@ class Response {
 			$this->updateSegment = random_int(0, 99);
 		}
 
+		$useNewerVersion = true;
+		if ($this->platform === 'win32') {
+			if ($this->osVersion === '10') {
+				switch ($this->kernelVersion) {
+				case '10.0.10240':
+				case '10.0.10586':
+				case '10.0.14393':
+				case '10.0.15063':
+				case '':
+					$useNewerVersion = false;
+					break;
+				}
+			} else {
+				$useNewerVersion = false;
+			}
+		}
+
 		// updateSegment is 0-99, so even fine grained control would possible
 		$chunks = floor($this->updateSegment / 10);
 		$throttleDate->sub(new \DateInterval('PT' . (12 * $chunks) . 'H'));
 
 		if ($throttleDate >= $releaseDate) {
 			$values = $this->config[$this->oem][$this->platform];
+
+			if ($useNewerVersion === false) {
+				$values['version'] = $values['legacyversion'];
+				$values['versionstring'] = $values['legacyversionstring'];
+				$values['downloadurl'] = $values['legacydownloadurl'];
+			}
+			unset($values['legacyversion']);
+			unset($values['legacyversionstring']);
+			unset($values['legacydownloadurl']);
+
 			if(version_compare($this->version, $values['version']) === -1) {
 				return $values;
 			}
