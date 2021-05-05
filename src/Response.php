@@ -113,6 +113,8 @@ class Response {
 					$useNewerVersion = false;
 					break;
 				}
+			} else if (version_compare($this->version, '3.2.0') <> -1) {
+				$useNewerVersion = true;
 			} else {
 				$useNewerVersion = false;
 			}
