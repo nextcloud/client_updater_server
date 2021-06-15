@@ -32,3 +32,7 @@ If the default `config.php` doesn't hold update information for this OEM, the co
 
 ## Developement
 To test this update server locally use `composer start`, which then will run the server on localhost port 1234.
+
+## Deployment
+
+The updater server is deployed via Github webhooks. The state in master is deployed to https://updates.nextcloud.com/client/.
