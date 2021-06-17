@@ -40,6 +40,7 @@ if (version_compare($version, '3.0.3') < 0) {
 
 if (version_compare($version, '3.1.0') < 0) {
     $windows_suffix = '-setup.exe';
+    $ver = '3.1.3';
 } else {
     if ($buildArch === 'i386') {
         $windows_suffix = '-x86.msi';
