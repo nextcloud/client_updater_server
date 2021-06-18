@@ -1,8 +1,0 @@
-sudo: false
-language: php
-php:
-  - 7.0
-
-script:
-  - composer install
-  - sh -c "cd tests/unit/ && ../../vendor/bin/phpunit ."
