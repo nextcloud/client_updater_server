@@ -10,6 +10,7 @@ If the default `config.php` doesn't hold update information for this OEM, the co
 
 ```json
 {
+  "release": "2022-01-27 14:31",
   "linux": {
     "version": "2.3.2",
     "versionstring": "Nextcloud Client 2.3.2",
