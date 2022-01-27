@@ -29,6 +29,8 @@ class Response {
 	private $platform;
 	/** @var string */
 	private $version;
+	/** @var string */
+	private $channel;
 	/** @var bool */
 	private $isSparkle;
 	/** @var int */
@@ -39,12 +41,14 @@ class Response {
 	public function __construct(string $oem,
 								string $platform,
 								string $version,
+								string $channel,
 								bool $isSparkle,
 								int $updateSegment,
 								array $config) {
 		$this->oem = $oem;
 		$this->platform = $platform;
 		$this->version = $version;
+		$this->channel = $channel;
 		$this->isSparkle = $isSparkle;
 		$this->updateSegment = $updateSegment;
 		$this->config = $config;
@@ -78,11 +82,11 @@ class Response {
 			$this->config[$this->oem] = $data;
 		}
 
-		if(!isset($this->config[$this->oem][$this->platform])) {
+		if(!isset($this->config[$this->oem][$this->channel][$this->platform])) {
 			return [];
 		}
 
-		$releaseDate = new \DateTime($this->config[$this->oem]['release']);
+		$releaseDate = new \DateTime($this->config[$this->oem][$this->channel]['release']);
 		$throttleDate = new \DateTime();
 
 		if ($this->updateSegment === -1) {
@@ -94,9 +98,17 @@ class Response {
 		$throttleDate->sub(new \DateInterval('PT' . (12 * $chunks) . 'H'));
 
 		if ($throttleDate >= $releaseDate) {
-			$values = $this->config[$this->oem][$this->platform];
+			$values = $this->config[$this->oem][$this->channel][$this->platform];
 			if(version_compare($this->version, $values['version']) === -1) {
 				return $values;
+			} else {
+				if ($this->channel == 'beta') {
+					// check if newer stable version is available
+					$values = $this->config[$this->oem]['stable'][$this->platform];
+					if (version_compare($this->version, $values['version']) === -1) {
+						return $values;
+					}
+				}
 			}
 		}
 

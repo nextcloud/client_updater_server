@@ -86,6 +86,7 @@ $currentArch = isset($_GET['currentArch']) ? (string)$_GET['currentArch'] : "x86
 $version = isset($_GET['version']) ? (string)$_GET['version'] : null;
 $isSparkle = isset($_GET['sparkle']) ? true : false;
 $updateSegment = isset($_GET['updatesegment']) ? (int)$_GET['updatesegment'] : -1;
+$channel = isset($_GET['channel']) ? (string)$_GET['channel'] : 'stable';
 
 if($oem === null || $platform === null || $version === null) {
 	die();
@@ -98,6 +99,7 @@ $response = new \ClientUpdateServer\Response(
 	$oem,
 	$platform,
 	$version,
+	$channel,
 	$isSparkle,
 	$updateSegment,
 	$config

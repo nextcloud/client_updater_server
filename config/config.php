@@ -21,31 +21,40 @@
 
 declare(strict_types=1);
 
-$rel = '2022-03-18 16:00';
-$ver = '3.4.4';
+$stableReleaseDate = '2022-03-18 16:00';
+$stableVersion = '3.4.4';
 
-$ver_str = 'Nextcloud Client ' . $ver;
+$betaReleaseDate = '2022-03-18 18:30';
+$betaVersion = '3.5.0-rc1';
+
+$stableVersionString = 'Nextcloud Client ' . $stableVersion;
+$betaVersionString = 'Nextcloud Client ' . $betaVersion;
 
 if (version_compare($version, '3.0.3') < 0) {
 	$url = 'https://download.nextcloud.com/desktop/releases/';
-	$linux_url = $url . 'Linux/';
-	$windows_url = $url . 'Windows/';
-	$mac_url = $url . 'Mac/Installer/';
+	$stable_linux_url = $url . 'Linux/';
+	$stable_windows_url = $url . 'Windows/';
+	$stable_mac_url = $url . 'Mac/Installer/';
 } else {
-	$url = 'https://github.com/nextcloud/desktop/releases/download/v' . $ver . '/';
-	$linux_url = $url;
-	$windows_url = $url;
-	$mac_url = $url;
+	$stableUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $stableVersion . '/';
+	$stable_linux_url = $stableUrl;
+	$stable_windows_url = $stableUrl;
+	$stable_mac_url = $stableUrl;
+
+	$betaUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $betaVersion . '/';
+	$beta_linux_url = $betaUrl;
+	$beta_windows_url = $betaUrl;
+	$beta_mac_url = $betaUrl;
 }
 
 if (version_compare($version, '3.1.0') < 0) {
     $windows_suffix = '-setup.exe';
-    $ver = '3.1.3';
+    $stableVersion = '3.1.3';
 } else {
     if ($buildArch === 'i386') {
         $windows_suffix = '-x86.msi';
     } else {
-        $windows_suffix = '-x64.msi';
+        $windows_suffix = '-x86_64.msi';
     }
 }
 
@@ -55,24 +64,47 @@ if (version_compare($version, '3.1.0') < 0) {
  */
 return [
 	'Nextcloud' => [
-		'release' => $rel,
-		'linux' => [
-			'version' => $ver,
-			'versionstring' => $ver_str,
-			'downloadurl' => $linux_url . 'Nextcloud-' . $ver . '-x86_64.AppImage',
-			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+		'stable' => [
+			'release' => $stableReleaseDate,
+			'linux' => [
+				'version' => $stableVersion,
+				'versionstring' => $stableVersionString,
+				'downloadurl' => $stable_linux_url . 'Nextcloud-' . $stableVersion . '-x64.AppImage',
+				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			],
+			'win32' => [
+				'version' => $stableVersion,
+				'versionstring' => $stableVersionString,
+				'downloadurl' => $stable_windows_url . 'Nextcloud-' . $stableVersion . $windows_suffix,
+				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			],
+			'macos' => [
+				'version' => $stableVersion,
+				'versionstring' => $stableVersionString,
+				'downloadurl' => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg',
+				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			],
 		],
-		'win32' => [
-			'version' => $ver,
-			'versionstring' => $ver_str,
-			'downloadurl' => $windows_url . 'Nextcloud-' . $ver . $windows_suffix,
-			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
-		],
-		'macos' => [
-			'version' => $ver,
-			'versionstring' => $ver_str,
-			'downloadurl' => $mac_url . 'Nextcloud-' . $ver . '.pkg',
-			'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
-		],
-	],
+		'beta' => [
+			'release' => $betaReleaseDate,
+			'linux' => [
+				'version' => $betaVersion,
+				'versionstring' => $betaVersionString,
+				'downloadurl' => $beta_linux_url . 'Nextcloud-' . $betaVersion . '-x64.AppImage',
+				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			],
+			'win32' => [
+				'version' => $betaVersion,
+				'versionstring' => $betaVersionString,
+				'downloadurl' => $beta_windows_url . 'Nextcloud-' . $betaVersion . $windows_suffix,
+				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			],
+			'macos' => [
+				'version' => $betaVersion,
+				'versionstring' => $betaVersionString,
+				'downloadurl' => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg',
+				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+			],
+		]
+	]
 ];

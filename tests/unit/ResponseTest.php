@@ -25,31 +25,35 @@ use PHPUnit\Framework\TestCase;
 
 class ResponseTest extends TestCase {
 
-	public function updateDataProvider(): array {
+	public function updateDataProvider(): array
+	{
 		$config = [
 			'nextcloud' => [
-				'release' => '2019-02-24 17:05',
-				'linux' => [
-					'version' => '2.2.2',
-					'versionstring' => 'Nextcloud Client 2.2.2',
-					'web' => 'https://nextcloud.com/install/#install-clients',
+				'stable' => [
+					'release' => '2019-02-24 17:05',
+					'linux' => [
+						'version' => '2.2.2',
+						'versionstring' => 'Nextcloud Client 2.2.2',
+						'web' => 'https://nextcloud.com/install/#install-clients',
+					],
+					'win32' => [
+						'version' => '2.2.2.6192',
+						'versionstring' => 'Nextcloud Client 2.2.2 (build 6192)',
+						'downloadUrl' => 'https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe',
+					],
+					'macos' => [
+						'version' => '2.2.2.3472',
+						'versionstring' => 'Nextcloud Client 2.2.2 (build 3472)',
+						'downloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
+						'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
+					]
 				],
-				'win32' => [
-					'version' => '2.2.2.6192',
-					'versionstring' => 'Nextcloud Client 2.2.2 (build 6192)',
-					'downloadUrl' => 'https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe',
-				],
-				'macos' => [
-					'version' => '2.2.2.3472',
-					'versionstring' => 'Nextcloud Client 2.2.2 (build 3472)',
-					'downloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
-					'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
-				],
+				'beta' => []
 			]
 		];
 
 		$configThrottle = $config;
-		$configThrottle['nextcloud']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:m');
+		$configThrottle['nextcloud']['stable']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:m');
 
 		return [
 			// Update segment is already allowed
@@ -57,6 +61,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'win32',
 				'1.9.0',
+				'stable',
 				false,
 				5,
 				$configThrottle,
@@ -69,6 +74,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'win32',
 				'1.9.0',
+				'stable',
 				false,
 				95,
 				$configThrottle,
@@ -82,6 +88,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'win32',
 				'1.9.0',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -93,6 +100,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'win32',
 				'1.9.0',
+				'stable',
 				true,
 				-1,
 				$config,
@@ -104,6 +112,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'linux',
 				'1.9.0',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -115,6 +124,7 @@ class ResponseTest extends TestCase {
 			'nextcloud',
 				'macos',
 				'1.9.0',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -126,6 +136,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'macos',
 				'1.9.0',
+				'stable',
 				true,
 				-1,
 				$config,
@@ -147,6 +158,7 @@ class ResponseTest extends TestCase {
 				'randomOem',
 				'macos',
 				'1.9.0',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -156,8 +168,9 @@ class ResponseTest extends TestCase {
 			],
 			[
 				'nextcloud',
-				'ramdomOs',
+				'randomOs',
 				'1.9.0',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -170,6 +183,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'win32',
 				'2.2.2.6192',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -181,6 +195,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'win32',
 				'2.2.6192',
+				'stable',
 				true,
 				-1,
 				$config,
@@ -192,6 +207,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'linux',
 				'2.2.2',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -203,6 +219,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'macos',
 				'2.2.2.3472',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -214,6 +231,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'macos',
 				'2.2.2.3472',
+				'stable',
 				true,
 				-1,
 				$config,
@@ -230,6 +248,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'win32',
 				'2.3',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -241,6 +260,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'win32',
 				'2.3',
+				'stable',
 				true,
 				-1,
 				$config,
@@ -252,6 +272,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'linux',
 				'2.3',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -263,6 +284,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'macos',
 				'2.3',
+				'stable',
 				false,
 				-1,
 				$config,
@@ -274,6 +296,7 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'macos',
 				'2.3',
+				'stable',
 				true,
 				-1,
 				$config,
@@ -294,6 +317,7 @@ class ResponseTest extends TestCase {
 	 * @param string $oem
 	 * @param string $platform
 	 * @param string $version
+	 * @param string $channel
 	 * @param bool $isSparkle
 	 * @param int $updateSegment
 	 * @param array $config
@@ -302,12 +326,13 @@ class ResponseTest extends TestCase {
 	public function testBuildResponse(string $oem,
 									  string $platform,
 									  string $version,
+									  string $channel,
 									  bool $isSparkle,
 									  int $updateSegment,
 									  array $config,
 									  string $expected) {
 		$response = $this->getMockBuilder('\ClientUpdateServer\Response')
-			->setConstructorArgs([$oem, $platform, $version, $isSparkle, $updateSegment, $config])
+			->setConstructorArgs([$oem, $platform, $version, $channel, $isSparkle, $updateSegment, $config])
 			->setMethods(['getCurrentTimeStamp'])
 			->getMock();
 		$response
