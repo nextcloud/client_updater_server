@@ -10,23 +10,47 @@ If the default `config.php` doesn't hold update information for this OEM, the co
 
 ```json
 {
-  "release": "2022-01-27 14:31",
-  "linux": {
-    "version": "2.3.2",
-    "versionstring": "Nextcloud Client 2.3.2",
-    "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
+  "stable": {
+    "release": "2022-01-01 13:00",
+    "linux": {
+      "version": "2.3.2",
+      "versionstring": "Nextcloud Client 2.3.2",
+      "downloadUrl": "https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-2.3.2.1-setup.AppImage",
+      "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
+    },
+    "win32": {
+      "version": "2.3.2.1",
+      "versionstring": "Nextcloud Client 2.3.2 (build 1)",
+      "downloadUrl": "https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.3.2.1-setup.exe",
+      "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
+    },
+    "macos": {
+      "version": "2.2.4.1",
+      "versionstring": "Nextcloud Client 2.2.4 (build 1)",
+      "downloadUrl": "https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.2.4.1.pkg.tbz",
+      "signature": "MCwCFGC3X/fejC/y/3T2X+c8ldDk7pJGAhQoR8v6vtvvV57nIcMNePA+jNRYcw=="
+    }
   },
-  "win32": {
-    "version": "2.3.2.1",
-    "versionstring": "Nextcloud Client 2.3.2 (build 1)",
-    "downloadUrl": "https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.3.2.1-setup.exe",
-    "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
-  },
-  "macos": {
-    "version": "2.2.4.1",
-    "versionstring": "Nextcloud Client 2.2.4 (build 1)",
-    "downloadUrl": "https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.2.4.1.pkg.tbz",
-    "signature": "MCwCFGC3X/fejC/y/3T2X+c8ldDk7pJGAhQoR8v6vtvvV57nIcMNePA+jNRYcw=="
+  "beta": {
+    "release": "2022-01-27 14:31",
+    "linux": {
+      "version": "3.5.6-rc1",
+      "versionstring": "Nextcloud Client 3.5.6 RC1",
+      "downloadUrl": "https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-3.5.6-rc1-setup.AppImage",
+      "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
+    },
+    "win32": {
+      "version": "3.5.6-rc1",
+      "versionstring": "Nextcloud Client 3.5.6 RC1",
+      "downloadUrl": "https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-3.5.6-rc1-setup.exe",
+      "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
+    },
+    "macos": {
+      "version": "3.5.6-rc1",
+      "versionstring": "Nextcloud Client 3.5.6 RC1",
+      "downloadUrl": "https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-3.5.6-rc1-pkg.tbz",
+      "signature": "MCwCFGC3X/fejC/y/3T2X+c8ldDk7pJGAhQoR8v6vtvvV57nIcMNePA+jNRYcw=="
+    }
   }
 }
 ```
