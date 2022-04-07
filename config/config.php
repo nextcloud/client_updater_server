@@ -24,8 +24,8 @@ declare(strict_types=1);
 $stableReleaseDate = '2022-03-18 16:00';
 $stableVersion = '3.4.4';
 
-$betaReleaseDate = '2022-03-18 18:30';
-$betaVersion = '3.5.0-rc1';
+$betaReleaseDate = '2022-04-07 00:00';
+$betaVersion = '3.5.0-rc3';
 
 $stableVersionString = 'Nextcloud Client ' . $stableVersion;
 $betaVersionString = 'Nextcloud Client ' . $betaVersion;
