@@ -39,12 +39,12 @@ class ResponseTest extends TestCase {
 					'win32' => [
 						'version' => '2.2.2.6192',
 						'versionstring' => 'Nextcloud Client 2.2.2 (build 6192)',
-						'downloadUrl' => 'https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe',
 					],
 					'macos' => [
 						'version' => '2.2.2.3472',
 						'versionstring' => 'Nextcloud Client 2.2.2 (build 3472)',
-						'downloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
+						'downloadurl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
 						'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
 					]
 				],
