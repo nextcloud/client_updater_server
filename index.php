@@ -21,6 +21,7 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/Response.php';
 
 // Set Content-Type to XML
@@ -71,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
 
 	if (isset($data['ref']) && $data['ref'] === 'refs/heads/' . $branch) {
 		$escapedDir = escapeshellarg(__DIR__);
-		exec("cd $escapedDir && git pull");
+		exec("cd $escapedDir && git pull && composer update --no-dev");
 		echo "Deployed";
 	}
 
