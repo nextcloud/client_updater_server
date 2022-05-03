@@ -44,8 +44,10 @@ class ResponseTest extends TestCase {
 					'macos' => [
 						'version' => '2.2.2.3472',
 						'versionstring' => 'Nextcloud Client 2.2.2 (build 3472)',
-						'downloadurl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
+						'downloadurl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg',
+						'sparkleDownloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
 						'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
+						'length' => '62738920',
 					]
 				],
 				'beta' => []
