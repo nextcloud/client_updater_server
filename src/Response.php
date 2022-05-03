@@ -133,8 +133,8 @@ class Response {
 		$item = !empty($updateVersion) ? '<item>
 					<title>'.$updateVersion['versionstring'].'</title>
 					<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
-					<enclosure url="'.$updateVersion['downloadurl'].'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:dsaSignature="'.$updateVersion['signature'].'"/>
-					<sparkle:minimumSystemVersion>10.7.0</sparkle:minimumSystemVersion>
+					<enclosure url="'.$updateVersion['sparkleDownloadUrl'].'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:edSignature="'.$updateVersion['signature'].'" length="'.$updateVersion['length'].'"/>
+					<sparkle:minimumSystemVersion>10.13.0</sparkle:minimumSystemVersion>
 				</item>' : '';
 		$xml = '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
