@@ -54,7 +54,7 @@ if (version_compare($version, '3.1.0') < 0) {
     if ($buildArch === 'i386') {
         $windows_suffix = '-x86.msi';
     } else {
-        $windows_suffix = '-x86_64.msi';
+        $windows_suffix = '-x64.msi';
     }
 }
 
