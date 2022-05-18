@@ -34,6 +34,7 @@ class ResponseTest extends TestCase {
 					'linux' => [
 						'version' => '2.2.2',
 						'versionstring' => 'Nextcloud Client 2.2.2',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage',
 						'web' => 'https://nextcloud.com/install/#install-clients',
 					],
 					'win32' => [
@@ -50,7 +51,29 @@ class ResponseTest extends TestCase {
 						'length' => '62738920',
 					]
 				],
-				'beta' => []
+				'beta' => [
+					'release' => '2020-01-01 01:01',
+					'linux' => [
+						'version' => '2.2.2-rc2',
+						'versionstring' => 'Nextcloud Client 2.2.2-rc2',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc2-x64.AppImage',
+						'web' => 'https://nextcloud.com/install/#install-clients',
+					],
+					'win32' => [
+						'version' => '2.2.3-rc3',
+						'versionstring' => 'Nextcloud Client 2.2.3-rc3',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.3-rc3-x86.msi',
+						'web' => 'https://nextcloud.com/install/#install-clients',
+					],
+					'macos' => [
+						'version' => '2.2.2-rc2',
+						'versionstring' => 'Nextcloud Client 2.2.2-rc2',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc2.pkg',
+						'sparkleDownloadUrl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz',
+						'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
+						'length' => '62738920',
+					]
+				],
 			]
 		];
 
@@ -58,7 +81,7 @@ class ResponseTest extends TestCase {
 		$configThrottle['nextcloud']['stable']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:m');
 
 		return [
-			// Update segment is already allowed
+			// #0 Update segment is already allowed
 			[
 				'nextcloud',
 				'win32',
@@ -71,7 +94,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],
-			// Update segment is not yet allowed
+			// #1 Update segment is not yet allowed
 			[
 				'nextcloud',
 				'win32',
@@ -84,8 +107,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
-
-			// Updates for client available
+			// #2 Updates for client available
 			[
 				'nextcloud',
 				'win32',
@@ -98,6 +120,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],
+			// #3
 			[
 				'nextcloud',
 				'win32',
@@ -110,6 +133,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],
+			// #4
 			[
 				'nextcloud',
 				'linux',
@@ -119,9 +143,10 @@ class ResponseTest extends TestCase {
 				-1,
 				$config,
 				'<?xml version="1.0"?>
-<owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+<owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
+			// #5
 			[
 			'nextcloud',
 				'macos',
@@ -134,6 +159,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.3472</version><versionstring>Nextcloud Client 2.2.2 (build 3472)</versionstring><downloadurl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg</downloadurl><sparkleDownloadUrl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz</sparkleDownloadUrl><signature>MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=</signature><length>62738920</length></owncloudclient>
 '
 			],
+			// #6
 			[
 				'nextcloud',
 				'macos',
@@ -155,7 +181,46 @@ class ResponseTest extends TestCase {
 				</item></channel>
 			</rss>'
 			],
-			// Updates for not existing entries
+			// #7 stable -> beta version
+			[
+				'nextcloud',
+				'win32',
+				'1.9.0',
+				'beta',
+				false,
+				-1,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient><version>2.2.3-rc3</version><versionstring>Nextcloud Client 2.2.3-rc3</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.3-rc3-x86.msi</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+'
+			],
+			// #8 older beta -> newer beta version
+			[
+				'nextcloud',
+				'win32',
+				'2.2.3-rc1',
+				'beta',
+				false,
+				-1,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient><version>2.2.3-rc3</version><versionstring>Nextcloud Client 2.2.3-rc3</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.3-rc3-x86.msi</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+'
+			],
+			// #9 older beta, but newer stable -> update
+			[
+				'nextcloud',
+				'linux',
+				'2.2.2-rc1',
+				'beta',
+				false,
+				-1,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+'
+			],
+			// #10 Updates for not existing entries
 			[
 				'randomOem',
 				'macos',
@@ -168,6 +233,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #11
 			[
 				'nextcloud',
 				'randomOs',
@@ -180,7 +246,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
-			// No updates if the version is the same
+			// #12 No updates if the version is the same
 			[
 				'nextcloud',
 				'win32',
@@ -193,6 +259,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #13
 			[
 				'nextcloud',
 				'win32',
@@ -205,6 +272,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #14
 			[
 				'nextcloud',
 				'linux',
@@ -217,6 +285,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #15
 			[
 				'nextcloud',
 				'macos',
@@ -229,6 +298,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #16
 			[
 				'nextcloud',
 				'macos',
@@ -245,7 +315,7 @@ class ResponseTest extends TestCase {
 		<language>en</language></channel>
 			</rss>'
 			],
-			// No updates if the version is higher
+			// #17 No updates if the version is higher
 			[
 				'nextcloud',
 				'win32',
@@ -258,6 +328,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #18
 			[
 				'nextcloud',
 				'win32',
@@ -270,6 +341,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #19
 			[
 				'nextcloud',
 				'linux',
@@ -282,6 +354,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #20
 			[
 				'nextcloud',
 				'macos',
@@ -294,6 +367,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
+			// #21
 			[
 				'nextcloud',
 				'macos',

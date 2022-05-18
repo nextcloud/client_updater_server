@@ -98,17 +98,15 @@ class Response {
 		$throttleDate->sub(new \DateInterval('PT' . (12 * $chunks) . 'H'));
 
 		if ($throttleDate >= $releaseDate) {
-			$values = $this->config[$this->oem][$this->channel][$this->platform];
-			if(version_compare($this->version, $values['version']) === -1) {
-				return $values;
-			} else {
-				if ($this->channel == 'beta') {
-					// check if newer stable version is available
-					$values = $this->config[$this->oem]['stable'][$this->platform];
-					if (version_compare($this->version, $values['version']) === -1) {
-						return $values;
-					}
-				}
+			$stable = $this->config[$this->oem]['stable'][$this->platform];
+			$beta = $this->config[$this->oem]['beta'][$this->platform];
+
+			if ($this->channel == 'beta' && version_compare($stable['version'], $beta['version']) == -1) {
+				return $beta;
+			}
+
+			if (version_compare($this->version, $stable['version']) == -1) {
+				return $stable;
 			}
 		}
 
