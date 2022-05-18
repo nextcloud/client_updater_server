@@ -70,19 +70,19 @@ return [
 				'version' => $stableVersion,
 				'versionstring' => $stableVersionString,
 				'downloadurl' => $stable_linux_url . 'Nextcloud-' . $stableVersion . '-x64.AppImage',
-				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+				'web' => 'https://nextcloud.com/install',
 			],
 			'win32' => [
 				'version' => $stableVersion,
 				'versionstring' => $stableVersionString,
 				'downloadurl' => $stable_windows_url . 'Nextcloud-' . $stableVersion . $windows_suffix,
-				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+				'web' => 'https://nextcloud.com/install',
 			],
 			'macos' => [
 				'version' => $stableVersion,
 				'versionstring' => $stableVersionString,
 				'downloadurl' => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg',
-				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"signature" => "VjVCAmZ2PtX3P0bo2R7GWJf2eKcxwQvcswA1oly1SpcOeHu8nt9Rfo20Hbl+JIz4vIo1aIZHWKwiXU2CtrjrBw==",
 				"length" => 62917216
@@ -94,19 +94,19 @@ return [
 				'version' => $betaVersion,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_linux_url . 'Nextcloud-' . $betaVersion . '-x64.AppImage',
-				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+				'web' => 'https://nextcloud.com/install',
 			],
 			'win32' => [
 				'version' => $betaVersion,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_windows_url . 'Nextcloud-' . $betaVersion . $windows_suffix,
-				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+				'web' => 'https://nextcloud.com/install',
 			],
 			'macos' => [
 				'version' => $betaVersion,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg',
-				'web' => 'https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients',
+				'web' => 'https://nextcloud.com/install',
 			],
 		]
 	]
