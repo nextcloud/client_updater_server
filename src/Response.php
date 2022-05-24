@@ -33,8 +33,6 @@ class Response {
 	private $channel;
 	/** @var bool */
 	private $isSparkle;
-	/** @var int */
-	private $updateSegment;
 	/** @var array */
 	private $config;
 
@@ -43,14 +41,12 @@ class Response {
 								string $version,
 								string $channel,
 								bool $isSparkle,
-								int $updateSegment,
 								array $config) {
 		$this->oem = $oem;
 		$this->platform = $platform;
 		$this->version = $version;
 		$this->channel = $channel;
 		$this->isSparkle = $isSparkle;
-		$this->updateSegment = $updateSegment;
 		$this->config = $config;
 	}
 
@@ -87,27 +83,15 @@ class Response {
 		}
 
 		$releaseDate = new \DateTime($this->config[$this->oem][$this->channel]['release']);
-		$throttleDate = new \DateTime();
+		$stable = $this->config[$this->oem]['stable'][$this->platform];
+		$beta = $this->config[$this->oem]['beta'][$this->platform];
 
-		if ($this->updateSegment === -1) {
-			$this->updateSegment = random_int(0, 99);
+		if ($this->channel == 'beta' && version_compare($stable['version'], $beta['version']) == -1) {
+			return $beta;
 		}
 
-		// updateSegment is 0-99, so even fine grained control would possible
-		$chunks = floor($this->updateSegment / 10);
-		$throttleDate->sub(new \DateInterval('PT' . (12 * $chunks) . 'H'));
-
-		if ($throttleDate >= $releaseDate) {
-			$stable = $this->config[$this->oem]['stable'][$this->platform];
-			$beta = $this->config[$this->oem]['beta'][$this->platform];
-
-			if ($this->channel == 'beta' && version_compare($stable['version'], $beta['version']) == -1) {
-				return $beta;
-			}
-
-			if (version_compare($this->version, $stable['version']) == -1) {
-				return $stable;
-			}
+		if (version_compare($this->version, $stable['version']) == -1) {
+			return $stable;
 		}
 
 		return [];
