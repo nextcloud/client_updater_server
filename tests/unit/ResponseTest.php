@@ -270,7 +270,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
-			// #16
+			// #16 Except for Sparkle, which always needs to know what the latest version is
 			[
 				'nextcloud',
 				'macos',
@@ -283,7 +283,12 @@ class ResponseTest extends TestCase {
 	<channel>
 		<title>Download Channel</title>
 		<description>Most recent changes with links to updates.</description>
-		<language>en</language></channel>
+		<language>en</language><item>
+					<title>Nextcloud Client 2.2.2 (build 3472)</title>
+					<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
+					<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+					<sparkle:minimumSystemVersion>10.13.0</sparkle:minimumSystemVersion>
+				</item></channel>
 			</rss>'
 			],
 			// #17 No updates if the version is higher
@@ -334,7 +339,7 @@ class ResponseTest extends TestCase {
 <owncloudclient/>
 '
 			],
-			// #21
+			// #21 Again, Sparkle needs to know about the latest version
 			[
 				'nextcloud',
 				'macos',
@@ -347,7 +352,12 @@ class ResponseTest extends TestCase {
 	<channel>
 		<title>Download Channel</title>
 		<description>Most recent changes with links to updates.</description>
-		<language>en</language></channel>
+		<language>en</language><item>
+					<title>Nextcloud Client 2.2.2 (build 3472)</title>
+					<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
+					<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+					<sparkle:minimumSystemVersion>10.13.0</sparkle:minimumSystemVersion>
+				</item></channel>
 			</rss>'
 			],
 		];

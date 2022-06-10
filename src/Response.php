@@ -86,11 +86,11 @@ class Response {
 		$stable = $this->config[$this->oem]['stable'][$this->platform];
 		$beta = $this->config[$this->oem]['beta'][$this->platform];
 
-		if ($this->channel == 'beta' && version_compare($stable['version'], $beta['version']) == -1) {
+		if ($this->channel == 'beta' && (version_compare($stable['version'], $beta['version']) == -1 || ($this->platform === 'macos' && $this->isSparkle === true))) {
 			return $beta;
 		}
 
-		if (version_compare($this->version, $stable['version']) == -1) {
+		if (version_compare($this->version, $stable['version']) == -1 || ($this->platform === 'macos' && $this->isSparkle === true)) {
 			return $stable;
 		}
 
