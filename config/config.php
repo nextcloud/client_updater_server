@@ -107,6 +107,9 @@ return [
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg',
 				'web' => 'https://nextcloud.com/install',
+				"sparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg.tbz',
+				"signature" => "SiYX3W4sBtAcam/ml0LwKQMHh865Wvw4wiu6uEi666zhxBLC4a7h674XYttoyDuh6o2+ohY2FRj3L9LADcNVDQ==",
+				"length" => 63704102
 			],
 		]
 	]
