@@ -25,6 +25,7 @@ $stableReleaseDate = '2022-08-02 18:00';
 $stableVersion = '3.5.4';
 
 $betaReleaseDate = '2022-08-15 18:00';
+$betaVersionInternal = '3.5.81';
 $betaVersion = '3.6.0-rc1';
 
 $stableVersionString = 'Nextcloud Client ' . $stableVersion;
@@ -91,19 +92,19 @@ return [
 		'beta' => [
 			'release' => $betaReleaseDate,
 			'linux' => [
-				'version' => $betaVersion,
+				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_linux_url . 'Nextcloud-' . $betaVersion . '-x64.AppImage',
 				'web' => 'https://nextcloud.com/install',
 			],
 			'win32' => [
-				'version' => $betaVersion,
+				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_windows_url . 'Nextcloud-' . $betaVersion . $windows_suffix,
 				'web' => 'https://nextcloud.com/install',
 			],
 			'macos' => [
-				'version' => $betaVersion,
+				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg',
 				'web' => 'https://nextcloud.com/install',
