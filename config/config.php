@@ -24,7 +24,7 @@ declare(strict_types=1);
 $stableReleaseDate = '2023-05-17 18:00';
 $stableVersion = '3.8.2';
 
-$betaReleaseDate = '2023-05-19 12:00';
+$betaReleaseDate = '2023-05-31 08:00';
 $betaVersionInternal = '3.8.82';
 $betaVersion = '3.9.0-rc2';
 
