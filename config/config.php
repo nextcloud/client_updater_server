@@ -21,8 +21,8 @@
 
 declare(strict_types=1);
 
-$stableReleaseDate = '2023-12-12 12:00';
-$stableVersion = '3.11.0';
+$stableReleaseDate = '2024-01-30 13:00';
+$stableVersion = '3.11.1';
 
 $betaReleaseDate = '2023-12-06 21:00';
 $betaVersionInternal = '3.10.81';
@@ -85,8 +85,8 @@ return [
 				'downloadurl' => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg',
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
-				"signature" => "yantlW+PGwo0WhCU3tzrUoJXwk2it0kTJVZZddk+A1RMg7+S2VAVwYiuxBdSApFPuTFyoTZMIK0hod0OOz8WDA==",
-				"length" => 63812091
+				"signature" => "PG1dllx0rysAw802ZEf1svVWY0g650ZRpADKDyHNWkW8WSCl9vF5xiPXfaqF+1YHsiVOqWc3yxnJ7sF1MiomCA==",
+				"length" => 63824127
 			],
 		],
 		'beta' => [
