@@ -88,6 +88,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'stable',
 				false,
+                false,
 				$configThrottle,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -100,6 +101,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -112,6 +114,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'stable',
 				true,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -124,6 +127,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -136,6 +140,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.3472</version><versionstring>Nextcloud Client 2.2.2 (build 3472)</versionstring><downloadurl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg</downloadurl><sparkleDownloadUrl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz</sparkleDownloadUrl><signature>MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=</signature><length>62738920</length></owncloudclient>
@@ -148,6 +153,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'stable',
 				true,
+                false,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -158,7 +164,7 @@ class ResponseTest extends TestCase {
 					<title>Nextcloud Client 2.2.2 (build 3472)</title>
 					<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 					<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
-					<sparkle:minimumSystemVersion>10.13.0</sparkle:minimumSystemVersion>
+					<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 				</item></channel>
 			</rss>'
 			],
@@ -169,6 +175,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'beta',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.3-rc3</version><versionstring>Nextcloud Client 2.2.3-rc3</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.3-rc3-x86.msi</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -181,6 +188,7 @@ class ResponseTest extends TestCase {
 				'2.2.3-rc1',
 				'beta',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.3-rc3</version><versionstring>Nextcloud Client 2.2.3-rc3</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.3-rc3-x86.msi</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -193,6 +201,7 @@ class ResponseTest extends TestCase {
 				'2.2.2-rc1',
 				'beta',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -205,6 +214,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -217,6 +227,7 @@ class ResponseTest extends TestCase {
 				'1.9.0',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -229,6 +240,7 @@ class ResponseTest extends TestCase {
 				'2.2.2.6192',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -241,6 +253,7 @@ class ResponseTest extends TestCase {
 				'2.2.6192',
 				'stable',
 				true,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -253,6 +266,7 @@ class ResponseTest extends TestCase {
 				'2.2.2',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -265,6 +279,7 @@ class ResponseTest extends TestCase {
 				'2.2.2.3472',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -277,6 +292,7 @@ class ResponseTest extends TestCase {
 				'2.2.2.3472',
 				'stable',
 				true,
+                false,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -287,7 +303,7 @@ class ResponseTest extends TestCase {
 					<title>Nextcloud Client 2.2.2 (build 3472)</title>
 					<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 					<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
-					<sparkle:minimumSystemVersion>10.13.0</sparkle:minimumSystemVersion>
+					<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 				</item></channel>
 			</rss>'
 			],
@@ -298,6 +314,7 @@ class ResponseTest extends TestCase {
 				'2.3',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -310,6 +327,7 @@ class ResponseTest extends TestCase {
 				'2.3',
 				'stable',
 				true,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -322,6 +340,7 @@ class ResponseTest extends TestCase {
 				'2.3',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -334,6 +353,7 @@ class ResponseTest extends TestCase {
 				'2.3',
 				'stable',
 				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -346,6 +366,7 @@ class ResponseTest extends TestCase {
 				'2.3',
 				'stable',
 				true,
+                false,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -356,7 +377,7 @@ class ResponseTest extends TestCase {
 					<title>Nextcloud Client 2.2.2 (build 3472)</title>
 					<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 					<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
-					<sparkle:minimumSystemVersion>10.13.0</sparkle:minimumSystemVersion>
+					<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 				</item></channel>
 			</rss>'
 			],
@@ -367,6 +388,7 @@ class ResponseTest extends TestCase {
                 '2.2.2-rc2',
                 'beta',
                 true,
+                false,
                 $config,
                 '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -377,7 +399,7 @@ class ResponseTest extends TestCase {
 					<title>Nextcloud Client 2.2.2-rc2</title>
 					<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 					<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
-					<sparkle:minimumSystemVersion>10.13.0</sparkle:minimumSystemVersion>
+					<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 				</item></channel>
 			</rss>'
 		    ],
@@ -388,6 +410,7 @@ class ResponseTest extends TestCase {
                 '2.2.2',
                 'beta',
                 true,
+                false,
                 $config,
                 '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -398,7 +421,7 @@ class ResponseTest extends TestCase {
 					<title>Nextcloud Client 2.2.2-rc2</title>
 					<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 					<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
-					<sparkle:minimumSystemVersion>10.13.0</sparkle:minimumSystemVersion>
+					<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 				</item></channel>
 			</rss>'
             ]
@@ -413,6 +436,7 @@ class ResponseTest extends TestCase {
 	 * @param string $version
 	 * @param string $channel
 	 * @param bool $isSparkle
+     * @param bool $isFileProvider
 	 * @param array $config
 	 * @param string $expected
 	 */
@@ -421,10 +445,11 @@ class ResponseTest extends TestCase {
 									  string $version,
 									  string $channel,
 									  bool $isSparkle,
+                                      bool $isFileProvider,
 									  array $config,
 									  string $expected) {
 		$response = $this->getMockBuilder('\ClientUpdateServer\Response')
-			->setConstructorArgs([$oem, $platform, $version, $channel, $isSparkle, $config])
+			->setConstructorArgs([$oem, $platform, $version, $channel, $isSparkle, $isFileProvider, $config])
 			->setMethods(['getCurrentTimeStamp'])
 			->getMock();
 		$response
