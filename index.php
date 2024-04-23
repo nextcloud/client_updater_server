@@ -102,7 +102,7 @@ $response = new \ClientUpdateServer\Response(
 	$version,
 	$channel,
 	$isSparkle,
-    $isFileProvider,
+	$isFileProvider,
 	$config
 );
 echo $response->buildResponse();
