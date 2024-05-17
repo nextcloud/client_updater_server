@@ -111,14 +111,14 @@ return [
 				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg',
-                // 'fileProviderDownloadUrl' => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg',  TODO: 3.13.0
+				// 'fileProviderDownloadUrl' => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg',  TODO: 3.13.0
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg.tbz',
-                // "fileProviderSparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg', TODO: 3.13.0
+				// "fileProviderSparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg', TODO: 3.13.0
 				"signature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==",
-                // "fileProviderSignature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==", TODO: 3.13.0
+				// "fileProviderSignature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==", TODO: 3.13.0
 				"length" => 64530955 //,
-                // "fileProviderLength" => 64530955  TODO: 3.13.0
+				// "fileProviderLength" => 64530955  TODO: 3.13.0
 			],
 		]
 	]

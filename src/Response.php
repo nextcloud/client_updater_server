@@ -33,8 +33,8 @@ class Response {
 	private $channel;
 	/** @var bool */
 	private $isSparkle;
-    /** @var bool */
-    private $isFileProvider;
+	/** @var bool */
+	private $isFileProvider;
 	/** @var array */
 	private $config;
 
@@ -50,7 +50,7 @@ class Response {
 		$this->version = $version;
 		$this->channel = $channel;
 		$this->isSparkle = $isSparkle;
-        $this->isFileProvider = $isFileProvider;
+		$this->isFileProvider = $isFileProvider;
 		$this->config = $config;
 	}
 
