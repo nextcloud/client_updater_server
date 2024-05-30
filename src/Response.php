@@ -86,7 +86,6 @@ class Response {
 			return [];
 		}
 
-		$releaseDate = new \DateTime($this->config[$this->oem][$this->channel]['release']);
 		$stable = $this->config[$this->oem]['stable'][$this->platform];
 		$beta = $this->config[$this->oem]['beta'][$this->platform];
 
