@@ -137,20 +137,22 @@ class Response {
 		$sparkleSignature = $this->getSparkleUpdateSignature($updateVersion);
 		$sparkleLength = $this->getSparkleUpdateLength($updateVersion);
 		
-		$item = !empty($updateVersion) ? '<item>
-				<title>'.$updateVersion['versionstring'].'</title>
-				<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
-				<enclosure url="'.$sparkleUrl.'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:edSignature="'.$sparkleSignature.'" length="'.$sparkleLength.'"/>
-				<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-			</item>' : '';
+		$item = !empty($updateVersion) ? '
+		<item>
+			<title>'.$updateVersion['versionstring'].'</title>
+			<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
+			<enclosure url="'.$sparkleUrl.'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:edSignature="'.$sparkleSignature.'" length="'.$sparkleLength.'"/>
+			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+		</item>' : '';
 		
 		return '<?xml version="1.0" encoding="utf-8"?>
-			<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
-				<channel>
-				<title>Download Channel</title>
-				<description>Most recent changes with links to updates.</description>
-				<language>en</language>'.$item.'</channel>
-			</rss>';
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Download Channel</title>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>'.$item.'
+	</channel>
+</rss>';
 	}
 
 	/**
