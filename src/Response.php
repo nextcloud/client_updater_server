@@ -88,6 +88,11 @@ class Response {
 
 		$stable = $this->config[$this->oem]['stable'][$this->platform];
 		$beta = $this->config[$this->oem]['beta'][$this->platform];
+		$daily = $this->config[$this->oem]['daily'][$this->platform];
+
+		if ($this->channel == 'daily' && (version_compare($this->version, $daily['version']) == -1)) {
+			return $daily;
+		}
 
 		if ($this->channel == 'beta' && (version_compare($stable['version'], $beta['version']) == -1 || ($this->platform === 'macos' && $this->isSparkle === true))) {
 			return $beta;
