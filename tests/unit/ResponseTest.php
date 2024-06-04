@@ -74,6 +74,26 @@ class ResponseTest extends TestCase {
 						'length' => '62738920',
 					]
 				],
+				'daily' => [
+					'linux' => [
+						'version' => '20240604',
+						'versionstring' => 'Nextcloud Daily 20240604',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/daily/linux/linux-20240604.AppImage',
+						'web' => 'https://nextcloud.com/install/#install-clients',
+					],
+					'win32' => [
+						'version' => '20240604',
+						'versionstring' => 'Nextcloud Daily 20240604',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/daily/windows/windows-20240604.msi',
+						'web' => 'https://nextcloud.com/install/#install-clients',
+					],
+					'macos' => [
+						'version' => '20240604',
+						'versionstring' => 'Nextcloud Daily 20240604',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/daily/macos/macos-20240604.pkg',
+						'web' => 'https://nextcloud.com/install/#install-clients',
+					]
+				],
 			]
 		];
 
@@ -434,8 +454,21 @@ class ResponseTest extends TestCase {
 		</item>
 	</channel>
 </rss>'
-            ]
-		];
+            ],
+			// #24 daily
+			[
+				'nextcloud',
+				'linux',
+				'20240601',
+				'daily',
+				false,
+				false,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient><version>20240604</version><versionstring>Nextcloud Daily 20240604</versionstring><downloadurl>https://download.nextcloud.com/desktop/daily/linux/linux-20240604.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+'
+			],
+        ];
 	}
 
 	/**
