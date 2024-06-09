@@ -1,2 +1,8 @@
 config/*.json
 config/secrets.php
+.idea/
+vendor/
+composer.lock
+.DS_Store
+localhost.pem
+localhost-key.pem

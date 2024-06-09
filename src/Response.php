@@ -86,7 +86,6 @@ class Response {
 			return [];
 		}
 
-		$releaseDate = new \DateTime($this->config[$this->oem][$this->channel]['release']);
 		$stable = $this->config[$this->oem]['stable'][$this->platform];
 		$beta = $this->config[$this->oem]['beta'][$this->platform];
 
@@ -110,26 +109,50 @@ class Response {
 	}
 
 	/**
+	 * Convenience functions to get specific file provider or standard client update information
+	 */
+	private function getSparkleUpdateUrl(array $updateVersion) : string {
+		$updateUrlKey = $this->isFileProvider ? 'fileProviderSparkleDownloadUrl' : 'sparkleDownloadUrl';
+		return $updateVersion[$updateUrlKey];
+	}
+
+	private function getSparkleUpdateSignature(array $updateVersion) : string {
+		$updateSignatureKey = $this->isFileProvider ? 'fileProviderSignature' : 'signature';
+		return $updateVersion[$updateSignatureKey];
+	}
+
+	private function getSparkleUpdateLength(array $updateVersion) : string {
+		$updateLengthKey = $this->isFileProvider ? 'fileProviderLength' : 'length';
+		return $updateVersion[$updateLengthKey];
+	}
+
+	/**
 	 * Builds the response for Sparkle (used by the Mac updater)
 	 *
 	 * @param array $updateVersion
 	 * @return string
 	 */
 	private function buildSparkleResponse(array $updateVersion) : string {
-		$item = !empty($updateVersion) ? '<item>
-					<title>'.$updateVersion['versionstring'].'</title>
-					<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
-					<enclosure url="'.$updateVersion[$this->isFileProvider ? 'fileProviderSparkleDownloadUrl' : 'sparkleDownloadUrl'].'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:edSignature="'.$updateVersion[$this->isFileProvider ? 'fileProviderSignature' : 'signature'].'" length="'.$updateVersion[$this->isFileProvider ? 'fileProviderLength' : 'length'].'"/>
-					<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-				</item>' : '';
-		$xml = '<?xml version="1.0" encoding="utf-8"?>
+		$sparkleUrl = $this->getSparkleUpdateUrl($updateVersion);
+		$sparkleSignature = $this->getSparkleUpdateSignature($updateVersion);
+		$sparkleLength = $this->getSparkleUpdateLength($updateVersion);
+		
+		$item = !empty($updateVersion) ? '
+		<item>
+			<title>'.$updateVersion['versionstring'].'</title>
+			<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
+			<enclosure url="'.$sparkleUrl.'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:edSignature="'.$sparkleSignature.'" length="'.$sparkleLength.'"/>
+			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+		</item>' : '';
+		
+		return '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>Download Channel</title>
 		<description>Most recent changes with links to updates.</description>
-		<language>en</language>'.$item.'</channel>
-			</rss>';
-		return $xml;
+		<language>en</language>'.$item.'
+	</channel>
+</rss>';
 	}
 
 	/**
