@@ -28,6 +28,11 @@ $betaReleaseDate = '2024-04-13 15:00';
 $betaVersionInternal = '3.12.81';
 $betaVersion = '3.13.0-rc1';
 
+$dailyReleaseDateLinux = '202406010';
+$dailyReleaseDateWindows = '20240604';
+$dailyReleaseDateMacos = '20240604';
+$dailyUrl = "https://download.nextcloud.com/desktop/daily/";
+
 $stableVersionString = 'Nextcloud Client ' . $stableVersion;
 $betaVersionString = 'Nextcloud Client ' . $betaVersion;
 
@@ -119,6 +124,26 @@ return [
                 // "fileProviderSignature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==", TODO: 3.13.0
 				"length" => 64530955 //,
                 // "fileProviderLength" => 64530955  TODO: 3.13.0
+			],
+		],
+		'daily' => [
+			'linux' => [
+				'version' => $linuxDailyReleaseDate,
+				'versionstring' => "Nextcloud Daily " . $linuxDailyReleaseDate,
+				'downloadurl' => $dailyUrl . 'linux/linux-' . $linuxDailyReleaseDate . '.AppImage',
+				'web' => 'https://nextcloud.com/install',
+			],
+			'win32' => [
+				'version' => $windowsDailyReleaseDate,
+				'versionstring' => "Nextcloud Daily " . $windowsDailyReleaseDate,
+				'downloadurl' => $dailyUrl . 'windows/windows-' . $windowsDailyReleaseDate . '.msi',
+				'web' => 'https://nextcloud.com/install',
+			],
+			'macos' => [
+				'version' => $macosDailyReleaseDate,
+				'versionstring' => "Nextcloud Daily " . $macosDailyReleaseDate,
+				'downloadurl' => $dailyUrl . 'macos/macos-' . $macosDailyReleaseDate . '.pkg',
+				'web' => 'https://nextcloud.com/install',
 			],
 		]
 	]

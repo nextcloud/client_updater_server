@@ -6,3 +6,4 @@ composer.lock
 .DS_Store
 localhost.pem
 localhost-key.pem
+/tests/unit/.phpunit.result.cache
