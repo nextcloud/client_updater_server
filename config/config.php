@@ -28,9 +28,9 @@ $betaReleaseDate = '2024-04-13 15:00';
 $betaVersionInternal = '3.12.81';
 $betaVersion = '3.13.0-rc1';
 
-$linuxDailyReleaseDate = '20240604';
-$windowsDailyReleaseDate = '20240604';
-$macDailyReleaseDate = '20240604';
+$dailyReleaseDateLinux = '202406010';
+$dailyReleaseDateWindows = '20240604';
+$dailyReleaseDateMacos = '20240604';
 $dailyUrl = "https://download.nextcloud.com/desktop/daily/";
 
 $stableVersionString = 'Nextcloud Client ' . $stableVersion;
@@ -140,9 +140,9 @@ return [
 				'web' => 'https://nextcloud.com/install',
 			],
 			'macos' => [
-				'version' => $macDailyReleaseDate,
-				'versionstring' => "Nextcloud Daily " . $macDailyReleaseDate,
-				'downloadurl' => $dailyUrl . 'macos/macos-' . $macDailyReleaseDate . '.pkg',
+				'version' => $macosDailyReleaseDate,
+				'versionstring' => "Nextcloud Daily " . $macosDailyReleaseDate,
+				'downloadurl' => $dailyUrl . 'macos/macos-' . $macosDailyReleaseDate . '.pkg',
 				'web' => 'https://nextcloud.com/install',
 			],
 		]
