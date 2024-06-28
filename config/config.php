@@ -29,7 +29,7 @@ $betaVersionInternal = '3.12.81';
 $betaVersion = '3.13.0-rc1';
 
 $dailyReleaseDateLinux = '20240627';
-$dailyReleaseDateWindows = '20240627';
+$dailyReleaseDateWindows = '20240628';
 $dailyReleaseDateMacos = '20240604';
 $dailyUrl = "https://download.nextcloud.com/desktop/daily/";
 
@@ -134,9 +134,9 @@ return [
 				'web' => 'https://nextcloud.com/install',
 			],
 			'win32' => [
-				'version' => $dailyReleaseDateWindows,
-				'versionstring' => "Nextcloud Daily " . $dailyReleaseDateWindows,
-				'downloadurl' => $dailyUrl . 'windows/windows-' . $dailyReleaseDateWindows . '.msi',
+				'version' => $dailyReleaseDateWindows = '20240628';
+				'versionstring' => "Nextcloud Daily " . $dailyReleaseDateWindows = '20240628';
+				'downloadurl' => $dailyUrl . 'windows/windows-' . $dailyReleaseDateWindows = '20240628';
 				'web' => 'https://nextcloud.com/install',
 			],
 			'macos' => [
