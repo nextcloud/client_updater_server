@@ -128,15 +128,15 @@ return [
 		],
 		'daily' => [
 			'linux' => [
-				'version' => $dailyReleaseDateLinux = '20240628';
-				'versionstring' => "Nextcloud Daily " . $dailyReleaseDateLinux = '20240628';
-				'downloadurl' => $dailyUrl . 'linux/linux-' . $dailyReleaseDateLinux = '20240628';
+				'version' => $dailyReleaseDateLinux,
+				'versionstring' => "Nextcloud Daily " . $dailyReleaseDateLinux,
+				'downloadurl' => $dailyUrl . 'linux/linux-' . $dailyReleaseDateLinux. '.AppImage',
 				'web' => 'https://nextcloud.com/install',
 			],
 			'win32' => [
-				'version' => $dailyReleaseDateWindows = '20240628';
-				'versionstring' => "Nextcloud Daily " . $dailyReleaseDateWindows = '20240628';
-				'downloadurl' => $dailyUrl . 'windows/windows-' . $dailyReleaseDateWindows = '20240628';
+				'version' => $dailyReleaseDateWindows,
+				'versionstring' => "Nextcloud Daily " . $dailyReleaseDateWindows,
+				'downloadurl' => $dailyUrl . 'windows/windows-' . $dailyReleaseDateWindows . '.msi',
 				'web' => 'https://nextcloud.com/install',
 			],
 			'macos' => [
