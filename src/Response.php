@@ -126,7 +126,7 @@ class Response {
 		return $updateVersion[$updateSignatureKey];
 	}
 
-	private function getSparkleUpdateLength(array $updateVersion) : string {
+	private function getSparkleUpdateLength(array $updateVersion) : int {
 		$updateLengthKey = $this->isFileProvider ? 'fileProviderLength' : 'length';
 		return $updateVersion[$updateLengthKey];
 	}
