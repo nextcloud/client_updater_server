@@ -48,7 +48,7 @@ class ResponseTest extends TestCase {
 						'downloadurl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg',
 						'sparkleDownloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
 						'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
-						'length' => '62738920',
+						'length' => 62738920,
 					]
 				],
 				'beta' => [
@@ -71,7 +71,7 @@ class ResponseTest extends TestCase {
 						'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc2.pkg',
 						'sparkleDownloadUrl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz',
 						'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
-						'length' => '62738920',
+						'length' => 62738920,
 					]
 				],
 				'daily' => [
