@@ -97,9 +97,9 @@ return [
 				"sparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $fileProviderStableVersion . '-macOS-vfs.pkg.tbz',
 				"signature" => "++voffbxHKaURwb+EAVtj5uvvCZTRKIY6LUMNQx1dt8lnJyxv2vlCmJxydfM/oOPLkYrE9PAhqTHFNmmX6QXCA==",
-                "fileProviderSignature" => "mHJDtEbZDnWElr2MQa44kEHp6wOwbPae+CYyLZbueeFuT+K8Us3icimrcQ8uBU1vb0UNay5j6L+dVhf9VO8qBw==",
+				"fileProviderSignature" => "mHJDtEbZDnWElr2MQa44kEHp6wOwbPae+CYyLZbueeFuT+K8Us3icimrcQ8uBU1vb0UNay5j6L+dVhf9VO8qBw==",
 				"length" => 64626206,
-                "fileProviderLength" => 97313419,
+				"fileProviderLength" => 97313419,
 			],
 		],
 		'beta' => [
@@ -120,14 +120,14 @@ return [
 				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg',
-                // 'fileProviderDownloadUrl' => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg',  TODO: 3.13.0
+				// 'fileProviderDownloadUrl' => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg',  TODO: 3.13.0
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg.tbz',
-                // "fileProviderSparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg', TODO: 3.13.0
+				// "fileProviderSparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg', TODO: 3.13.0
 				"signature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==",
-                // "fileProviderSignature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==", TODO: 3.13.0
+				// "fileProviderSignature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==", TODO: 3.13.0
 				"length" => 64530955 //,
-                // "fileProviderLength" => 64530955  TODO: 3.13.0
+				// "fileProviderLength" => 64530955  TODO: 3.13.0
 			],
 		],
 		'daily' => [
