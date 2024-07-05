@@ -131,11 +131,6 @@ class Response {
 		return $updateVersion[$updateLengthKey];
 	}
 
-	private function getSparkleVersionString(array $updateVersion) : string {
-		$updateLengthKey = $this->isFileProvider ? 'fileProviderVersionString' : 'versionstring';
-		return $updateVersion[$updateLengthKey];
-	}
-
 	/**
 	 * Builds the response for Sparkle (used by the Mac updater)
 	 *
@@ -144,13 +139,12 @@ class Response {
 	 */
 	private function buildSparkleResponse(array $updateVersion) : string {
 		$sparkleUrl = $this->getSparkleUpdateUrl($updateVersion);
-		$versionString = $this->getSparkleVersionString($updateVersion);
 		$sparkleSignature = $this->getSparkleUpdateSignature($updateVersion);
 		$sparkleLength = $this->getSparkleUpdateLength($updateVersion);
 		
 		$item = !empty($updateVersion) ? '
 		<item>
-			<title>'.$versionString.'</title>
+			<title>'.$updateVersion['versionstring'].'</title>
 			<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
 			<enclosure url="'.$sparkleUrl.'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:edSignature="'.$sparkleSignature.'" length="'.$sparkleLength.'"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
