@@ -21,8 +21,8 @@
 
 declare(strict_types=1);
 
-$stableReleaseDate = '2024-07-02 10:00';
-$stableVersion = '3.13.1';
+$stableReleaseDate = '2024-04-24 14:00';
+$stableVersion = '3.13.0';
 $fileProviderStableReleaseDate = '2024-04-24 14:00';
 $fileProviderStableVersion = '3.13.0';
 
