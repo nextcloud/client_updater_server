@@ -21,9 +21,9 @@
 
 declare(strict_types=1);
 
-$stableReleaseDate = '2024-07-09 14:00';
+$stableReleaseDate = '2024-07-09 13:00';
 $stableVersion = '3.13.2';
-$fileProviderStableReleaseDate = '2024-07-09 14:00';
+$fileProviderStableReleaseDate = '2024-07-09 13:00';
 $fileProviderStableVersion = '3.13.2';
 
 $betaReleaseDate = '2024-04-13 15:00';
@@ -96,8 +96,8 @@ return [
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $fileProviderStableVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => "tAoUcmUDQyIliaDmpUMnbgkzjCurWyVAOUR86+9/7b22Wjmbrg7h+bZrc1mLRC9KktC2DIA58/d//mXBTtPOBQ==",
-				"length" => 64593268,
+				"signature" => "IWbBaoJWVXVP2nj2X1ozx3ZujZtxgz5Ik9mPEpA3bK6m4F4sbmcNktpZQ5XRr3uJCc8ffBR4BO0KVBt56390Bw==",
+				"length" => 64591609,
 				"fileProviderSignature" => "YQVQQ3ePAvTKOG61gOlbo7zpTadETQNxAPofKRZmOyxiE6Jiat33euFh3zbfF0pYa+1rqEZDqhK+UwMlePBUAw==",
 				"fileProviderLength" => 97352407,
 			],
