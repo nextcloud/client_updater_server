@@ -98,19 +98,19 @@ class ResponseTest extends TestCase {
 				],
 				'daily' => [
 					'linux' => [
-						'version' => '20240604',
+						'version' => '3.13.50.20240604',
 						'versionstring' => 'Nextcloud Daily 20240604',
 						'downloadurl' => 'https://download.nextcloud.com/desktop/daily/linux/linux-20240604.AppImage',
 						'web' => 'https://nextcloud.com/install/#install-clients',
 					],
 					'win32' => [
-						'version' => '20240604',
+						'version' => '3.13.50.20240604',
 						'versionstring' => 'Nextcloud Daily 20240604',
 						'downloadurl' => 'https://download.nextcloud.com/desktop/daily/windows/windows-20240604.msi',
 						'web' => 'https://nextcloud.com/install/#install-clients',
 					],
 					'macos' => [
-						'version' => '20240604',
+						'version' => '3.13.50.20240604',
 						'versionstring' => 'Nextcloud Daily 20240604',
 						'downloadurl' => 'https://download.nextcloud.com/desktop/daily/macos/macos-20240604.pkg',
 						'web' => 'https://nextcloud.com/install/#install-clients',
@@ -550,7 +550,7 @@ class ResponseTest extends TestCase {
 			[
 				'nextcloud',
 				'linux',
-				'20240601',
+				'3.13.50.20240603',
 				'',
 				'debian',
 				'20',
@@ -559,7 +559,46 @@ class ResponseTest extends TestCase {
 				false,
 				$config,
 				'<?xml version="1.0"?>
-<owncloudclient><version>20240604</version><versionstring>Nextcloud Daily 20240604</versionstring><downloadurl>https://download.nextcloud.com/desktop/daily/linux/linux-20240604.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+<owncloudclient><version>3.13.50.20240604</version><versionstring>Nextcloud Daily 20240604</versionstring><downloadurl>https://download.nextcloud.com/desktop/daily/linux/linux-20240604.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+'
+			],
+			// #24 daily too new
+			[
+				'nextcloud',
+				'linux',
+				'3.13.50.20240815',
+				'daily',
+				false,
+				false,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient/>
+'
+			],
+			// #25 daily downgrade to stable -> wait for new version
+			[
+				'nextcloud',
+				'linux',
+				'3.13.50.20240815',
+				'stable',
+				false,
+				false,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient/>
+'
+			],
+			// #26 daily downgrade to stable -> wait for new version
+			[
+				'nextcloud',
+				'linux',
+				'2.1.50.20240815',
+				'stable',
+				false,
+				false,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
 			// #24 Win7 -> QT5
