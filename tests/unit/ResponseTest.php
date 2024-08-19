@@ -601,6 +601,19 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
+			// #27 daily, upgrade from old version schema
+			[
+				'nextcloud',
+				'linux',
+				'3.13.50.28075',
+				'daily',
+				false,
+				false,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient><version>3.13.50.20240604</version><versionstring>Nextcloud Daily 20240604</versionstring><downloadurl>https://download.nextcloud.com/desktop/daily/linux/linux-20240604.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+'
+			],
 			// #24 Win7 -> QT5
 			[
 				'nextcloud',
