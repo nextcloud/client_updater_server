@@ -45,7 +45,7 @@ if (version_compare($version, '3.0.3') < 0) {
 	$stable_windows_url = $url . 'Windows/';
 	$stable_mac_url = $url . 'Mac/Installer/';
 
-	$betaUrl = = 'https://download.nextcloud.com/desktop/prereleases/';
+	$betaUrl = 'https://download.nextcloud.com/desktop/prereleases/';
 	$stable_linux_url = $url . 'Linux/';
 	$stable_windows_url = $url . 'Windows/';
 	$stable_mac_url = $url . 'Mac/';
