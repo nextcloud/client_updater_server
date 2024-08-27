@@ -89,6 +89,10 @@ $isSparkle = isset($_GET['sparkle']) ? true : false;
 $isFileProvider = isset($_GET['fileprovider']) ? true : false;
 $channel = isset($_GET['channel']) ? (string)$_GET['channel'] : 'stable';
 
+$osRelease = '';
+$osVersion = '';
+$kernelVersion = '';
+
 if($oem === null || $platform === null || $version === null) {
 	die();
 }
@@ -100,9 +104,12 @@ $response = new \ClientUpdateServer\Response(
 	$oem,
 	$platform,
 	$version,
+	$osRelease,
+	$osVersion,
+	$kernelVersion,
 	$channel,
 	$isSparkle,
-    $isFileProvider,
+	$isFileProvider,
 	$config
 );
 echo $response->buildResponse();
