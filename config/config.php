@@ -56,6 +56,15 @@ if (version_compare($version, '3.0.3') < 0) {
 	$beta_mac_url = $betaUrl;
 }
 
+$stableQt5ReleaseDate = $stableReleaseDate;
+$stableQt5Version = $stableVersion;
+$fileProviderStableQt5Version = $fileProviderStableVersion;
+$stableQt5VersionString = $stableVersionString;
+$fileProviderStableQt5VersionString = $fileProviderStableVersionString;
+$stableQt5_linux_url = $stable_linux_url;
+$stableQt5_windows_url = $stable_windows_url;
+$stableQt5_mac_url = $stable_mac_url;
+
 if (version_compare($version, '3.1.0') < 0) {
     $windows_suffix = '-setup.exe';
     $stableVersion = '3.1.3';
@@ -73,6 +82,35 @@ if (version_compare($version, '3.1.0') < 0) {
  */
 return [
 	'Nextcloud' => [
+		'stable-qt5' => [
+			'release' => $stableQt5ReleaseDate,
+                        'linux' => [
+                                'version' => $stableQt5Version,
+                                'versionstring' => $stableQt5VersionString,
+                                'downloadurl' => $stableQt5_linux_url . 'Nextcloud-' . $stableQt5Version . '-x64.AppImage',
+                                'web' => 'https://nextcloud.com/install',
+                        ],
+                        'win32' => [
+                                'version' => $stableQt5Version,
+                                'versionstring' => $stableQt5VersionString,
+                                'downloadurl' => $stableQt5_windows_url . 'Nextcloud-' . $stableQt5Version . $windows_suffix,
+                                'web' => 'https://nextcloud.com/install',
+                        ],
+                        'macos' => [
+                                'version' => $stableQt5Version,
+                                'versionstring' => $stableQt5VersionString,
+                                "fileProviderVersionString" => $fileProviderStableQt5VersionString,
+                                'downloadurl' => $stableQt5_mac_url . 'Nextcloud-' . $stableQt5Version . '.pkg',
+                                'fileProviderDownloadUrl' => $stableQt5_mac_url . 'Nextcloud-' . $fileProviderStableQt5Version . '-macOS-vfs.pkg',
+                                'web' => 'https://nextcloud.com/install',
+                                "sparkleDownloadUrl" => $stableQt5_mac_url . 'Nextcloud-' . $stableQt5Version . '.pkg.tbz',
+                                "fileProviderSparkleDownloadUrl" => $stableQt5_mac_url . 'Nextcloud-' . $fileProviderStableQt5Version . '-macOS-vfs.pkg.tbz',
+                                "signature" => "r3N8KG8vYVlu+ONRXtlrPtWW1ueTF1eUr9Zkq1b/aBpdBfPV0y/7MWSTtdonJ6l3IYwVVQsGW6pxZ7nfILrqCw==",
+                                "length" => 64628815,
+                                "fileProviderSignature" => "Y5H86yeRuwFtNFJOqcGe1xzbFNEmxQgjft5oOoezQ31fo8PHgZ7BkHrunY1s4yYKNYkTUqpgvtYws2W9WBujCw==",
+                                "fileProviderLength" => 97379078,
+                        ],
+		],		
 		'stable' => [
 			'release' => $stableReleaseDate,
 			'linux' => [
