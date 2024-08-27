@@ -26,9 +26,9 @@ $stableVersion = '3.13.3';
 $fileProviderStableReleaseDate = '2024-08-23 16:00';
 $fileProviderStableVersion = '3.13.3';
 
-$betaReleaseDate = '2024-04-13 15:00';
-$betaVersionInternal = '3.12.81';
-$betaVersion = '3.13.0-rc1';
+$betaReleaseDate = '2024-08-26 19:00';
+$betaVersionInternal = '3.13.81';
+$betaVersion = '3.14.0-rc1';
 
 $dailyReleaseDateLinux = '20240827';
 $dailyReleaseDateWindows = '20240827';
@@ -158,14 +158,14 @@ return [
 				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
 				'downloadurl' => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg',
-				// 'fileProviderDownloadUrl' => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg',  TODO: 3.13.0
+				'fileProviderDownloadUrl' => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg',
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-' . $betaVersion . '.pkg.tbz',
-				// "fileProviderSparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg', TODO: 3.13.0
-				"signature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==",
-				// "fileProviderSignature" => "5wXe1phH6syvreaT+2Lah40CBzdyVnjzCWlmAjdwoKe/uSDlR+Hk5er+Y7nu/W2FDkeLvAxzNr2nK4HIhJZ+Cw==", TODO: 3.13.0
-				"length" => 64530955 //,
-				// "fileProviderLength" => 64530955  TODO: 3.13.0
+				"fileProviderSparkleDownloadUrl" => $beta_mac_url . 'Nextcloud-macOS-vfs-' . $betaVersion . '.pkg',
+				"signature" => "dPAZfEPQcGmD4WMrTAkBvSReKaCjwIfRtB0m3RuScXs3be715Uj9Tnb0ACECRX+s2ezwFr8m87VFxobJyIcaDw==",
+				"fileProviderSignature" => "nKZ67tDDIyg91J3TLli336mboEDvV1yOz9NELxLXThENbb0Py1Z7vw8Xa5OHCK/jp4s0SRRotY0jXKwSls8KDA==",
+				"length" => 140539623,
+				"fileProviderLength" => 189038736,
 			],
 		],
 		'daily' => [
