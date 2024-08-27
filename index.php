@@ -89,9 +89,9 @@ $isSparkle = isset($_GET['sparkle']) ? true : false;
 $isFileProvider = isset($_GET['fileprovider']) ? true : false;
 $channel = isset($_GET['channel']) ? (string)$_GET['channel'] : 'stable';
 
-$osRelease = '';
-$osVersion = '';
-$kernelVersion = '';
+$osRelease = isset($_GET['osRelease']) ? (string)$_GET['osRelease'] : '';
+$osVersion = isset($_GET['osVersion']) ? (string)$_GET['osVersion'] : '';
+$kernelVersion = isset($_GET['kernelVersion']) ? (string)$_GET['kernelVersion'] : '';
 
 if($oem === null || $platform === null || $version === null) {
 	die();
