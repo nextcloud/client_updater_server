@@ -567,6 +567,9 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'linux',
 				'3.13.50.20240815',
+				'ubuntu',
+				'22.00',
+				'5.5.0',
 				'daily',
 				false,
 				false,
@@ -580,6 +583,9 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'linux',
 				'3.13.50.20240815',
+				'ubuntu',
+				'22.00',
+				'5.5.0',
 				'stable',
 				false,
 				false,
@@ -593,6 +599,9 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'linux',
 				'2.1.50.20240815',
+				'ubuntu',
+				'24.04',
+				'5.5.0',
 				'stable',
 				false,
 				false,
@@ -606,6 +615,9 @@ class ResponseTest extends TestCase {
 				'nextcloud',
 				'linux',
 				'3.13.50.28075',
+				'ubuntu',
+				'24.04',
+				'5.5.0',
 				'daily',
 				false,
 				false,
@@ -614,7 +626,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>3.13.50.20240604</version><versionstring>Nextcloud Daily 20240604</versionstring><downloadurl>https://download.nextcloud.com/desktop/daily/linux/linux-20240604.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
-			// #24 Win7 -> QT5
+			// #28 Win7 -> QT5
 			[
 				'nextcloud',
 				'win32',
@@ -630,7 +642,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.0.0.0000</version><versionstring>Nextcloud Client 2.0.0 (build 0000)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000-setup.exe</downloadurl></owncloudclient>
 '
 			],
-			// #25 Win10 -> QT5
+			// #29 Win10 -> QT5
 			[
 				'nextcloud',
 				'win32',
@@ -646,7 +658,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.0.0.0000</version><versionstring>Nextcloud Client 2.0.0 (build 0000)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000-setup.exe</downloadurl></owncloudclient>
 '
 			],
-			// #26 Win10 -> QT6
+			// #30 Win10 -> QT6
 			[
 				'nextcloud',
 				'win32',
@@ -662,7 +674,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],
-			// #27 Win11 -> QT6
+			// #31 Win11 -> QT6
 			[
 				'nextcloud',
 				'win32',
@@ -678,7 +690,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],
-			// #28 stable-qt5 -> old beta -> latest qt5 stable
+			// #32 stable-qt5 -> old beta -> latest qt5 stable
 			[
 				'nextcloud',
 				'win32',
@@ -694,7 +706,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.0.0.0000</version><versionstring>Nextcloud Client 2.0.0 (build 0000)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000-setup.exe</downloadurl></owncloudclient>
 '
 			],
-			// #29 MAC QT5
+			// #33 MAC QT5
 			[
 				'nextcloud',
 				'macos',
@@ -721,7 +733,7 @@ class ResponseTest extends TestCase {
 	</channel>
 </rss>'
 			],
-			// #30 old Win11 -> QT5
+			// #34 old Win11 -> QT5
 			[
 				'nextcloud',
 				'win32',
@@ -737,7 +749,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.0.0.0000</version><versionstring>Nextcloud Client 2.0.0 (build 0000)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000-setup.exe</downloadurl></owncloudclient>
 '
 			],
-			// #31 old Ubuntu
+			// #35 old Ubuntu
 			[
 				'nextcloud',
 				'linux',
@@ -753,7 +765,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.0.0</version><versionstring>Nextcloud Client 2.0.0</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
-			// #32 new Ubuntu
+			// #36 new Ubuntu
 			[
 				'nextcloud',
 				'linux',
@@ -769,7 +781,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
-			// #33 old RHEL
+			// #37 old RHEL
 			[
 				'nextcloud',
 				'linux',
@@ -785,7 +797,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.0.0</version><versionstring>Nextcloud Client 2.0.0</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
-			// #34 new RHEL
+			// #38 new RHEL
 			[
 				'nextcloud',
 				'linux',
@@ -801,7 +813,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
-			// #35 old openSuse
+			// #39 old openSuse
 			[
 				'nextcloud',
 				'linux',
@@ -817,7 +829,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.0.0</version><versionstring>Nextcloud Client 2.0.0</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
-			// #36 new openSuse
+			// #40 new openSuse
 			[
 				'nextcloud',
 				'linux',
