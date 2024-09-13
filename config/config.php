@@ -21,10 +21,10 @@
 
 declare(strict_types=1);
 
-$stableReleaseDate = '2024-08-23 16:00';
-$stableVersion = '3.13.3';
-$fileProviderStableReleaseDate = '2024-08-23 16:00';
-$fileProviderStableVersion = '3.13.3';
+$stableReleaseDate = '2024-09-13 12:00';
+$stableVersion = '3.13.4';
+$fileProviderStableReleaseDate = '2024-09-13 12:00';
+$fileProviderStableVersion = '3.13.4';
 
 $betaReleaseDate = '2024-09-09 17:00';
 $betaVersionInternal = '3.13.83';
@@ -110,10 +110,10 @@ return [
                                 'web' => 'https://nextcloud.com/install',
                                 "sparkleDownloadUrl" => $stableQt5_mac_url . 'Nextcloud-' . $stableQt5Version . '.pkg.tbz',
                                 "fileProviderSparkleDownloadUrl" => $stableQt5_mac_url . 'Nextcloud-' . $fileProviderStableQt5Version . '-macOS-vfs.pkg.tbz',
-                                "signature" => "r3N8KG8vYVlu+ONRXtlrPtWW1ueTF1eUr9Zkq1b/aBpdBfPV0y/7MWSTtdonJ6l3IYwVVQsGW6pxZ7nfILrqCw==",
-                                "length" => 64628815,
-                                "fileProviderSignature" => "Y5H86yeRuwFtNFJOqcGe1xzbFNEmxQgjft5oOoezQ31fo8PHgZ7BkHrunY1s4yYKNYkTUqpgvtYws2W9WBujCw==",
-                                "fileProviderLength" => 97379078,
+                                "signature" => "8cG1fsKD6OaFpe8npjDNAfI0EGWK69UHsusTKIAv0pGcd0MALM9Hqc+cWKGxH338LNPe4It65/KRI5cykoScDw==",
+                                "length" => 64634085,
+                                "fileProviderSignature" => "ZI/hNmZ3zedPHEwWuzAvqSSf5ddPkW+XrzYjRguRIcX0zDxXh1OR9iEr5BDIS8X9LeLoaRbaGLGHXlm7xQCxAA==",
+                                "fileProviderLength" => 97371547,
                         ],
 		],		
 		'stable' => [
@@ -139,10 +139,10 @@ return [
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $fileProviderStableVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => "r3N8KG8vYVlu+ONRXtlrPtWW1ueTF1eUr9Zkq1b/aBpdBfPV0y/7MWSTtdonJ6l3IYwVVQsGW6pxZ7nfILrqCw==",
-				"length" => 64628815,
-				"fileProviderSignature" => "Y5H86yeRuwFtNFJOqcGe1xzbFNEmxQgjft5oOoezQ31fo8PHgZ7BkHrunY1s4yYKNYkTUqpgvtYws2W9WBujCw==",
-				"fileProviderLength" => 97379078,
+				"signature" => "8cG1fsKD6OaFpe8npjDNAfI0EGWK69UHsusTKIAv0pGcd0MALM9Hqc+cWKGxH338LNPe4It65/KRI5cykoScDw==",
+				"length" => 64634085,
+				"fileProviderSignature" => "ZI/hNmZ3zedPHEwWuzAvqSSf5ddPkW+XrzYjRguRIcX0zDxXh1OR9iEr5BDIS8X9LeLoaRbaGLGHXlm7xQCxAA==",
+				"fileProviderLength" => 97371547,
 			],
 		],
 		'beta' => [
