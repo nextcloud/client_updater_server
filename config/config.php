@@ -21,10 +21,10 @@
 
 declare(strict_types=1);
 
-$stableReleaseDate = '2024-09-13 12:00';
-$stableVersion = '3.13.4';
-$fileProviderStableReleaseDate = '2024-09-13 12:00';
-$fileProviderStableVersion = '3.13.4';
+$stableReleaseDate = '2024-09-15 10:00';
+$stableVersion = '3.14.0';
+$fileProviderStableReleaseDate = '2024-09-15 10:00';
+$fileProviderStableVersion = '3.14.0';
 
 $betaReleaseDate = '2024-09-09 17:00';
 $betaVersionInternal = '3.13.83';
@@ -61,11 +61,11 @@ if (version_compare($version, '3.0.3') < 0) {
 	$beta_mac_url = $betaUrl;
 }
 
-$stableQt5ReleaseDate = $stableReleaseDate;
-$stableQt5Version = $stableVersion;
-$fileProviderStableQt5Version = $fileProviderStableVersion;
-$stableQt5VersionString = $stableVersionString;
-$fileProviderStableQt5VersionString = $fileProviderStableVersionString;
+$stableQt5ReleaseDate = '2024-09-13 12:00';
+$stableQt5Version = '3.13.4';
+$fileProviderStableQt5Version = '3.13.4';
+$stableQt5VersionString = 'Nextcloud Client ' . $stableQt5Version;
+$fileProviderStableQt5VersionString = 'Nextcloud Client ' . $fileProviderStableQt5Version;
 $stableQt5_linux_url = $stable_linux_url;
 $stableQt5_windows_url = $stable_windows_url;
 $stableQt5_mac_url = $stable_mac_url;
@@ -139,10 +139,10 @@ return [
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $fileProviderStableVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => "8cG1fsKD6OaFpe8npjDNAfI0EGWK69UHsusTKIAv0pGcd0MALM9Hqc+cWKGxH338LNPe4It65/KRI5cykoScDw==",
-				"length" => 64634085,
-				"fileProviderSignature" => "ZI/hNmZ3zedPHEwWuzAvqSSf5ddPkW+XrzYjRguRIcX0zDxXh1OR9iEr5BDIS8X9LeLoaRbaGLGHXlm7xQCxAA==",
-				"fileProviderLength" => 97371547,
+				"signature" => "Fu2tbLugDkKyVWp7IJdr4IYK4LCyJcXdZkexo44B4qB56hKyzAU3Jvjz3Tz5QPE1ADHDUwpZYJTxn0dqdhnpBA==",
+				"length" => 317882368,
+				"fileProviderSignature" => "Ck2HA+vpKwM3dAGNKswDfln4XJJUOwbUpFkxHNYXHSFJkqc/2AKX9UUUvGZ0+1az416Q6pZ1MD39m7uPuTWyBw==",
+				"fileProviderLength" => 368671978,
 			],
 		],
 		'beta' => [
