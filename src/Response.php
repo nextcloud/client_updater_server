@@ -100,9 +100,17 @@ class Response {
 
 		// if outdated platform, hand out latest stable-qt5, no daily/beta possible
 		if ($this->checkOldPlatform()) {
-			$stable = $this->config[$this->oem]['stable-qt5'][$this->platform];
-			$beta = null;
-			$daily = null;
+            $stable = $this->config[$this->oem]['stable-qt5'][$this->platform];
+            $beta = null;
+            $daily = null;
+        } else if (version_compare($this->osVersion, '12.0', '<') &&
+                   version_compare($this->version, '3.14.0', '<') &&
+                   version_compare($this->config[$this->oem]['stable'][$this->platform]['version'], '3.14.0', '==')) {
+            // Skip 3.14.0 for macOS < 12 when updating as we have an issue with the system requirement settings
+            // Serve the prior version instead in the meantime (3.13.4)
+            $stable = $this->config[$this->oem]['stable-qt5'][$this->platform];
+            $beta = $this->config[$this->oem]['beta'][$this->platform];
+            $daily = $this->config[$this->oem]['daily'][$this->platform];
 		} else {
 			$stable = $this->config[$this->oem]['stable'][$this->platform];
 			$beta = $this->config[$this->oem]['beta'][$this->platform];
