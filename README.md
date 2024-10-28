@@ -4,6 +4,8 @@
 -->
 # Nextcloud Client Updater Server
 
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud/client_updater_server)](https://api.reuse.software/info/github.com/nextcloud/client_updater_server)
+
 This is the Nextcloud client update server.
 
 ## Ship config of other OEMs
