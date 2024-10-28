@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+version = 1
+SPDX-PackageName = "client_updater_server"
+SPDX-PackageSupplier = "Nextcloud <info@nextcloud.com>"
+SPDX-PackageDownloadLocation = "https://github.com/nextcloud/client_updater_server"
+
+[[annotations]]
+path = ["composer.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2016 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "MIT"
