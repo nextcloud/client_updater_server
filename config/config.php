@@ -17,7 +17,7 @@ $betaVersion = '3.14.0-rc3';
 
 $dailyReleaseDateLinux = '20250101';
 $dailyReleaseDateWindows = '20250102';
-$dailyReleaseDateMacos = '20250101';
+$dailyReleaseDateMacos = '20250102';
 $dailyUrl = "https://download.nextcloud.com/desktop/daily/";
 
 $stableVersionString = 'Nextcloud Client ' . $stableVersion;
