@@ -6,10 +6,10 @@
 
 declare(strict_types=1);
 
-$stableReleaseDate = '2024-12-16 19:00';
-$stableVersion = '3.15.2';
-$fileProviderStableReleaseDate = '2024-12-16 19:00';
-$fileProviderStableVersion = '3.15.2';
+$stableReleaseDate = '2025-01-07 15:00';
+$stableVersion = '3.15.3';
+$fileProviderStableReleaseDate = '2025-01-07 15:00';
+$fileProviderStableVersion = '3.15.3';
 
 $betaReleaseDate = '2024-09-09 17:00';
 $betaVersionInternal = '3.13.83';
@@ -124,10 +124,10 @@ return [
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $fileProviderStableVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => "wKIuw5109sTIvGvSuBTXlGp93TizSjFka45OslbgTIFrK+XzLJc2Zs+xCcpPcHLXBeFeKByq+ST1XpinWKSdBA==",
-				"length" => 321172605,
-				"fileProviderSignature" => "fQUSg4tLPip6etSv2ESVj9ALrcfVTMQNbuPPZD8alKLasAsEkGRAVZinNaRITDfNJo0cmkyEdePniZ4EAvDPAg==",
-				"fileProviderLength" => 369917941,
+				"signature" => "6nYH9xj3jnyfNltKzFjW/ftxCiRbYISnYe51OHemuQRhbmXccldD0Jf3F2t7oClyeDW6UDjz+RIGJm9Yke28Aw==",
+				"length" => 321201506,
+				"fileProviderSignature" => "ES+XyMp0pg+NrudwJFxOStK/hh0dZ3crqO1wefSP34AxzfJlNtcbt6tA/fl9dEIdkHI3p3mHQ3Ksjqbg4JJzCw==",
+				"fileProviderLength" => 369951114,
 			],
 		],
 		'beta' => [
