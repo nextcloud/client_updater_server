@@ -24,6 +24,15 @@ $stableVersionString = 'Nextcloud Client ' . $stableVersion;
 $fileProviderStableVersionString = 'Nextcloud Client ' . $fileProviderStableVersion;
 $betaVersionString = 'Nextcloud Client ' . $betaVersion;
 
+$enterpriseReleaseDate = '2025-01-07 15:00';
+$enterpriseVersion = '3.15.3';
+$enterpriseFileProviderReleaseDate = '2025-01-07 15:00';
+$enterpriseFileProviderVersion = '3.15.3';
+
+$enterpriseVersionString = 'Nextcloud Client ' . $enterpriseVersion;
+$enterpriseFileProviderVersionString = 'Nextcloud Client ' . $enterprisefileProviderVersion;
+$enterpriseVersionString = 'Nextcloud Client ' . $enterpriseVersion;
+
 if (version_compare($version, '3.0.3') < 0) {
 	$url = 'https://download.nextcloud.com/desktop/releases/';
 	$stable_linux_url = $url . 'Linux/';
@@ -39,6 +48,11 @@ if (version_compare($version, '3.0.3') < 0) {
 	$stable_linux_url = $stableUrl;
 	$stable_windows_url = $stableUrl;
 	$stable_mac_url = $stableUrl;
+
+	$enterpriseUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $enterpriseVersion . '/';
+	$enterprise_linux_url = $enterpriseUrl;
+	$enterprise_windows_url = $enterpriseUrl;
+	$enterprise_mac_url = $enterpriseUrl;
 
 	$betaUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $betaVersion . '/';
 	$beta_linux_url = $betaUrl;
@@ -124,6 +138,35 @@ return [
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $stable_mac_url . 'Nextcloud-' . $fileProviderStableVersion . '-macOS-vfs.pkg.tbz',
+				"signature" => "6nYH9xj3jnyfNltKzFjW/ftxCiRbYISnYe51OHemuQRhbmXccldD0Jf3F2t7oClyeDW6UDjz+RIGJm9Yke28Aw==",
+				"length" => 321201506,
+				"fileProviderSignature" => "ES+XyMp0pg+NrudwJFxOStK/hh0dZ3crqO1wefSP34AxzfJlNtcbt6tA/fl9dEIdkHI3p3mHQ3Ksjqbg4JJzCw==",
+				"fileProviderLength" => 369951114,
+			],
+		],
+		'enterprise' => [
+			'release' => $enterpriseReleaseDate,
+			'linux' => [
+				'version' => $enterpriseVersion,
+				'versionstring' => $enterpriseVersionString,
+				'downloadurl' => $enterprise_linux_url . 'Nextcloud-' . $enterpriseVersion . '-x64.AppImage',
+				'web' => 'https://nextcloud.com/install',
+			],
+			'win32' => [
+				'version' => $enterpriseVersion,
+				'versionstring' => $enterpriseVersionString,
+				'downloadurl' => $enterprise_windows_url . 'Nextcloud-' . $enterpriseVersion . $windows_suffix,
+				'web' => 'https://nextcloud.com/install',
+			],
+			'macos' => [
+				'version' => $enterpriseVersion,
+				'versionstring' => $enterpriseVersionString,
+				"fileProviderVersionString" => $enterpriseFileProviderVersionString,
+				'downloadurl' => $enterprise_mac_url . 'Nextcloud-' . $enterpriseVersion . '.pkg',
+				'fileProviderDownloadUrl' => $enterprise_mac_url . 'Nextcloud-' . $enterpriseFileProviderVersion . '-macOS-vfs.pkg',
+				'web' => 'https://nextcloud.com/install',
+				"sparkleDownloadUrl" => $enterprise_mac_url . 'Nextcloud-' . $enterpriseVersion . '.pkg.tbz',
+				"fileProviderSparkleDownloadUrl" => $enterprise_mac_url . 'Nextcloud-' . $enterpriseFileProviderVersion . '-macOS-vfs.pkg.tbz',
 				"signature" => "6nYH9xj3jnyfNltKzFjW/ftxCiRbYISnYe51OHemuQRhbmXccldD0Jf3F2t7oClyeDW6UDjz+RIGJm9Yke28Aw==",
 				"length" => 321201506,
 				"fileProviderSignature" => "ES+XyMp0pg+NrudwJFxOStK/hh0dZ3crqO1wefSP34AxzfJlNtcbt6tA/fl9dEIdkHI3p3mHQ3Ksjqbg4JJzCw==",
