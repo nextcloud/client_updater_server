@@ -58,6 +58,28 @@ class ResponseTest extends TestCase {
 						'length' => 62738920,
 					]
 				],
+				'enterprise' => [
+					'release' => '2019-02-24 17:05',
+					'linux' => [
+						'version' => '2.2.2',
+						'versionstring' => 'Nextcloud Client 2.2.2',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage',
+						'web' => 'https://nextcloud.com/install/#install-clients',
+					],
+					'win32' => [
+						'version' => '2.2.2.6192',
+						'versionstring' => 'Nextcloud Client 2.2.2 (build 6192)',
+						'downloadurl' => 'https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe',
+					],
+					'macos' => [
+						'version' => '2.2.2.3472',
+						'versionstring' => 'Nextcloud Client 2.2.2 (build 3472)',
+						'downloadurl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg',
+						'sparkleDownloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
+						'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
+						'length' => 62738920,
+					]
+				],
 				'beta' => [
 					'release' => '2020-01-01 01:01',
 					'linux' => [
@@ -766,6 +788,65 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
+			// #37 new openSuse
+			[
+				'nextcloud',
+				'linux',
+				'1.9.0',
+				'opensuse-leap',
+				'15.6',
+				'6.6.0',
+				'enterprise',
+				false,
+				false,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+'
+			],
+			// #38 Win11 -> QT6
+			[
+				'nextcloud',
+				'win32',
+				'1.9.0',
+				'',
+				"11",
+				"10.0.22622",
+				'enterprise',
+				true,
+				false,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
+'
+			],		
+			// #39 Again, Sparkle needs to know about the latest version
+			[
+				'nextcloud',
+				'macos',
+				'2.3',
+				'',
+				'11.0',
+				'21.04.00',
+				'enterprise',
+				true,
+                false,
+				$config,
+				'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Download Channel</title>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
+			<title>Nextcloud Client 2.2.2 (build 3472)</title>
+			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
+			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+		</item>
+	</channel>
+</rss>'
+			],				
         ];
 	}
 
