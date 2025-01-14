@@ -6,24 +6,38 @@
 
 declare(strict_types=1);
 
-$stableReleaseDate = '2025-01-07 15:00';
-$stableVersion = '3.15.3';
-$fileProviderStableReleaseDate = '2025-01-07 15:00';
-$fileProviderStableVersion = '3.15.3';
-
-$betaReleaseDate = '2024-09-09 17:00';
-$betaVersionInternal = '3.13.83';
-$betaVersion = '3.14.0-rc3';
-
+//
+// daily
+//
 $dailyReleaseDateLinux = '20250113';
 $dailyReleaseDateWindows = '20250113';
 $dailyReleaseDateMacos = '20250113';
 $dailyUrl = "https://download.nextcloud.com/desktop/daily/";
 
-$stableVersionString = 'Nextcloud Client ' . $stableVersion;
-$fileProviderStableVersionString = 'Nextcloud Client ' . $fileProviderStableVersion;
+//
+// beta
+//
+$betaReleaseDate = '2024-09-09 17:00';
+$betaVersionInternal = '3.13.83';
+$betaVersion = '3.14.0-rc3';
 $betaVersionString = 'Nextcloud Client ' . $betaVersion;
+$betaUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $betaVersion . '/';
 
+//
+// stable
+//
+$stableReleaseDate = '2025-01-07 15:00';
+$stableVersion = '3.15.3';
+$stableFileProviderReleaseDate = '2025-01-07 15:00';
+$stableFileProviderVersion = '3.15.3';
+
+$stableVersionString = 'Nextcloud Client ' . $stableVersion;
+$stableFileProviderVersionString = 'Nextcloud Client ' . $stableFileProviderVersion;
+$stableUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $stableVersion . '/';
+
+//
+// enterprise
+//
 $enterpriseReleaseDate = '2025-01-07 15:00';
 $enterpriseVersion = '3.15.3';
 $enterpriseFileProviderReleaseDate = '2025-01-07 15:00';
@@ -31,18 +45,18 @@ $enterpriseFileProviderVersion = '3.15.3';
 
 $enterpriseVersionString = 'Nextcloud Client ' . $enterpriseVersion;
 $enterpriseFileProviderVersionString = 'Nextcloud Client ' . $enterprisefileProviderVersion;
-$enterpriseVersionString = 'Nextcloud Client ' . $enterpriseVersion;
+$enterpriseUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $enterpriseVersion . '/';
+
+//
+//
+//
 
 if (version_compare($version, '3.0.3') < 0) {
 	$url = 'https://download.nextcloud.com/desktop/releases/';
 	$stable_linux_url = $url . 'Linux/';
 	$stable_windows_url = $url . 'Windows/';
 	$stable_mac_url = $url . 'Mac/Installer/';
-} else {
-	$stableUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $stableVersion . '/';
-	$enterpriseUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $enterpriseVersion . '/';
-	$betaUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $betaVersion . '/';
-}
+} 
 
 $stableQt5ReleaseDate = '2024-09-13 12:00';
 $stableQt5Version = '3.13.4';
@@ -116,12 +130,12 @@ return [
 			'macos' => [
 				'version' => $stableVersion,
 				'versionstring' => $stableVersionString,
-				"fileProviderVersionString" => $fileProviderStableVersionString,
+				"fileProviderVersionString" => $stableFileProviderVersionString,
 				'downloadurl' => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg',
-				'fileProviderDownloadUrl' => $stableUrl . 'Nextcloud-' . $fileProviderStableVersion . '-macOS-vfs.pkg',
+				'fileProviderDownloadUrl' => $stableUrl . 'Nextcloud-' . $stableFileProviderVersion . '-macOS-vfs.pkg',
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
-				"fileProviderSparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $fileProviderStableVersion . '-macOS-vfs.pkg.tbz',
+				"fileProviderSparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableFileProviderVersion . '-macOS-vfs.pkg.tbz',
 				"signature" => "6nYH9xj3jnyfNltKzFjW/ftxCiRbYISnYe51OHemuQRhbmXccldD0Jf3F2t7oClyeDW6UDjz+RIGJm9Yke28Aw==",
 				"length" => 321201506,
 				"fileProviderSignature" => "ES+XyMp0pg+NrudwJFxOStK/hh0dZ3crqO1wefSP34AxzfJlNtcbt6tA/fl9dEIdkHI3p3mHQ3Ksjqbg4JJzCw==",
