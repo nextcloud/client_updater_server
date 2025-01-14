@@ -28,7 +28,6 @@ $betaUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' .
 //
 $stableReleaseDate = '2025-01-07 15:00';
 $stableVersion = '3.15.3';
-$stableFileProviderVersion = '3.15.3';
 
 $stableVersionString = 'Nextcloud Client ' . $stableVersion;
 $stableFileProviderVersionString = 'Nextcloud Client ' . $stableFileProviderVersion;
