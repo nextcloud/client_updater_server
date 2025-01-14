@@ -89,6 +89,7 @@ class Response {
             $stable = $this->config[$this->oem]['stable-qt5'][$this->platform];
             $beta = null;
             $daily = null;
+            $enterprise = null;
         } else if (version_compare($this->osVersion, '12.0', '<') &&
                    version_compare($this->version, '3.14.0', '<') &&
                    version_compare($this->config[$this->oem]['stable'][$this->platform]['version'], '3.14.0', '==')) {
@@ -97,22 +98,29 @@ class Response {
             $stable = $this->config[$this->oem]['stable-qt5'][$this->platform];
             $beta = $this->config[$this->oem]['beta'][$this->platform];
             $daily = $this->config[$this->oem]['daily'][$this->platform];
+            $enterprise = null;
 		} else {
 			$stable = $this->config[$this->oem]['stable'][$this->platform];
 			$beta = $this->config[$this->oem]['beta'][$this->platform];
 			$daily = $this->config[$this->oem]['daily'][$this->platform];
+			$enterprise = $this->config[$this->oem]['enterprise'][$this->platform];
 		}
+
+		$isMacOs = ($this->platform === 'macos' && $this->isSparkle === true);
 
 		if (isset($daily) && $this->channel == 'daily' && (version_compare($this->version, $daily['version']) == -1)) {
 			return $daily;
 		}
 
-		if (isset($beta) && $this->channel == 'beta' && (version_compare($stable['version'], $beta['version']) == -1 ||
-			($this->platform === 'macos' && $this->isSparkle === true))) {
+		if (isset($beta) && $this->channel == 'beta' && (version_compare($stable['version'], $beta['version']) == -1 || $isMacOs)) {
 			return $beta;
 		}
 
-		if (version_compare($this->version, $stable['version']) == -1 || ($this->platform === 'macos' && $this->isSparkle === true)) {
+		if (isset($enterprise) && $this->channel == 'enterprise' && (version_compare($this->version, $enterprise['version']) == -1 || $isMacOs)) {
+			return $enterprise;
+		}
+
+		if (version_compare($this->version, $stable['version']) == -1 || $isMacOs) {
 			return $stable;
 		}
 
