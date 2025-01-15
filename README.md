@@ -19,22 +19,24 @@ If the default `config.php` doesn't hold update information for this OEM, the co
   "stable": {
     "release": "2022-01-01 13:00",
     "linux": {
-      "version": "2.3.2",
-      "versionstring": "Nextcloud Client 2.3.2",
-      "downloadurl": "https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-2.3.2.1-setup.AppImage",
+      "version": "3.2.1",
+      "versionstring": "Nextcloud Client 3.2.1",
+      "downloadurl": "https://download.nextcloud.com/desktop/releases/Linux/Nextcloud-3.2.1.AppImage",
       "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
     },
     "win32": {
-      "version": "2.3.2.1",
-      "versionstring": "Nextcloud Client 2.3.2 (build 1)",
-      "downloadurl": "https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-2.3.2.1-setup.exe",
+      "version": "3.2.1.0",
+      "versionstring": "Nextcloud Client 3.2.1 (build 1234)",
+      "downloadurl": "https://download.nextcloud.com/desktop/releases/Windows/Nextcloud-3.2.1-x64.msi",
       "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
     },
     "macos": {
-      "version": "2.2.4.1",
-      "versionstring": "Nextcloud Client 2.2.4 (build 1)",
-      "downloadurl": "https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-2.2.4.1.pkg.tbz",
-      "signature": "MCwCFGC3X/fejC/y/3T2X+c8ldDk7pJGAhQoR8v6vtvvV57nIcMNePA+jNRYcw=="
+      "version": "3.5.2",
+      "versionstring": "Nextcloud Client 3.5.2",
+      "downloadurl": "https://download.nextcloud.com/desktop/releases/Mac/Installer/Nextcloud-3.15.2.pkg",
+      "sparkleDownloadUrl": "https://download.nextcloud.com/desktop/releases/Mac/Installer/Nextcloud-3.15.2.pkg.tbz",
+      "signature": "AAAaaaAAA001AAA001AAA001AAA001AAA123456001AAA+001AAA01+001AAA001AAA12345+001AAA001AAAA==",
+      "length": 123123123
     }
   },
   "beta": {
@@ -52,17 +54,41 @@ If the default `config.php` doesn't hold update information for this OEM, the co
       "web": "https://nextcloud.com/install/?pk_campaign=clientupdate#install-clients"
     },
     "macos": {
-      "version": "3.5.6-rc1",
-      "versionstring": "Nextcloud Client 3.5.6 RC1",
-      "downloadurl": "https://download.nextcloud.com/desktop/releases/Mac/Updates/Nextcloud-3.5.6-rc1-pkg.tbz",
-      "signature": "MCwCFGC3X/fejC/y/3T2X+c8ldDk7pJGAhQoR8v6vtvvV57nIcMNePA+jNRYcw=="
+      "version": "3.5.0-rc1",
+      "versionstring": "Nextcloud Client 3.5.0 RC1",
+      "downloadurl": "https://download.nextcloud.com/desktop/releases/Mac/Installer/Nextcloud-3.15.0-rc1.pkg",
+      "sparkleDownloadUrl": "https://download.nextcloud.com/desktop/releases/Mac/Installer/Nextcloud-3.15.0-rc1.pkg.tbz",
+      "signature": "AAAaaaAAA001AAA001AAA001AAA001AAA123456001AAA+001AAA01+001AAA001AAA12345+001AAA001AAAA==",
+      "length": 123123123
     }
   }
 }
 ```
 
-## Developement
-To test this update server locally use `composer start`, which then will run the server on localhost port 1234.
+## Development
+
+1. Create the json file in `config/` with the name of the OEM that contains the same entries as the `config.php`, e.g. `nextcloudev.json`.
+2. To test this update server locally use `composer start`, which then will run the server on localhost port 1234.
+3. Alternativately, you can directly execute: `php -S 0.0.0.0:1234 -t .`.
+4. To generate debug logs while developing:
+    - Create a `php.ini` in the root folder with the following content:
+      ```
+      error_log = /Users/camila/client_updater_server/test.log
+      log_errors = on
+      ```
+    - Start the development php server with: `php -S 0.0.0.0:1234 -c php.ini -t .`.
+
+### Desktop client
+
+- For all platforms, with cmake: 
+   - Enable `BUILD_UPDATER`.
+   - Set `APPLICATION_UPDATE_URL` with `http://0.0.0.0:1234` or the following environment variable when running the client: `export OCC_UPDATE_URL="http://0.0.0.0:1234"`.
+- On mac OS: 
+   - Build the app bundle and codesign it using [mac-crafter](https://github.com/nextcloud/desktop/tree/master/admin/osx/mac-crafter).
+   - Alternativately, with cmake:
+     - Enable `BUILD_OWNCLOUD_OSX_BUNDLE`.
+     - Set `SPARKLE_LIBRARY`.
+     - `codesign` the `Sparkle.framework` and the app bundle.
 
 ## Deployment
 
