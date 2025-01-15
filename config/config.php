@@ -35,7 +35,7 @@ $stableUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v'
 // enterprise
 //
 $enterpriseReleaseDate = '2025-01-07 15:00';
-$enterpriseVersion = '3.15.3';
+$enterpriseVersion = '3.15.2';
 $enterpriseVersionString = 'Nextcloud Client ' . $enterpriseVersion;
 $enterpriseUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $enterpriseVersion . '/';
 
@@ -151,10 +151,10 @@ return [
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $enterpriseUrl . 'Nextcloud-' . $enterpriseVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $enterpriseUrl . 'Nextcloud-' . $enterpriseVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => "6nYH9xj3jnyfNltKzFjW/ftxCiRbYISnYe51OHemuQRhbmXccldD0Jf3F2t7oClyeDW6UDjz+RIGJm9Yke28Aw==",
-				"length" => 321201506,
-				"fileProviderSignature" => "ES+XyMp0pg+NrudwJFxOStK/hh0dZ3crqO1wefSP34AxzfJlNtcbt6tA/fl9dEIdkHI3p3mHQ3Ksjqbg4JJzCw==",
-				"fileProviderLength" => 369951114,
+				"signature" => "wKIuw5109sTIvGvSuBTXlGp93TizSjFka45OslbgTIFrK+XzLJc2Zs+xCcpPcHLXBeFeKByq+ST1XpinWKSdBA==",
+				"length" => 321172605,
+				"fileProviderSignature" => "fQUSg4tLPip6etSv2ESVj9ALrcfVTMQNbuPPZD8alKLasAsEkGRAVZinNaRITDfNJo0cmkyEdePniZ4EAvDPAg==",
+				"fileProviderLength" => 369917941,
 			],
 		],
 		'beta' => [
