@@ -16,7 +16,7 @@ $betaVersionInternal = '3.13.83';
 $betaVersion = '3.14.0-rc3';
 
 $dailyReleaseDateLinux = '20250115';
-$dailyReleaseDateWindows = '20250115';
+$dailyReleaseDateWindows = '20250116';
 $dailyReleaseDateMacos = '20250114';
 $dailyUrl = "https://download.nextcloud.com/desktop/daily/";
 
