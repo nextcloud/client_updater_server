@@ -223,7 +223,7 @@ class Response {
 		<item>
 			<title>'.$versionString.'</title>
 			<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
-			<enclosure url="'.$sparkleUrl.'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:edSignature="'.$sparkleSignature.'" length="'.$sparkleLength.'"/>
+			<enclosure url="'.$sparkleUrl.'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="'.$sparkleSignature.'" length="'.$sparkleLength.'"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>' : '';
 		
