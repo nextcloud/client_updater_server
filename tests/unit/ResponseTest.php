@@ -231,7 +231,7 @@ class ResponseTest extends TestCase {
 		<item>
 			<title>Nextcloud Client 2.2.2 (build 3472)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -402,7 +402,7 @@ class ResponseTest extends TestCase {
 		<item>
 			<title>Nextcloud Client 2.2.2 (build 3472)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -493,7 +493,7 @@ class ResponseTest extends TestCase {
 		<item>
 			<title>Nextcloud Client 2.2.2 (build 3472)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -520,7 +520,7 @@ class ResponseTest extends TestCase {
 		<item>
 			<title>Nextcloud Client 2.2.2-rc2</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -547,7 +547,7 @@ class ResponseTest extends TestCase {
 		<item>
 			<title>Nextcloud Client 2.2.2-rc2</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -670,7 +670,7 @@ class ResponseTest extends TestCase {
 		<item>
 			<title>Nextcloud Client 2.0.0 (build 0000)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000.pkg.tbz" sparkle:version="2.0.0.0000" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000.pkg.tbz" sparkle:version="2.0.0.0000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -841,7 +841,7 @@ class ResponseTest extends TestCase {
 		<item>
 			<title>Nextcloud Client 2.2.2 (build 3472)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
