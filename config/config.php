@@ -17,9 +17,9 @@ $dailyUrl = "https://download.nextcloud.com/desktop/daily/";
 //
 // beta
 //
-$betaReleaseDate = '2025-02-20 17:00';
-$betaVersionInternal = '3.15.82';
-$betaVersion = '3.16.0-rc2';
+$betaReleaseDate = '2025-02-26 10:00';
+$betaVersionInternal = '3.15.83';
+$betaVersion = '3.16.0-rc3';
 $betaVersionString = 'Nextcloud Client ' . $betaVersion;
 $betaUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $betaVersion . '/';
 
@@ -179,10 +179,10 @@ return [
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $betaUrl . 'Nextcloud-' . $betaVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $betaUrl . 'Nextcloud-' . $betaVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => "tJGksav+DG2Kk9UQDtuuegFjfiEaoaHd8LSxQw/8N9Fvc/6XB4K2V5XJePC/294CTZV6kY8+F7UrjH5PJK0xAw==",
-				"fileProviderSignature" => "LXyVVIRnoK+dZTcx9ah2xP4H5Y/tGIW2DZCTxTiYMN1XFrWiHEcThQM5fu05rQ0IG9rmMpQwWpUXUxa3EcPUCw==",
-				"length" => 331944784,
-				"fileProviderLength" => 382003392,
+				"signature" => "eGaQ6la/p0Bhxzh/ap636goUtF1lZLXmSueVYmalUDmQrVma7O+EXd5OUfFqCBYV1WWuOT7iskhavVB6grMkDg==",
+				"fileProviderSignature" => "6RXIWEoWf2fNNkm6yyzSG7qFTL6dTSFCvkTe+3iJyXP6xXeZrybxOhnKSK5hGXXvkk/66obRL/vWF2a2k641Bw==",
+				"length" => 332399269,
+				"fileProviderLength" => 382475147,
 			],
 		],
 		'daily' => [
