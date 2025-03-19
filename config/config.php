@@ -26,8 +26,8 @@ $betaUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' .
 //
 // stable
 //
-$stableReleaseDate = '2025-03-13 17:00';
-$stableVersion = '3.16.1';
+$stableReleaseDate = '2025-03-19 19:00';
+$stableVersion = '3.16.2';
 $stableVersionString = 'Nextcloud Client ' . $stableVersion;
 $stableUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $stableVersion . '/';
 
@@ -122,10 +122,10 @@ return [
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"fileProviderSparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => "/n5RE9bVaLEbjb5wK9+KcNEhsTQx1/xL2P2UCSfU4DCf2MO7PUQnRt61+8+Y9dEU3+hSED5hEWPvhCZOfYT7Cw==",
-				"length" => 332226847,
-				"fileProviderSignature" => "yYNB8OuIG2ziCNtbGBSZYbBpZlVvx62+f5a4wezP1LetsPCl04O/oHXK3j4dlqU6jdCjWGlniHrXP2zonC2HBw==",
-				"fileProviderLength" => 374010611,
+				"signature" => "M/cd4ZqZsI5fxa42UjVd1YcWZciQ+SshLxr+uqYhRjnNGzGyPziGLTdEJIorCsthAQq5hK741Zs9Gi2XkItnAA==",
+				"length" => 332225941,
+				"fileProviderSignature" => "YLN1NI1CjYJfuXeWYU5YGCaNEDbMVTBUON0bJl/NPjdK+fjZif/XXRa9RrjNEY/FAZMrUx1+ocFoOsGR1lSFCg==",
+				"fileProviderLength" => 374017592,
 			],
 		],
 		'enterprise' => [
