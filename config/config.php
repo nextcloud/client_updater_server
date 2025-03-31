@@ -9,7 +9,7 @@ declare(strict_types=1);
 //
 // daily
 //
-$dailyReleaseDateLinux = '20250330';
+$dailyReleaseDateLinux = '20250331';
 $dailyReleaseDateWindows = '20250331';
 $dailyReleaseDateMacos = '20250327';
 $dailyUrl = "https://download.nextcloud.com/desktop/daily/";
