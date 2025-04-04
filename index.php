@@ -64,6 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
 	exit();
 }
 
+$allowedChannels = ['stable', 'daily', 'beta', 'enterprise'];
+
 // Read parameters
 $oem = isset($_GET['oem']) ? (string)$_GET['oem'] : null;
 $platform = isset($_GET['platform']) ? (string)$_GET['platform'] : null;
@@ -72,7 +74,10 @@ $currentArch = isset($_GET['currentArch']) ? (string)$_GET['currentArch'] : "x86
 $version = isset($_GET['version']) ? (string)$_GET['version'] : null;
 $isSparkle = isset($_GET['sparkle']) ? true : false;
 $isFileProvider = isset($_GET['fileprovider']) ? true : false;
-$channel = isset($_GET['channel']) ? (string)$_GET['channel'] : 'stable';
+// due to a bug in an old version, the channels were translated. we need to catch them again
+$channel = isset($_GET['channel']) && in_array($_GET['channel'], $allowedChannels, true)
+	? $_GET['channel']
+	: 'stable';
 
 $osRelease = isset($_GET['osRelease']) ? (string)$_GET['osRelease'] : '';
 $osVersion = isset($_GET['osVersion']) ? (string)$_GET['osVersion'] : '';
