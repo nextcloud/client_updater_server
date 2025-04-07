@@ -87,6 +87,12 @@ if($oem === null || $platform === null || $version === null) {
 	die();
 }
 
+// for macOS we currently can not deliver daily do to dependencies of the sparkle updater
+// we will default macOS daily => stable
+if ($platform === 'macos' && $channel === 'daily') {
+    $channel = 'stable';
+}
+
 $config = require_once __DIR__ . '/config/config.php';
 
 // Deliver update
