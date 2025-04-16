@@ -17,13 +17,13 @@ $dailyReleaseDateMacos = '20250414';
 // beta
 // should point to stable, once stable is released
 //
-$betaReleaseDate = '2025-03-19 19:00';
-$betaVersionInternal = '3.16.2'; // short string
-$betaVersion = '3.16.2'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
-$betaVersionSignature = 'M/cd4ZqZsI5fxa42UjVd1YcWZciQ+SshLxr+uqYhRjnNGzGyPziGLTdEJIorCsthAQq5hK741Zs9Gi2XkItnAA==';
-$betaVersionLength = 332225941;
-$betaVersionFileProviderSignature = 'YLN1NI1CjYJfuXeWYU5YGCaNEDbMVTBUON0bJl/NPjdK+fjZif/XXRa9RrjNEY/FAZMrUx1+ocFoOsGR1lSFCg==';
-$betaVersionFileProviderLength = 374017592;
+$betaReleaseDate = '2025-04-16 16:00';
+$betaVersionInternal = '3.16.3'; // short string
+$betaVersion = '3.16.3'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
+$betaVersionSignature = '12Ob+qe3x/u0KNYQ2gEy9S2dcPF5TfhabdtOo1V9YjsqM53/dZo3z3Mx6BPo25FRPv4HNJTJrP39j6O03SZOCQ==';
+$betaVersionLength = 332223312;
+$betaVersionFileProviderSignature = 'izp+P4YJ241NXjMN9NsyFBCzwDElZfZW/e2zlxO/btQyfSrLj8i2W2ydEMIt4onGO2WYVjAE9PkiCu5WuWszAg==';
+$betaVersionFileProviderLength = 373989957;
 
 //
 // stable
@@ -39,12 +39,12 @@ $stableVersionFileProviderLength = 373989957;
 // enterprise 
 // should point to that stable version, that was branded to the customers
 //
-$enterpriseReleaseDate = '2025-01-07 15:00';
-$enterpriseVersion = '3.15.2';
-$enterpriseVersionSignature = 'wKIuw5109sTIvGvSuBTXlGp93TizSjFka45OslbgTIFrK+XzLJc2Zs+xCcpPcHLXBeFeKByq+ST1XpinWKSdBA==';
-$enterpriseVersionLength = 321172605;
-$enterpriseVersionFileProviderSignature = 'fQUSg4tLPip6etSv2ESVj9ALrcfVTMQNbuPPZD8alKLasAsEkGRAVZinNaRITDfNJo0cmkyEdePniZ4EAvDPAg==';
-$enterpriseVersionFileProviderLength = 369917941;
+$enterpriseReleaseDate = '2025-03-19 19:00';
+$enterpriseVersion = '3.16.2';
+$enterpriseVersionSignature = 'M/cd4ZqZsI5fxa42UjVd1YcWZciQ+SshLxr+uqYhRjnNGzGyPziGLTdEJIorCsthAQq5hK741Zs9Gi2XkItnAA==';
+$enterpriseVersionLength = 332225941;
+$enterpriseVersionFileProviderSignature = 'YLN1NI1CjYJfuXeWYU5YGCaNEDbMVTBUON0bJl/NPjdK+fjZif/XXRa9RrjNEY/FAZMrUx1+ocFoOsGR1lSFCg==';
+$enterpriseVersionFileProviderLength = 374017592;
 
 //
 // stable Qt5 (legacy)
