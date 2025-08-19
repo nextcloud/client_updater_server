@@ -196,6 +196,7 @@ return [
 			'macos' => [
 				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
+				"fileProviderVersionString" => $betaVersionString,
 				'downloadurl' => $betaUrl . 'Nextcloud-' . $betaVersion . '.pkg',
 				'fileProviderDownloadUrl' => $betaUrl . 'Nextcloud-' . $betaVersion . '-macOS-vfs.pkg',
 				'web' => 'https://nextcloud.com/install',
