@@ -17,23 +17,23 @@ $dailyReleaseDateMacos = '20250916';
 // beta
 // should point to stable, once stable is released
 //
-$betaReleaseDate = '2025-08-19 14:00';
-$betaVersionInternal = '3.17.1'; // short string
-$betaVersion = '3.17.1'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
-$betaVersionSignature = 'Me/elDZZngFlwRWA/eStNMPQMy7dDgF+a2FLkXSOW26odI/AjVrijSUO5D7XsA2FsmSEcjPstKzPetFWplIgDA==';
-$betaVersionLength = 332564881;
-$betaVersionFileProviderSignature = 'yBQjwN8gcol8YgFaeQO87ubaKgq7U+YyWjGqol/3Ugx7hPCu+K86g3iZ6wOZIGE9iXR6SGvZ4zOVN8EjibK1BQ==';
-$betaVersionFileProviderLength = 374376425;
+$betaReleaseDate = '2025-09-16 16:00';
+$betaVersionInternal = '3.17.2'; // short string
+$betaVersion = '3.17.2'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
+$betaVersionSignature = 'tu43rluaUMB8dqRLbAqyU/hApu+TOsDfblsnYH84EJ9mT4LOyJnjNyyu4N7xgWtTOrayayN7NIhdwZq9rWaaCw==';
+$betaVersionLength = 332685581;
+$betaVersionFileProviderSignature = '71a2XwjBRVfbQ8l1PV7rqeI8nzgpuyc68DVvnW06REgI4RX/nFS1iRrVvlNub+tgebWSayk3mWf3NZL2dU9aAA==';
+$betaVersionFileProviderLength = 374510489;
 
 //
 // stable
 //
-$stableReleaseDate = '2025-08-19 14:00';
-$stableVersion = '3.17.1';
-$stableVersionSignature = 'Me/elDZZngFlwRWA/eStNMPQMy7dDgF+a2FLkXSOW26odI/AjVrijSUO5D7XsA2FsmSEcjPstKzPetFWplIgDA==';
-$stableVersionLength = 332564881;
-$stableVersionFileProviderSignature = 'yBQjwN8gcol8YgFaeQO87ubaKgq7U+YyWjGqol/3Ugx7hPCu+K86g3iZ6wOZIGE9iXR6SGvZ4zOVN8EjibK1BQ==';
-$stableVersionFileProviderLength = 374376425;
+$stableReleaseDate = '2025-09-16 16:00';
+$stableVersion = '3.17.2';
+$stableVersionSignature = 'tu43rluaUMB8dqRLbAqyU/hApu+TOsDfblsnYH84EJ9mT4LOyJnjNyyu4N7xgWtTOrayayN7NIhdwZq9rWaaCw==';
+$stableVersionLength = 332685581;
+$stableVersionFileProviderSignature = '71a2XwjBRVfbQ8l1PV7rqeI8nzgpuyc68DVvnW06REgI4RX/nFS1iRrVvlNub+tgebWSayk3mWf3NZL2dU9aAA==';
+$stableVersionFileProviderLength = 374510489;
 
 //
 // enterprise 
