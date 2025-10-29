@@ -28,12 +28,12 @@ $betaVersionFileProviderLength = 370104951;
 //
 // stable
 //
-$stableReleaseDate = '2025-10-10 10:00';
-$stableVersion = '3.17.3';
-$stableVersionSignature = '5Vce1qmt78OBIP+JG5d/e4+tKz+Rat34F39kcK2XJ9btQsWc9326nHBWESaq6Y3xLWrO77mvBXtBBySEfhvFDw==';
-$stableVersionLength = 332740195;
-$stableVersionFileProviderSignature = '+1JPY9AzzB5j7wp4orOcIZ6JDcavdDU2z2k3oE9N3hViKZD0/AXgk5Rs0GwWeZKnfRYHGyRbFnrhBAivLZJ2Bg==';
-$stableVersionFileProviderLength = 374577721;
+$stableReleaseDate = '2025-10-29 09:30';
+$stableVersion = '4.0.1';
+$stableVersionSignature = '1PP3ykX4UPa7oulqQkzkKfDsjIlYRavpV1L1zgCnMPl01QZ1YmK+OvQoz0ZQjPlTkXsIfctPL3Zy574Xps0ZCA==';
+$stableVersionLength = 342055442;
+$stableVersionFileProviderSignature = 'VTiqEsDQdigMpsmhOTIhY1gmSKR7q3qBDSPJ/NTRzb91wJz+6ClBItAL0Atkxj2Xm6y6X94u//rE3KiN9m5MDA==';
+$stableVersionFileProviderLength = 370104951;
 
 //
 // enterprise 
