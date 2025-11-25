@@ -17,29 +17,29 @@ $dailyReleaseDateMacos = '20250922';
 // beta
 // should point to stable, once stable is released
 //
-$betaReleaseDate = '2025-10-27 20:00';
-$betaVersionInternal = '4.0.1'; // short string
-$betaVersion = '4.0.1'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
-$betaVersionSignature = '1PP3ykX4UPa7oulqQkzkKfDsjIlYRavpV1L1zgCnMPl01QZ1YmK+OvQoz0ZQjPlTkXsIfctPL3Zy574Xps0ZCA==';
-$betaVersionLength = 342055442;
-$betaVersionFileProviderSignature = 'VTiqEsDQdigMpsmhOTIhY1gmSKR7q3qBDSPJ/NTRzb91wJz+6ClBItAL0Atkxj2Xm6y6X94u//rE3KiN9m5MDA==';
-$betaVersionFileProviderLength = 370104951;
+$betaReleaseDate = '2025-11-25 13:40';
+$betaVersionInternal = '4.0.2'; // short string
+$betaVersion = '4.0.2'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
+$betaVersionSignature = 'ynh6SBeDcS0XViB9XJn59gw//hVR9hEhunO83L6uQe5yedplGdW7yacGXFjxAPr/m40unlRH2SI5QGt/gofmCQ==';
+$betaVersionLength = 342008680;
+$betaVersionFileProviderSignature = 'pfsfGlQUmrHptGCaf1TzssYjKbHxhnMV0rGvT3mmdtEf+URnbUC3eD8xrA27f3iZSIRLmBGuMMrImDSG+YxXDA==';
+$betaVersionFileProviderLength = 370127696;
 
 //
 // stable
 //
-$stableReleaseDate = '2025-10-29 09:30';
-$stableVersion = '4.0.1';
-$stableVersionSignature = '1PP3ykX4UPa7oulqQkzkKfDsjIlYRavpV1L1zgCnMPl01QZ1YmK+OvQoz0ZQjPlTkXsIfctPL3Zy574Xps0ZCA==';
-$stableVersionLength = 342055442;
-$stableVersionFileProviderSignature = 'VTiqEsDQdigMpsmhOTIhY1gmSKR7q3qBDSPJ/NTRzb91wJz+6ClBItAL0Atkxj2Xm6y6X94u//rE3KiN9m5MDA==';
-$stableVersionFileProviderLength = 370104951;
+$stableReleaseDate = '2025-11-25 13:40';
+$stableVersion = '4.0.2';
+$stableVersionSignature = 'ynh6SBeDcS0XViB9XJn59gw//hVR9hEhunO83L6uQe5yedplGdW7yacGXFjxAPr/m40unlRH2SI5QGt/gofmCQ==';
+$stableVersionLength = 342008680;
+$stableVersionFileProviderSignature = 'pfsfGlQUmrHptGCaf1TzssYjKbHxhnMV0rGvT3mmdtEf+URnbUC3eD8xrA27f3iZSIRLmBGuMMrImDSG+YxXDA==';
+$stableVersionFileProviderLength = 370127696;
 
 //
 // enterprise 
 // should point to that stable version, that was branded to the customers
 //
-$enterpriseReleaseDate = '2025-11-26 10:00';
+$enterpriseReleaseDate = '2025-11-25 13:40';
 $enterpriseVersion = '3.17.4';
 $enterpriseVersionSignature = 'uMKB/UoExWbv8y8VxzX1IAkrS5zhGThK+jemdPJYaxQveB73WyOIZVfi5Me2kFMT52oLJ7uyxLifAgSJ/PzFAg==';
 $enterpriseVersionLength = 332821925;
