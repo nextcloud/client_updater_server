@@ -73,7 +73,7 @@ If the default `config.php` doesn't hold update information for this OEM, the co
 4. To generate debug logs while developing:
     - Create a `php.ini` in the root folder with the following content:
       ```
-      error_log = /Users/camila/client_updater_server/test.log
+      error_log = ~/client_updater_server/test.log
       log_errors = on
       ```
     - Start the development php server with: `php -S 0.0.0.0:1234 -c php.ini -t .`.

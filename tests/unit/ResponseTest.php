@@ -140,7 +140,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'stable',
 				false,
-                false,
 				$configThrottle,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -156,7 +155,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -172,7 +170,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'stable',
 				true,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -188,7 +185,6 @@ class ResponseTest extends TestCase {
 				'9.3',
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -204,7 +200,6 @@ class ResponseTest extends TestCase {
 				'21.04.00',
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.3472</version><versionstring>Nextcloud Client 2.2.2 (build 3472)</versionstring><downloadurl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg</downloadurl><sparkleDownloadUrl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz</sparkleDownloadUrl><signature>MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=</signature><length>62738920</length></owncloudclient>
@@ -220,7 +215,6 @@ class ResponseTest extends TestCase {
 				"21.0.1",
 				'stable',
 				true,
-                false,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -247,7 +241,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'beta',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.3-rc3</version><versionstring>Nextcloud Client 2.2.3-rc3</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.3-rc3-x86.msi</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -263,7 +256,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'beta',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.3-rc3</version><versionstring>Nextcloud Client 2.2.3-rc3</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.3-rc3-x86.msi</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -279,7 +271,6 @@ class ResponseTest extends TestCase {
 				'9.3',
 				'beta',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -295,7 +286,6 @@ class ResponseTest extends TestCase {
 				"21.0.1",
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -311,7 +301,6 @@ class ResponseTest extends TestCase {
 				'???',
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -327,7 +316,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -343,7 +331,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'stable',
 				true,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -359,7 +346,6 @@ class ResponseTest extends TestCase {
 				'9.3',
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -375,7 +361,6 @@ class ResponseTest extends TestCase {
 				'21.04.00',
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -391,7 +376,6 @@ class ResponseTest extends TestCase {
 				'21.04.00',
 				'stable',
 				true,
-                false,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -418,7 +402,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -434,7 +417,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'stable',
 				true,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -450,7 +432,6 @@ class ResponseTest extends TestCase {
 				'9.3',
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -466,7 +447,6 @@ class ResponseTest extends TestCase {
 				'21.04.00',
 				'stable',
 				false,
-                false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient/>
@@ -482,7 +462,6 @@ class ResponseTest extends TestCase {
 				'21.04.00',
 				'stable',
 				true,
-                false,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -509,7 +488,6 @@ class ResponseTest extends TestCase {
 				'21.04.00',
                 'beta',
                 true,
-                false,
                 $config,
                 '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -536,7 +514,6 @@ class ResponseTest extends TestCase {
 				'21.04.00',
                 'beta',
                 true,
-                false,
                 $config,
                 '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -563,7 +540,6 @@ class ResponseTest extends TestCase {
 				'20',
 				'daily',
 				false,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>20240604</version><versionstring>Nextcloud Daily 20240604</versionstring><downloadurl>https://download.nextcloud.com/desktop/daily/linux/linux-20240604.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -579,7 +555,6 @@ class ResponseTest extends TestCase {
 				"06.01.00",
 				'stable',
 				true,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.0.0.0000</version><versionstring>Nextcloud Client 2.0.0 (build 0000)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000-setup.exe</downloadurl></owncloudclient>
@@ -595,7 +570,6 @@ class ResponseTest extends TestCase {
 				"10.0.1800",
 				'stable',
 				true,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.0.0.0000</version><versionstring>Nextcloud Client 2.0.0 (build 0000)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000-setup.exe</downloadurl></owncloudclient>
@@ -611,7 +585,6 @@ class ResponseTest extends TestCase {
 				"10.0.26080",
 				'stable',
 				true,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -627,7 +600,6 @@ class ResponseTest extends TestCase {
 				"10.0.22622",
 				'stable',
 				true,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -642,7 +614,6 @@ class ResponseTest extends TestCase {
 				"10",
 				'10.0.1500',
 				'beta',
-				false,
 				false,
 				$config,
 				'<?xml version="1.0"?>
@@ -659,7 +630,6 @@ class ResponseTest extends TestCase {
 				"21.0.1.00",
 				'stable',
 				true,
-				false,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -686,7 +656,6 @@ class ResponseTest extends TestCase {
 				"10.0.17700",
 				'stable',
 				true,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.0.0.0000</version><versionstring>Nextcloud Client 2.0.0 (build 0000)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000-setup.exe</downloadurl></owncloudclient>
@@ -701,7 +670,6 @@ class ResponseTest extends TestCase {
 				'22.00',
 				'5.5.0',
 				'stable',
-				false,
 				false,
 				$config,
 				'<?xml version="1.0"?>
@@ -718,7 +686,6 @@ class ResponseTest extends TestCase {
 				'6.6.0',
 				'stable',
 				false,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -733,7 +700,6 @@ class ResponseTest extends TestCase {
 				'8.0',
 				'5.5.0',
 				'stable',
-				false,
 				false,
 				$config,
 				'<?xml version="1.0"?>
@@ -750,7 +716,6 @@ class ResponseTest extends TestCase {
 				'6.6.0',
 				'stable',
 				false,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -765,7 +730,6 @@ class ResponseTest extends TestCase {
 				'15.1',
 				'5.5.0',
 				'stable',
-				false,
 				false,
 				$config,
 				'<?xml version="1.0"?>
@@ -782,7 +746,6 @@ class ResponseTest extends TestCase {
 				'6.6.0',
 				'stable',
 				false,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
@@ -797,7 +760,6 @@ class ResponseTest extends TestCase {
 				'15.6',
 				'6.6.0',
 				'enterprise',
-				false,
 				false,
 				$config,
 				'<?xml version="1.0"?>
@@ -814,7 +776,6 @@ class ResponseTest extends TestCase {
 				"10.0.22622",
 				'enterprise',
 				true,
-				false,
 				$config,
 				'<?xml version="1.0"?>
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
@@ -830,7 +791,6 @@ class ResponseTest extends TestCase {
 				'21.04.00',
 				'enterprise',
 				true,
-                false,
 				$config,
 				'<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -860,7 +820,6 @@ class ResponseTest extends TestCase {
 	 * @param string $kernelVersion
 	 * @param string $channel
 	 * @param bool $isSparkle
-	 * @param bool $isFileProvider
 	 * @param array $config
 	 * @param string $expected
 	 */
@@ -872,7 +831,6 @@ class ResponseTest extends TestCase {
 									  string $kernelVersion,
 									  string $channel,
 									  bool $isSparkle,
-                                      bool $isFileProvider,
 									  array $config,
 									  string $expected) {
 		$response = $this->getMockBuilder('\ClientUpdateServer\Response')
@@ -885,7 +843,6 @@ class ResponseTest extends TestCase {
 				$kernelVersion,
 				$channel,
 				$isSparkle,
-				$isFileProvider,
 				$config])
 			->setMethods(['getCurrentTimeStamp'])
 			->getMock();

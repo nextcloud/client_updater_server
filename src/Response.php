@@ -25,8 +25,6 @@ class Response {
 	private $channel;
 	/** @var bool */
 	private $isSparkle;
-    /** @var bool */
-    private $isFileProvider;
 	/** @var array */
 	private $config;
 
@@ -38,7 +36,6 @@ class Response {
 								string $kernelVersion,
 								string $channel,
 								bool $isSparkle,
-                                bool $isFileProvider,
 								array $config) {
 		$this->oem = $oem;
 		$this->platform = $platform;
@@ -48,7 +45,6 @@ class Response {
 		$this->kernelVersion = $kernelVersion;
 		$this->channel = $channel;
 		$this->isSparkle = $isSparkle;
-        $this->isFileProvider = $isFileProvider;
 		$this->config = $config;
 	}
 
@@ -188,22 +184,22 @@ class Response {
 	 * Convenience functions to get specific file provider or standard client update information
 	 */
 	private function getSparkleUpdateUrl(array $updateVersion) : string {
-		$updateUrlKey = $this->isFileProvider ? 'fileProviderSparkleDownloadUrl' : 'sparkleDownloadUrl';
+		$updateUrlKey = 'sparkleDownloadUrl';
 		return $updateVersion[$updateUrlKey];
 	}
 
 	private function getSparkleUpdateSignature(array $updateVersion) : string {
-		$updateSignatureKey = $this->isFileProvider ? 'fileProviderSignature' : 'signature';
+		$updateSignatureKey = 'signature';
 		return $updateVersion[$updateSignatureKey];
 	}
 
 	private function getSparkleUpdateLength(array $updateVersion) : int {
-		$updateLengthKey = $this->isFileProvider ? 'fileProviderLength' : 'length';
+		$updateLengthKey = 'length';
 		return $updateVersion[$updateLengthKey];
 	}
 
 	private function getSparkleVersionString(array $updateVersion) : string {
-		$updateLengthKey = $this->isFileProvider ? 'fileProviderVersionString' : 'versionstring';
+		$updateLengthKey = 'versionstring';
 		return $updateVersion[$updateLengthKey];
 	}
 
