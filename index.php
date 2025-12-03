@@ -73,7 +73,6 @@ $buildArch = isset($_GET['buildArch']) ? (string)$_GET['buildArch'] : "x86_64";
 $currentArch = isset($_GET['currentArch']) ? (string)$_GET['currentArch'] : "x86_64";
 $version = isset($_GET['version']) ? (string)$_GET['version'] : null;
 $isSparkle = isset($_GET['sparkle']) ? true : false;
-$isFileProvider = isset($_GET['fileprovider']) ? true : false;
 // due to a bug in an old version, the channels were translated. we need to catch them again
 $channel = isset($_GET['channel']) && in_array((string)$_GET['channel'], $allowedChannels, true)
 	? (string)$_GET['channel']
@@ -105,7 +104,6 @@ $response = new \ClientUpdateServer\Response(
 	$kernelVersion,
 	$channel,
 	$isSparkle,
-	$isFileProvider,
 	$config
 );
 echo $response->buildResponse();
