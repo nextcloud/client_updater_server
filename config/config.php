@@ -20,20 +20,16 @@ $dailyReleaseDateMacos = '20250922';
 $betaReleaseDate = '2025-11-25 13:40';
 $betaVersionInternal = '4.0.2'; // short string
 $betaVersion = '4.0.2'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
-$betaVersionSignature = 'ynh6SBeDcS0XViB9XJn59gw//hVR9hEhunO83L6uQe5yedplGdW7yacGXFjxAPr/m40unlRH2SI5QGt/gofmCQ==';
-$betaVersionLength = 342008680;
-$betaVersionFileProviderSignature = 'pfsfGlQUmrHptGCaf1TzssYjKbHxhnMV0rGvT3mmdtEf+URnbUC3eD8xrA27f3iZSIRLmBGuMMrImDSG+YxXDA==';
-$betaVersionFileProviderLength = 370127696;
+$betaVersionSignature = 'pfsfGlQUmrHptGCaf1TzssYjKbHxhnMV0rGvT3mmdtEf+URnbUC3eD8xrA27f3iZSIRLmBGuMMrImDSG+YxXDA==';
+$betaVersionLength = 370127696;
 
 //
 // stable
 //
 $stableReleaseDate = '2025-11-25 13:40';
 $stableVersion = '4.0.2';
-$stableVersionSignature = 'ynh6SBeDcS0XViB9XJn59gw//hVR9hEhunO83L6uQe5yedplGdW7yacGXFjxAPr/m40unlRH2SI5QGt/gofmCQ==';
-$stableVersionLength = 342008680;
-$stableVersionFileProviderSignature = 'pfsfGlQUmrHptGCaf1TzssYjKbHxhnMV0rGvT3mmdtEf+URnbUC3eD8xrA27f3iZSIRLmBGuMMrImDSG+YxXDA==';
-$stableVersionFileProviderLength = 370127696;
+$stableVersionSignature = 'pfsfGlQUmrHptGCaf1TzssYjKbHxhnMV0rGvT3mmdtEf+URnbUC3eD8xrA27f3iZSIRLmBGuMMrImDSG+YxXDA==';
+$stableVersionLength = 370127696;
 
 //
 // enterprise 
@@ -41,10 +37,8 @@ $stableVersionFileProviderLength = 370127696;
 //
 $enterpriseReleaseDate = '2025-11-25 13:40';
 $enterpriseVersion = '3.17.4';
-$enterpriseVersionSignature = 'uMKB/UoExWbv8y8VxzX1IAkrS5zhGThK+jemdPJYaxQveB73WyOIZVfi5Me2kFMT52oLJ7uyxLifAgSJ/PzFAg==';
-$enterpriseVersionLength = 332821925;
-$enterpriseVersionFileProviderSignature = 'Etp40vzjOKAbiLOllzCZugCDkS+TMimkDUeIYigLCZAbIeKTMF7O+OpxiDEO58xfblj7xG2KKqvjej2fSrUcBA==';
-$enterpriseVersionFileProviderLength = 374673225;
+$enterpriseVersionSignature = 'Etp40vzjOKAbiLOllzCZugCDkS+TMimkDUeIYigLCZAbIeKTMF7O+OpxiDEO58xfblj7xG2KKqvjej2fSrUcBA==';
+$enterpriseVersionLength = 374673225;
 
 //
 // stable Qt5 (legacy)
@@ -138,16 +132,11 @@ return [
 			'macos' => [
 				'version' => $stableVersion,
 				'versionstring' => $stableVersionString,
-				"fileProviderVersionString" => $stableVersionString,
 				'downloadurl' => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg',
-				'fileProviderDownloadUrl' => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg',
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
-				"fileProviderSparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg.tbz',
 				"signature" => $stableVersionSignature,
 				"length" => $stableVersionLength,
-				"fileProviderSignature" => $stableVersionFileProviderSignature,
-				"fileProviderLength" => $stableVersionFileProviderLength,
 			],
 		],
 		'enterprise' => [
@@ -167,16 +156,11 @@ return [
 			'macos' => [
 				'version' => $enterpriseVersion,
 				'versionstring' => $enterpriseVersionString,
-				"fileProviderVersionString" => $enterpriseVersionString,
 				'downloadurl' => $enterpriseUrl . 'Nextcloud-' . $enterpriseVersion . '.pkg',
-				'fileProviderDownloadUrl' => $enterpriseUrl . 'Nextcloud-' . $enterpriseVersion . '-macOS-vfs.pkg',
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $enterpriseUrl . 'Nextcloud-' . $enterpriseVersion . '.pkg.tbz',
-				"fileProviderSparkleDownloadUrl" => $enterpriseUrl . 'Nextcloud-' . $enterpriseVersion . '-macOS-vfs.pkg.tbz',
 				"signature" => $enterpriseVersionSignature,
 				"length" => $enterpriseVersionLength,
-				"fileProviderSignature" => $enterpriseVersionFileProviderSignature,
-				"fileProviderLength" => $enterpriseVersionFileProviderLength,
 			],
 		],
 		'beta' => [
@@ -196,16 +180,11 @@ return [
 			'macos' => [
 				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
-				"fileProviderVersionString" => $betaVersionString,
 				'downloadurl' => $betaUrl . 'Nextcloud-' . $betaVersion . '.pkg',
-				'fileProviderDownloadUrl' => $betaUrl . 'Nextcloud-' . $betaVersion . '-macOS-vfs.pkg',
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $betaUrl . 'Nextcloud-' . $betaVersion . '.pkg.tbz',
-				"fileProviderSparkleDownloadUrl" => $betaUrl . 'Nextcloud-' . $betaVersion . '-macOS-vfs.pkg.tbz',
 				"signature" => $betaVersionSignature,
 				"length" => $betaVersionLength,
-				"fileProviderSignature" => $betaVersionFileProviderSignature,
-				"fileProviderLength" => $betaVersionFileProviderLength,
 			],
 		],
 		'daily' => [
