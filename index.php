@@ -10,7 +10,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/Response.php';
 
 // Check if this is a request for the enterprise version endpoint
-if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] === '/enterprise-version') {
+if (isset($_SERVER['REQUEST_URI']) && substr($_SERVER['REQUEST_URI'], -19) === '/enterprise-version') {
 	// Set Content-Type to JSON
 	header('Content-Type: application/json');
 	// Enforce browser based XSS filters
