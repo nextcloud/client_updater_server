@@ -24,10 +24,16 @@ if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] === '/enterprise-versi
 	
 	// Extract enterpriseVersion from the config file by parsing it
 	$configContent = file_get_contents(__DIR__ . '/config/config.php');
-	preg_match('/\$enterpriseVersion\s*=\s*[\'"]([^\'"]+)[\'"]/', $configContent, $matches);
+	if ($configContent === false) {
+		http_response_code(500);
+		echo json_encode(['error' => 'Failed to read configuration file'], JSON_THROW_ON_ERROR);
+		exit();
+	}
+	
+	preg_match('/\$enterpriseVersion\s*=\s*[\'"]([^\'"\r\n]+)[\'"]/', $configContent, $matches);
 	$enterpriseVersion = isset($matches[1]) ? $matches[1] : null;
 	
-	echo json_encode(['enterpriseVersion' => $enterpriseVersion]);
+	echo json_encode(['enterpriseVersion' => $enterpriseVersion], JSON_THROW_ON_ERROR);
 	exit();
 }
 
