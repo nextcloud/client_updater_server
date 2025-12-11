@@ -9,6 +9,28 @@ declare(strict_types=1);
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/Response.php';
 
+// Check if this is a request for the enterprise version endpoint
+if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] === '/enterprise-version') {
+	// Set Content-Type to JSON
+	header('Content-Type: application/json');
+	// Enforce browser based XSS filters
+	header('X-XSS-Protection: 1; mode=block');
+	// Disable sniffing the content type for IE
+	header('X-Content-Type-Options: nosniff');
+	// Disallow iFraming from other domains
+	header('X-Frame-Options: Sameorigin');
+	// https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag
+	header('X-Robots-Tag: none');
+	
+	// Extract enterpriseVersion from the config file by parsing it
+	$configContent = file_get_contents(__DIR__ . '/config/config.php');
+	preg_match('/\$enterpriseVersion\s*=\s*[\'"]([^\'"]+)[\'"]/', $configContent, $matches);
+	$enterpriseVersion = isset($matches[1]) ? $matches[1] : null;
+	
+	echo json_encode(['enterpriseVersion' => $enterpriseVersion]);
+	exit();
+}
+
 // Set Content-Type to XML
 header('Content-Type: application/xml');
 // Enforce browser based XSS filters
