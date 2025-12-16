@@ -11,7 +11,7 @@ declare(strict_types=1);
 //
 $dailyReleaseDateLinux = '20251215';
 $dailyReleaseDateWindows = '20251216';
-$dailyReleaseDateMacos = '20251215';
+$dailyReleaseDateMacos = '20251216';
 
 //
 // beta
