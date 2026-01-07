@@ -90,6 +90,9 @@ If the default `config.php` doesn't hold update information for this OEM, the co
      - Set `SPARKLE_LIBRARY`.
      - `codesign` the `Sparkle.framework` and the app bundle.
 
+### Testing
+- `*url*?version=4.0.50.20251204&platform=win32&osRelease=windows&osVersion=11&kernelVersion=10.0.26200&oem=Nextcloud&buildArch=x86_64&currentArch=x86_64&versionsuffix=daily&channel=daily&msi=true`
+
 ## Deployment
 
 The updater server is deployed via Github webhooks. The state in master is deployed to https://updates.nextcloud.com/client/.

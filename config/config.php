@@ -9,27 +9,27 @@ declare(strict_types=1);
 //
 // daily
 //
-$dailyReleaseDateLinux = '20251203';
-$dailyReleaseDateWindows = '20251203';
-$dailyReleaseDateMacos = '20250922';
+$dailyReleaseDateLinux = '20260107';
+$dailyReleaseDateWindows = '20260107';
+$dailyReleaseDateMacos = '20251216';
 
 //
 // beta
 // should point to stable, once stable is released
 //
-$betaReleaseDate = '2025-11-25 13:40';
-$betaVersionInternal = '4.0.2'; // short string
-$betaVersion = '4.0.2'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
-$betaVersionSignature = 'pfsfGlQUmrHptGCaf1TzssYjKbHxhnMV0rGvT3mmdtEf+URnbUC3eD8xrA27f3iZSIRLmBGuMMrImDSG+YxXDA==';
-$betaVersionLength = 370127696;
+$betaReleaseDate = '2025-12-15 19:30';
+$betaVersionInternal = '4.0.4'; // short string
+$betaVersion = '4.0.4'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
+$betaVersionSignature = 'Y7j83E4iM4/kmRtPozcaSC+v3Hx4xGgM6HV/wB0jJn2rzGrQfNoSD+3isROuWAbQaB79lb8B2LrZOJHzheicAg==';
+$betaVersionLength = 341999547;
 
 //
 // stable
 //
-$stableReleaseDate = '2025-11-25 13:40';
-$stableVersion = '4.0.2';
-$stableVersionSignature = 'pfsfGlQUmrHptGCaf1TzssYjKbHxhnMV0rGvT3mmdtEf+URnbUC3eD8xrA27f3iZSIRLmBGuMMrImDSG+YxXDA==';
-$stableVersionLength = 370127696;
+$stableReleaseDate = '2025-12-15 19:30';
+$stableVersion = '4.0.4';
+$stableVersionSignature = 'Y7j83E4iM4/kmRtPozcaSC+v3Hx4xGgM6HV/wB0jJn2rzGrQfNoSD+3isROuWAbQaB79lb8B2LrZOJHzheicAg==';
+$stableVersionLength = 341999547;
 
 //
 // enterprise 
