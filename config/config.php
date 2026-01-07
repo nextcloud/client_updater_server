@@ -20,7 +20,9 @@ $dailyReleaseDateMacos = '20251216';
 $betaReleaseDate = '2025-12-15 19:30';
 $betaVersionInternal = '4.0.4'; // short string
 $betaVersion = '4.0.4'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
+// !!! the signature and length of the vfs file are required here !!! PR#215
 $betaVersionSignature = 'Y7j83E4iM4/kmRtPozcaSC+v3Hx4xGgM6HV/wB0jJn2rzGrQfNoSD+3isROuWAbQaB79lb8B2LrZOJHzheicAg==';
+// !!! the signature and length of the vfs file are required here !!! PR#215
 $betaVersionLength = 341999547;
 
 //
@@ -28,8 +30,10 @@ $betaVersionLength = 341999547;
 //
 $stableReleaseDate = '2025-12-15 19:30';
 $stableVersion = '4.0.4';
-$stableVersionSignature = 'Y7j83E4iM4/kmRtPozcaSC+v3Hx4xGgM6HV/wB0jJn2rzGrQfNoSD+3isROuWAbQaB79lb8B2LrZOJHzheicAg==';
-$stableVersionLength = 341999547;
+// !!! the signature and length of the vfs file are required here !!! PR#215
+$stableVersionSignature = 'kmH1pg5B5jprwnuh9uB8Ur02XnGwP6dra/1wa6rne2XJ97gNY+kCwwONWsgMR/PNQygaVbCvcY+1/GyZaSuQCw==';
+// !!! the signature and length of the vfs file are required here !!! PR#215
+$stableVersionLength = 370134367;
 
 //
 // enterprise 
