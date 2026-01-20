@@ -97,7 +97,7 @@ return [
                         'linux' => [
                                 'version' => $stableQt5Version,
                                 'versionstring' => $stableQt5VersionString,
-                                'downloadurl' => $stableQt5_linux_url . 'Nextcloud-' . $stableQt5Version . '-x64.AppImage',
+                                'downloadurl' => $stableQt5_linux_url . 'Nextcloud-' . $stableQt5Version . '-x86_64.AppImage',
                                 'web' => 'https://nextcloud.com/install',
                         ],
                         'win32' => [
@@ -126,7 +126,7 @@ return [
 			'linux' => [
 				'version' => $stableVersion,
 				'versionstring' => $stableVersionString,
-				'downloadurl' => $stableUrl . 'Nextcloud-' . $stableVersion . '-x64.AppImage',
+				'downloadurl' => $stableUrl . 'Nextcloud-' . $stableVersion . '-x86_64.AppImage',
 				'web' => 'https://nextcloud.com/install',
 			],
 			'win32' => [
@@ -155,7 +155,7 @@ return [
 			'linux' => [
 				'version' => $enterpriseVersion,
 				'versionstring' => $enterpriseVersionString,
-				'downloadurl' => $enterpriseUrl . 'Nextcloud-' . $enterpriseVersion . '-x64.AppImage',
+				'downloadurl' => $enterpriseUrl . 'Nextcloud-' . $enterpriseVersion . '-x86_64.AppImage',
 				'web' => 'https://nextcloud.com/install',
 			],
 			'win32' => [
@@ -184,7 +184,7 @@ return [
 			'linux' => [
 				'version' => $betaVersionInternal,
 				'versionstring' => $betaVersionString,
-				'downloadurl' => $betaUrl . 'Nextcloud-' . $betaVersion . '-x64.AppImage',
+				'downloadurl' => $betaUrl . 'Nextcloud-' . $betaVersion . '-x86_64.AppImage',
 				'web' => 'https://nextcloud.com/install',
 			],
 			'win32' => [
