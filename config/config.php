@@ -86,6 +86,15 @@ $stableUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v'
 $enterpriseVersionString = 'Nextcloud Client ' . $enterpriseVersion;
 $enterpriseUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $enterpriseVersion . '/';
 
+// workaround for https://github.com/nextcloud/desktop/issues/9347
+// Win32 4.0.4 and 4.0.5 do not follow HTTP redirects, which fails the download of updates
+if ($platform == "win32" && (version_compare($version, '4.0.4', '>=') && version_compare($version, '4.0.6', '<'))) {
+    $stableUrl = 'https://download.nextcloud.com/desktop/releases/Windows/';
+    if (rand(0, 10) >= 2) {
+        // only allow ~2 out of 10 requests receive an update to not overload the download server
+        $stableVersion = '4.0.4';
+    }
+}
 
 /**
  * Associative array of OEM => OS => version
