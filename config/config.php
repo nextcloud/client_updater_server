@@ -90,8 +90,8 @@ $enterpriseUrl = 'https://github.com/nextcloud-releases/desktop/releases/downloa
 // Win32 4.0.4 and 4.0.5 do not follow HTTP redirects, which fails the download of updates
 if ($platform == "win32" && (version_compare($version, '4.0.4', '>=') && version_compare($version, '4.0.6', '<'))) {
     $stableUrl = 'https://download.nextcloud.com/desktop/releases/Windows/';
-    if (rand(0, 100) >= 2) {
-        // only allow ~2% of requests receive an update to not overload the download server
+    if (rand(0, 100) >= 10) {
+        // only allow ~10% of requests receive an update to not overload the download server
         $stableVersion = '4.0.4';
     }
 }
