@@ -17,13 +17,11 @@ $dailyReleaseDateMacos = '20260218';
 // beta
 // should point to stable, once stable is released
 //
-$betaReleaseDate = '2026-01-22 18:00';
-$betaVersionInternal = '4.0.6'; // short string
-$betaVersion = '4.0.6'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
-$betaVersionSignature = 'yzAm+RTOEtHCEmz1L4JHiRJkdfKMIeFAqYEJlaYNYP6s5IBKLq7YZY1sbtlmKQttRqKurB67s7dCuaGA2A6VBA==';
-$betaVersionLength = 345060719;
-$betaVersionFileProviderSignature = 'BCONOVs9x/wJxP4y5i0gqdwEErYFy9HFfGHYyWuXxUn6mgzhMlFLt3lFQOsuVvz2ADsR+fEdIqSFiSN8zEDYAA==';
-$betaVersionFileProviderLength = 373240934;
+$betaReleaseDate = '2026-02-18 18:00';
+$betaVersionInternal = '32.0.81'; // short string
+$betaVersion = '33.0.0-rc1'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
+$betaVersionSignature = 'RYWh27QN+GYl7If3pcpRVnny7ClHXpwjh7HqY06tXU0LXyfFqYciCFDdukdh49gfEVy9ocJjsJtSya/CxoG0DQ==';
+$betaVersionLength = 381334544;
 
 //
 // stable
@@ -207,14 +205,14 @@ return [
 				'versionstring' => $betaVersionString,
 				"fileProviderVersionString" => $betaVersionString,
 				'downloadurl' => $betaUrl . 'Nextcloud-' . $betaVersion . '.pkg',
-				'fileProviderDownloadUrl' => $betaUrl . 'Nextcloud-' . $betaVersion . '-macOS-vfs.pkg',
+				'fileProviderDownloadUrl' => $betaUrl . 'Nextcloud-' . $betaVersion . '.pkg',
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $betaUrl . 'Nextcloud-' . $betaVersion . '.pkg.tbz',
-				"fileProviderSparkleDownloadUrl" => $betaUrl . 'Nextcloud-' . $betaVersion . '-macOS-vfs.pkg.tbz',
+				"fileProviderSparkleDownloadUrl" => $betaUrl . 'Nextcloud-' . $betaVersion . '.pkg.tbz',
 				"signature" => $betaVersionSignature,
 				"length" => $betaVersionLength,
-				"fileProviderSignature" => $betaVersionFileProviderSignature,
-				"fileProviderLength" => $betaVersionFileProviderLength,
+				"fileProviderSignature" => $betaVersionSignature,
+				"fileProviderLength" => $betaVersionLength,
 			],
 		],
 		'daily' => [
