@@ -25,14 +25,8 @@ $betaVersionLength = 381334544;
 
 //
 // stable Qt6.9 (macOS 11 / 12 — not compatible with Qt6.10)
+// fixed to the last Qt6.9-compatible stable release
 //
-$stableQt69_url = 'https://download.nextcloud.com/desktop/releases/';
-$stableQt69_mac_url = $stableQt69_url . 'Mac/Installer/';
-$stableQt69ReleaseDate = '2025-01-01 12:00';
-$stableQt69Version = '3.13.4';
-$stableQt69FileProviderVersion = '3.13.4';
-$stableQt69VersionString = 'Nextcloud Client ' . $stableQt69Version;
-$stableQt69FileProviderVersionString = 'Nextcloud Client ' . $stableQt69FileProviderVersion;
 
 //
 // stable
@@ -140,20 +134,20 @@ return [
                         ],
 		],		
 		'stable-qt6.9' => [
-			'release' => $stableQt69ReleaseDate,
+			'release' => $stableReleaseDate,
 			'macos' => [
-				'version' => $stableQt69Version,
-				'versionstring' => $stableQt69VersionString,
-				"fileProviderVersionString" => $stableQt69FileProviderVersionString,
-				'downloadurl' => $stableQt69_mac_url . 'Nextcloud-' . $stableQt69Version . '.pkg',
-				'fileProviderDownloadUrl' => $stableQt69_mac_url . 'Nextcloud-' . $stableQt69FileProviderVersion . '-macOS-vfs.pkg',
+				'version' => $stableVersion,
+				'versionstring' => $stableVersionString,
+				"fileProviderVersionString" => $stableVersionString,
+				'downloadurl' => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg',
+				'fileProviderDownloadUrl' => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg',
 				'web' => 'https://nextcloud.com/install',
-				"sparkleDownloadUrl" => $stableQt69_mac_url . 'Nextcloud-' . $stableQt69Version . '.pkg.tbz',
-				"fileProviderSparkleDownloadUrl" => $stableQt69_mac_url . 'Nextcloud-' . $stableQt69FileProviderVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => "8cG1fsKD6OaFpe8npjDNAfI0EGWK69UHsusTKIAv0pGcd0MALM9Hqc+cWKGxH338LNPe4It65/KRI5cykoScDw==",
-				"length" => 64634085,
-				"fileProviderSignature" => "ZI/hNmZ3zedPHEwWuzAvqSSf5ddPkW+XrzYjRguRIcX0zDxXh1OR9iEr5BDIS8X9LeLoaRbaGLGHXlm7xQCxAA==",
-				"fileProviderLength" => 97371547,
+				"sparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
+				"fileProviderSparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg.tbz',
+				"signature" => $stableVersionSignature,
+				"length" => $stableVersionLength,
+				"fileProviderSignature" => $stableVersionFileProviderSignature,
+				"fileProviderLength" => $stableVersionFileProviderLength,
 			],
 		],
 		'stable' => [
