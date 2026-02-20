@@ -24,6 +24,17 @@ $betaVersionSignature = 'RYWh27QN+GYl7If3pcpRVnny7ClHXpwjh7HqY06tXU0LXyfFqYciCFD
 $betaVersionLength = 381334544;
 
 //
+// stable legacy (macOS 11 / 12 — not compatible with Qt6.10)
+//
+$stableLegacy_url = 'https://download.nextcloud.com/desktop/releases/';
+$stableLegacy_mac_url = $stableLegacy_url . 'Mac/Installer/';
+$stableLegacyReleaseDate = '2025-01-01 12:00';
+$stableLegacyVersion = '3.13.4';
+$stableLegacyFileProviderVersion = '3.13.4';
+$stableLegacyVersionString = 'Nextcloud Client ' . $stableLegacyVersion;
+$stableLegacyFileProviderVersionString = 'Nextcloud Client ' . $stableLegacyFileProviderVersion;
+
+//
 // stable
 //
 $stableReleaseDate = '2026-01-22 18:00';
@@ -128,6 +139,23 @@ return [
                                 "fileProviderLength" => 97371547,
                         ],
 		],		
+		'stable-legacy' => [
+			'release' => $stableLegacyReleaseDate,
+			'macos' => [
+				'version' => $stableLegacyVersion,
+				'versionstring' => $stableLegacyVersionString,
+				"fileProviderVersionString" => $stableLegacyFileProviderVersionString,
+				'downloadurl' => $stableLegacy_mac_url . 'Nextcloud-' . $stableLegacyVersion . '.pkg',
+				'fileProviderDownloadUrl' => $stableLegacy_mac_url . 'Nextcloud-' . $stableLegacyFileProviderVersion . '-macOS-vfs.pkg',
+				'web' => 'https://nextcloud.com/install',
+				"sparkleDownloadUrl" => $stableLegacy_mac_url . 'Nextcloud-' . $stableLegacyVersion . '.pkg.tbz',
+				"fileProviderSparkleDownloadUrl" => $stableLegacy_mac_url . 'Nextcloud-' . $stableLegacyFileProviderVersion . '-macOS-vfs.pkg.tbz',
+				"signature" => "8cG1fsKD6OaFpe8npjDNAfI0EGWK69UHsusTKIAv0pGcd0MALM9Hqc+cWKGxH338LNPe4It65/KRI5cykoScDw==",
+				"length" => 64634085,
+				"fileProviderSignature" => "ZI/hNmZ3zedPHEwWuzAvqSSf5ddPkW+XrzYjRguRIcX0zDxXh1OR9iEr5BDIS8X9LeLoaRbaGLGHXlm7xQCxAA==",
+				"fileProviderLength" => 97371547,
+			],
+		],
 		'stable' => [
 			'release' => $stableReleaseDate,
 			'linux' => [

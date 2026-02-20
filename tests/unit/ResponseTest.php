@@ -36,7 +36,18 @@ class ResponseTest extends TestCase {
 						'length' => 62738920,
 					]
 				],
-				'stable' => [
+				'stable-legacy' => [
+				'release' => '2024-06-01 01:01',
+				'macos' => [
+					'version' => '2.1.0.2000',
+					'versionstring' => 'Nextcloud Client 2.1.0 (build 2000)',
+					'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg',
+					'sparkleDownloadUrl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz',
+					'signature' => 'LEGACYMACSIG==',
+					'length' => 55555555,
+				],
+			],
+			'stable' => [
 					'release' => '2019-02-24 17:05',
 					'linux' => [
 						'version' => '2.2.2',
@@ -207,7 +218,7 @@ class ResponseTest extends TestCase {
                 false,
 				$config,
 				'<?xml version="1.0"?>
-<owncloudclient><version>2.2.2.3472</version><versionstring>Nextcloud Client 2.2.2 (build 3472)</versionstring><downloadurl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg</downloadurl><sparkleDownloadUrl>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz</sparkleDownloadUrl><signature>MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=</signature><length>62738920</length></owncloudclient>
+<owncloudclient><version>2.1.0.2000</version><versionstring>Nextcloud Client 2.1.0 (build 2000)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg</downloadurl><sparkleDownloadUrl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz</sparkleDownloadUrl><signature>LEGACYMACSIG==</signature><length>55555555</length></owncloudclient>
 '
 			],
 			// #5
@@ -229,9 +240,9 @@ class ResponseTest extends TestCase {
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
-			<title>Nextcloud Client 2.2.2 (build 3472)</title>
+			<title>Nextcloud Client 2.1.0 (build 2000)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -400,9 +411,9 @@ class ResponseTest extends TestCase {
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
-			<title>Nextcloud Client 2.2.2 (build 3472)</title>
+			<title>Nextcloud Client 2.1.0 (build 2000)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -491,15 +502,15 @@ class ResponseTest extends TestCase {
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
-			<title>Nextcloud Client 2.2.2 (build 3472)</title>
+			<title>Nextcloud Client 2.1.0 (build 2000)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
 </rss>'
 			],
-            // #21 Sparkle on, always needs to know what the latest version is
+            // #21 macOS 12 (legacy) on beta channel with RC version — gets stable-legacy, not beta
             [
                 'nextcloud',
                 'macos',
@@ -518,15 +529,15 @@ class ResponseTest extends TestCase {
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
-			<title>Nextcloud Client 2.2.2-rc2</title>
+			<title>Nextcloud Client 2.1.0 (build 2000)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
 </rss>'
 		    ],
-            // #22 Sparkle on, always needs to know what the latest version is
+            // #22 macOS 12 (legacy) on beta channel with stable version — gets stable-legacy, not beta
             [
                 'nextcloud',
                 'macos',
@@ -545,9 +556,9 @@ class ResponseTest extends TestCase {
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
-			<title>Nextcloud Client 2.2.2-rc2</title>
+			<title>Nextcloud Client 2.1.0 (build 2000)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
-			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
@@ -820,7 +831,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],		
-			// #39 Again, Sparkle needs to know about the latest version
+			// #39 macOS 11 (legacy) on enterprise channel — gets stable-legacy, not enterprise
 			[
 				'nextcloud',
 				'macos',
@@ -839,9 +850,63 @@ class ResponseTest extends TestCase {
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
+			<title>Nextcloud Client 2.1.0 (build 2000)</title>
+			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
+			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+		</item>
+	</channel>
+</rss>'
+			],
+			// #40 macOS 13 — not legacy, gets regular stable via sparkle
+			[
+				'nextcloud',
+				'macos',
+				'1.9.0',
+				'',
+				'13.0',
+				'22.00.00',
+				'stable',
+				true,
+				false,
+				$config,
+				'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Download Channel</title>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
 			<title>Nextcloud Client 2.2.2 (build 3472)</title>
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+		</item>
+	</channel>
+</rss>'
+			],
+			// #41 macOS 13 — not legacy, gets regular beta via sparkle
+			[
+				'nextcloud',
+				'macos',
+				'2.2.2-rc1',
+				'',
+				'13.0',
+				'22.00.00',
+				'beta',
+				true,
+				false,
+				$config,
+				'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Download Channel</title>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
+			<title>Nextcloud Client 2.2.2-rc2</title>
+			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
 		</item>
 	</channel>
