@@ -27,6 +27,12 @@ $betaVersionLength = 381334544;
 // stable Qt6.9 (macOS 11 / 12 — not compatible with Qt6.10)
 // fixed to the last Qt6.9-compatible stable release
 //
+$stableQt69ReleaseDate = '2026-01-22 18:00';
+$stableQt69Version = '4.0.6';
+$stableQt69VersionSignature = 'yzAm+RTOEtHCEmz1L4JHiRJkdfKMIeFAqYEJlaYNYP6s5IBKLq7YZY1sbtlmKQttRqKurB67s7dCuaGA2A6VBA==';
+$stableQt69VersionLength = 345060719;
+$stableQt69VersionFileProviderSignature = 'BCONOVs9x/wJxP4y5i0gqdwEErYFy9HFfGHYyWuXxUn6mgzhMlFLt3lFQOsuVvz2ADsR+fEdIqSFiSN8zEDYAA==';
+$stableQt69VersionFileProviderLength = 373240934;
 
 //
 // stable
@@ -86,6 +92,9 @@ $betaUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' .
 $stableVersionString = 'Nextcloud Client ' . $stableVersion;
 $stableUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $stableVersion . '/';
 
+$stableQt69VersionString = 'Nextcloud Client ' . $stableQt69Version;
+$stableQt69Url = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $stableQt69Version . '/';
+
 $enterpriseVersionString = 'Nextcloud Client ' . $enterpriseVersion;
 $enterpriseUrl = 'https://github.com/nextcloud-releases/desktop/releases/download/v' . $enterpriseVersion . '/';
 
@@ -134,20 +143,20 @@ return [
                         ],
 		],		
 		'stable-qt6.9' => [
-			'release' => $stableReleaseDate,
+			'release' => $stableQt69ReleaseDate,
 			'macos' => [
-				'version' => $stableVersion,
-				'versionstring' => $stableVersionString,
-				"fileProviderVersionString" => $stableVersionString,
-				'downloadurl' => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg',
-				'fileProviderDownloadUrl' => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg',
+				'version' => $stableQt69Version,
+				'versionstring' => $stableQt69VersionString,
+				"fileProviderVersionString" => $stableQt69VersionString,
+				'downloadurl' => $stableQt69Url . 'Nextcloud-' . $stableQt69Version . '.pkg',
+				'fileProviderDownloadUrl' => $stableQt69Url . 'Nextcloud-' . $stableQt69Version . '-macOS-vfs.pkg',
 				'web' => 'https://nextcloud.com/install',
-				"sparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
-				"fileProviderSparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg.tbz',
-				"signature" => $stableVersionSignature,
-				"length" => $stableVersionLength,
-				"fileProviderSignature" => $stableVersionFileProviderSignature,
-				"fileProviderLength" => $stableVersionFileProviderLength,
+				"sparkleDownloadUrl" => $stableQt69Url . 'Nextcloud-' . $stableQt69Version . '.pkg.tbz',
+				"fileProviderSparkleDownloadUrl" => $stableQt69Url . 'Nextcloud-' . $stableQt69Version . '-macOS-vfs.pkg.tbz',
+				"signature" => $stableQt69VersionSignature,
+				"length" => $stableQt69VersionLength,
+				"fileProviderSignature" => $stableQt69VersionFileProviderSignature,
+				"fileProviderLength" => $stableQt69VersionFileProviderLength,
 			],
 		],
 		'stable' => [
