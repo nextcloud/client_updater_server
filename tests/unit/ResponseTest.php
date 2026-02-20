@@ -36,7 +36,7 @@ class ResponseTest extends TestCase {
 						'length' => 62738920,
 					]
 				],
-				'stable-legacy' => [
+				'stable-qt6.9' => [
 				'release' => '2024-06-01 01:01',
 				'macos' => [
 					'version' => '2.1.0.2000',
@@ -510,7 +510,7 @@ class ResponseTest extends TestCase {
 	</channel>
 </rss>'
 			],
-            // #21 macOS 12 (legacy) on beta channel with RC version — gets stable-legacy, not beta
+            // #21 macOS 12 (legacy) on beta channel with RC version — gets stable-qt6.9, not beta
             [
                 'nextcloud',
                 'macos',
@@ -537,7 +537,7 @@ class ResponseTest extends TestCase {
 	</channel>
 </rss>'
 		    ],
-            // #22 macOS 12 (legacy) on beta channel with stable version — gets stable-legacy, not beta
+            // #22 macOS 12 (legacy) on beta channel with stable version — gets stable-qt6.9, not beta
             [
                 'nextcloud',
                 'macos',
@@ -831,7 +831,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],		
-			// #39 macOS 11 (legacy) on enterprise channel — gets stable-legacy, not enterprise
+			// #39 macOS 11 (legacy) on enterprise channel — gets stable-qt6.9, not enterprise
 			[
 				'nextcloud',
 				'macos',
