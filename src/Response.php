@@ -84,21 +84,16 @@ class Response {
 			return [];
 		}
 
-		// if outdated platform, hand out latest stable-qt5, no daily/beta possible
-		if ($this->checkOldPlatform()) {
-            $stable = $this->config[$this->oem]['stable-qt5'][$this->platform];
-            $beta = null;
-            $daily = null;
-            $enterprise = null;
-        } else if (version_compare($this->osVersion, '12.0', '<') &&
-                   version_compare($this->version, '3.14.0', '<') &&
-                   version_compare($this->config[$this->oem]['stable'][$this->platform]['version'], '3.14.0', '==')) {
-            // Skip 3.14.0 for macOS < 12 when updating as we have an issue with the system requirement settings
-            // Serve the prior version instead in the meantime (3.13.4)
-            $stable = $this->config[$this->oem]['stable-qt5'][$this->platform];
-            $beta = $this->config[$this->oem]['beta'][$this->platform];
-            $daily = $this->config[$this->oem]['daily'][$this->platform];
-            $enterprise = null;
+		// if legacy platform, hand out its dedicated stable version; no daily/beta/enterprise
+		$legacyChannel = $this->getLegacyChannel();
+		if ($legacyChannel !== null) {
+			if (!isset($this->config[$this->oem][$legacyChannel][$this->platform])) {
+				return [];
+			}
+			$stable = $this->config[$this->oem][$legacyChannel][$this->platform];
+			$beta = null;
+			$daily = null;
+			$enterprise = null;
 		} else {
 			$stable = $this->config[$this->oem]['stable'][$this->platform];
 			$beta = $this->config[$this->oem]['beta'][$this->platform];
@@ -127,8 +122,8 @@ class Response {
 		return [];
 	}
 
-	private function checkOldPlatform(): bool {
-		// Outdated platforms:
+	private function getLegacyChannel(): ?string {
+		// Outdated platforms (Qt5 era):
 		// - macOS < 11
 		// - Win < 10
 		// - Win 10 (build number < 1809)
@@ -139,41 +134,46 @@ class Response {
 
 		// Mac < 11
 		if ($this->platform === "macos" && version_compare($this->osVersion, "11") == -1) {
-			return true;
+			return 'stable-qt5';
+		}
+
+		// macOS 11/12 — not compatible with Qt6.10 (required by current stable)
+		if ($this->platform === "macos" && version_compare($this->osVersion, "13") == -1) {
+			return 'stable-qt6.9';
 		}
 
 		// Windows <10
 		if ($this->platform === "win32" && version_compare($this->osVersion, "10") == -1) {
-			return true;
+			return 'stable-qt5';
 		}
 
 		// Windows 10 (build number < 1809)
 		if ($this->platform === "win32" && version_compare($this->osVersion, "10") == 0 && version_compare($this->kernelVersion, '10.0.1809') == -1) {
-			return true;
+			return 'stable-qt5';
 		}
 
 		// - Win 11 (build number < 17764)
 		if ($this->platform === "win32" && version_compare($this->osVersion, "11") == 0 && version_compare($this->kernelVersion, '10.0.17764') == -1) {
-			return true;
+			return 'stable-qt5';
 		}
 
 		// - Ubuntu <22.04
 		if ($this->platform === "linux" && $this->osRelease == "ubuntu" && version_compare($this->osVersion, '22.04') == -1) {
-			return true;
+			return 'stable-qt5';
 		}
 
 		// - RHEL <9.2
 		if ($this->platform === "linux" && $this->osRelease == "rhel" && version_compare($this->osVersion, '9.2') == -1) {
-			return true;
+			return 'stable-qt5';
 		}
 
 
 		// - openSuse <15.5
 		if ($this->platform === "linux" && $this->osRelease == "opensuse-leap" && version_compare($this->osVersion, '15.5') == -1) {
-			return true;
+			return 'stable-qt5';
 		}
 
-		return false;
+		return null;
 	}
 
 	/**
