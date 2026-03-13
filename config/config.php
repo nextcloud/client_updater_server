@@ -17,11 +17,11 @@ $dailyReleaseDateMacos = '20260311';
 // beta
 // should point to stable, once stable is released
 //
-$betaReleaseDate = '2026-02-27 14:00';
-$betaVersionInternal = '32.0.82'; // short string
-$betaVersion = '33.0.0-rc2'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
-$betaVersionSignature = '6PVC7PkBC2ad285V/raYyCY0E9NpZYF6C656uoFCcONKl4lcGcif1xVgE7FqbtuV1ycHF3weLA3pPnQlBpI5Cg==';
-$betaVersionLength = 382961870;
+$betaReleaseDate = '2026-03-13 16:30';
+$betaVersionInternal = '32.0.83'; // short string
+$betaVersion = '33.0.0-rc3'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
+$betaVersionSignature = 'WkXwzACDj2zGAaAQWKXXIKD/yA1JuymA+3JKDODBk2Y7WAAlDy59yB/N//AstEUyaXJJ7Iaqi6a5fhOjI1EGAg==';
+$betaVersionLength = 383045323;
 
 //
 // stable Qt6.9 (macOS 11 / 12 — not compatible with Qt6.10)
