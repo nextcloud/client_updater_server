@@ -27,22 +27,22 @@ $betaVersionLength = 383045323;
 // stable Qt6.9 (macOS 11 / 12 — not compatible with Qt6.10)
 // fixed to the last Qt6.9-compatible stable release
 //
-$stableQt69ReleaseDate = '2026-03-11 15:00';
-$stableQt69Version = '4.0.7';
-$stableQt69VersionSignature = 'bwlGWdC92IvoiOtjL/FTuFHdqPEJ02B+lTQy/qGwkfJemnrJeH+BDjRNkJZ2/worA7OT8Gn2e18K3c9hj/V+Dw==';
-$stableQt69VersionLength = 345086717;
-$stableQt69VersionFileProviderSignature = 'UBxf+cSW8EV7BN7fNsfgvMvPAzqvBfa8RNFuge56xGg/V9vhe4D9W1oqF3mTsex1A7lb2pbAQXFqgnx5nrqzCg==';
-$stableQt69VersionFileProviderLength = 373254923;
+$stableQt69ReleaseDate = '2026-03-19 15:00';
+$stableQt69Version = '4.0.8';
+$stableQt69VersionSignature = 'rK+JgVBR3TDygsgaFzZnLaSlEHeH9qMG2ysaIFHTIc5ythZ7m+orSj/UDKPZtHpmnIp5Udcry4zOWjGA+CIBBw==';
+$stableQt69VersionLength = 345081075;
+$stableQt69VersionFileProviderSignature = 'fLD3Y84rJcvJ46/kZDYE6Csmr1qJ3Icg/RckVWRKyx/wuTSzRAXoURkaVBM98VRrKF7fn4Ejded2GeKWrVoZCg==';
+$stableQt69VersionFileProviderLength = 373257027;
 
 //
 // stable
 //
-$stableReleaseDate = '2026-03-11 15:00';
-$stableVersion = '4.0.7';
-$stableVersionSignature = 'bwlGWdC92IvoiOtjL/FTuFHdqPEJ02B+lTQy/qGwkfJemnrJeH+BDjRNkJZ2/worA7OT8Gn2e18K3c9hj/V+Dw==';
-$stableVersionLength = 345086717;
-$stableVersionFileProviderSignature = 'UBxf+cSW8EV7BN7fNsfgvMvPAzqvBfa8RNFuge56xGg/V9vhe4D9W1oqF3mTsex1A7lb2pbAQXFqgnx5nrqzCg==';
-$stableVersionFileProviderLength = 373254923;
+$stableReleaseDate = '2026-03-19 15:00';
+$stableVersion = '4.0.8';
+$stableVersionSignature = 'rK+JgVBR3TDygsgaFzZnLaSlEHeH9qMG2ysaIFHTIc5ythZ7m+orSj/UDKPZtHpmnIp5Udcry4zOWjGA+CIBBw==';
+$stableVersionLength = 345081075;
+$stableVersionFileProviderSignature = 'fLD3Y84rJcvJ46/kZDYE6Csmr1qJ3Icg/RckVWRKyx/wuTSzRAXoURkaVBM98VRrKF7fn4Ejded2GeKWrVoZCg==';
+$stableVersionFileProviderLength = 373257027;
 
 //
 // enterprise 
