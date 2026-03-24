@@ -17,11 +17,11 @@ $dailyReleaseDateMacos = '20260315';
 // beta
 // should point to stable, once stable is released
 //
-$betaReleaseDate = '2026-03-20 16:30';
-$betaVersionInternal = '32.0.84'; // short string
-$betaVersion = '33.0.0-rc4'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
-$betaVersionSignature = 'XNuz/a0xFSsxsI8UUwBhyk7/aN6Z1UOZw+fCsZ6qzowbrJYQl+pOgwwxvofYJEZJaj5hHn2a2xhRv2YA298hBw==';
-$betaVersionLength = 383012803;
+$betaReleaseDate = '2026-03-24 10:00';
+$betaVersionInternal = '33.0.0'; // short string
+$betaVersion = '33.0.0'; // long string like '3.16.0-rc3' used to hide the cryptical subversion like .58 from the user;
+$betaVersionSignature = '1QVaYzZcbZbwJEwVXPtbNfsY66Kvwg0JB00QbK8rxzG1xS8s3CsbJ21F70YJ3TzP5b0nPbfeKobAfHjJYRY6AA==';
+$betaVersionLength = 383015811;
 
 //
 // stable Qt6.9 (macOS 11 / 12 — not compatible with Qt6.10)
@@ -37,12 +37,10 @@ $stableQt69VersionFileProviderLength = 373257027;
 //
 // stable
 //
-$stableReleaseDate = '2026-03-19 15:00';
-$stableVersion = '4.0.8';
-$stableVersionSignature = 'rK+JgVBR3TDygsgaFzZnLaSlEHeH9qMG2ysaIFHTIc5ythZ7m+orSj/UDKPZtHpmnIp5Udcry4zOWjGA+CIBBw==';
-$stableVersionLength = 345081075;
-$stableVersionFileProviderSignature = 'fLD3Y84rJcvJ46/kZDYE6Csmr1qJ3Icg/RckVWRKyx/wuTSzRAXoURkaVBM98VRrKF7fn4Ejded2GeKWrVoZCg==';
-$stableVersionFileProviderLength = 373257027;
+$stableReleaseDate = '2026-03-24 10:00';
+$stableVersion = '33.0.0';
+$stableVersionSignature = '1QVaYzZcbZbwJEwVXPtbNfsY66Kvwg0JB00QbK8rxzG1xS8s3CsbJ21F70YJ3TzP5b0nPbfeKobAfHjJYRY6AA==';
+$stableVersionLength = 383015811;
 
 //
 // enterprise 
@@ -178,14 +176,14 @@ return [
 				'versionstring' => $stableVersionString,
 				"fileProviderVersionString" => $stableVersionString,
 				'downloadurl' => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg',
-				'fileProviderDownloadUrl' => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg',
+				'fileProviderDownloadUrl' => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg',
 				'web' => 'https://nextcloud.com/install',
 				"sparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
-				"fileProviderSparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '-macOS-vfs.pkg.tbz',
+				"fileProviderSparkleDownloadUrl" => $stableUrl . 'Nextcloud-' . $stableVersion . '.pkg.tbz',
 				"signature" => $stableVersionSignature,
 				"length" => $stableVersionLength,
-				"fileProviderSignature" => $stableVersionFileProviderSignature,
-				"fileProviderLength" => $stableVersionFileProviderLength,
+				"fileProviderSignature" => $stableVersionSignature,
+				"fileProviderLength" => $stableVersionLength,
 			],
 		],
 		'enterprise' => [
