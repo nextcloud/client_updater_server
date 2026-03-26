@@ -858,13 +858,13 @@ class ResponseTest extends TestCase {
 	</channel>
 </rss>'
 			],
-			// #40 macOS 13 — not legacy, gets regular stable via sparkle
+			// #40 macOS 14 — not legacy, gets regular stable via sparkle
 			[
 				'nextcloud',
 				'macos',
 				'1.9.0',
 				'',
-				'13.0',
+				'14.0',
 				'22.00.00',
 				'stable',
 				true,
@@ -885,13 +885,13 @@ class ResponseTest extends TestCase {
 	</channel>
 </rss>'
 			],
-			// #41 macOS 13 — not legacy, gets regular beta via sparkle
+			// #41 macOS 14 — not legacy, gets regular beta via sparkle
 			[
 				'nextcloud',
 				'macos',
 				'2.2.2-rc1',
 				'',
-				'13.0',
+				'14.0',
 				'22.00.00',
 				'beta',
 				true,
