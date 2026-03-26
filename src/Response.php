@@ -138,7 +138,8 @@ class Response {
 		}
 
 		// macOS 11/12 — not compatible with Qt6.10 (required by current stable)
-		if ($this->platform === "macos" && version_compare($this->osVersion, "13") == -1) {
+		// we also exclude macOS 14 for the moment due to an XPC error
+		if ($this->platform === "macos" && version_compare($this->osVersion, "14") == -1) {
 			return 'stable-qt6.9';
 		}
 
