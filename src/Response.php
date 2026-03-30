@@ -111,8 +111,8 @@ class Response {
 			return $beta;
 		}
 
-		if ($this->channel === 'enterprise') {
-		    if (isset($enterprise) && (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs)) {
+		if ($this->channel === 'enterprise' && isset($enterprise)) {
+		    if (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs) {
 		        return $enterprise;
 		    }
 		    return [];
