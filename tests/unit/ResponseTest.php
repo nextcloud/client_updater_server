@@ -815,7 +815,7 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2</version><versionstring>Nextcloud Client 2.2.2</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
 '
 			],
-			// #38 Win11 -> QT6
+			// #38 Win11 -> QT6 - enterprise. current version lower than enterprise => should update
 			[
 				'nextcloud',
 				'win32',
@@ -831,7 +831,23 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],		
-			// #39 macOS 11 (legacy) on enterprise channel — gets stable-qt6.9, not enterprise
+			// #39 Win11 -> QT6 - enterprise. current version = current enterprise => emtpy
+			[
+				'nextcloud',
+				'win32',
+				'2.2.2.6192',
+				'',
+				"11",
+				"10.0.26080",
+				'stable',
+				true,
+                false,
+				$config,
+				'<?xml version="1.0"?>
+<owncloudclient/>
+'
+			],		
+			// #40 macOS 11 (legacy) on enterprise channel — gets stable-qt6.9, not enterprise
 			[
 				'nextcloud',
 				'macos',
@@ -858,7 +874,7 @@ class ResponseTest extends TestCase {
 	</channel>
 </rss>'
 			],
-			// #40 macOS 14 — not legacy, gets regular stable via sparkle
+			// #41 macOS 14 — not legacy, gets regular stable via sparkle
 			[
 				'nextcloud',
 				'macos',
@@ -885,7 +901,7 @@ class ResponseTest extends TestCase {
 	</channel>
 </rss>'
 			],
-			// #41 macOS 14 — not legacy, gets regular beta via sparkle
+			// #42 macOS 14 — not legacy, gets regular beta via sparkle
 			[
 				'nextcloud',
 				'macos',

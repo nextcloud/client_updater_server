@@ -111,8 +111,11 @@ class Response {
 			return $beta;
 		}
 
-		if (isset($enterprise) && $this->channel == 'enterprise' && (version_compare($this->version, $enterprise['version']) == -1 || $isMacOs)) {
-			return $enterprise;
+		if ($this->channel === 'enterprise' && isset($enterprise)) {
+		    if (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs) {
+		        return $enterprise;
+		    }
+		    return []; // do not fall back to stable in case there is no enterprise update
 		}
 
 		if (version_compare($this->version, $stable['version']) == -1 || $isMacOs) {
