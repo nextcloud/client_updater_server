@@ -103,33 +103,26 @@ class Response {
 
 		$isMacOs = ($this->platform === 'macos' && $this->isSparkle === true);
 
-		if ($this->channel === 'daily') {
-			if (isset($daily) && version_compare($this->version, $daily['version']) === -1) {
-				return $daily;
-			}
-			return [];
+		if (isset($daily) && $this->channel == 'daily' && (version_compare($this->version, $daily['version']) == -1)) {
+			return $daily;
 		}
 
-		if ($this->channel === 'beta') {
-			if (isset($beta) && (version_compare($this->version, $beta['version']) === -1 || $isMacOs)) {
-				return $beta;
-			}
-			// return []; here we do not return empty. if the client is on the beta channel we will deliver stable (default check below) if a newer one is there
+		if (isset($beta) && $this->channel == 'beta' && (version_compare($stable['version'], $beta['version']) == -1 || $isMacOs)) {
+			return $beta;
 		}
 
 		if ($this->channel === 'enterprise') {
-			if (isset($enterprise) && (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs)) {
-				return $enterprise;
-			}
-			return [];
+		    if (isset($enterprise) && (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs)) {
+		        return $enterprise;
+		    }
+		    return [];
 		}
-
-		if (version_compare($this->version, $stable['version']) === -1) {
+		
+		if (version_compare($this->version, $stable['version']) == -1 || $isMacOs) {
 			return $stable;
 		}
 
-		return [];
-	}
+		return [];	}
 
 	private function getLegacyChannel(): ?string {
 		// Outdated platforms (Qt5 era):
