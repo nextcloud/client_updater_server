@@ -122,7 +122,7 @@ class Response {
 			return $stable;
 		}
 
-		return [];	
+		return [];
 	}
 
 	private function getLegacyChannel(): ?string {
