@@ -831,21 +831,22 @@ class ResponseTest extends TestCase {
 <owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
 '
 			],		
-			// #39 Win11 -> QT6 - enterprise. current version = enterprise => should get current version
+			// #39 Win11 -> QT6 - enterprise. current version = current enterprise => emtpy
 			[
 				'nextcloud',
 				'win32',
-				'2.2.2',
+				'2.2.2.6192',
 				'',
 				"11",
-				"10.0.22622",
-				'enterprise',
+				"10.0.26080",
+				'stable',
 				true,
-				false,
+                false,
 				$config,
 				'<?xml version="1.0"?>
-<owncloudclient><version>2.2.2.6192</version><versionstring>Nextcloud Client 2.2.2 (build 6192)</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/ownCloud-2.2.2.6192-setup.exe</downloadurl></owncloudclient>
-'			],		
+<owncloudclient/>
+'
+			],		
 			// #40 macOS 11 (legacy) on enterprise channel — gets stable-qt6.9, not enterprise
 			[
 				'nextcloud',
