@@ -117,12 +117,13 @@ class Response {
 		    }
 		    return [];
 		}
-		
+
 		if (version_compare($this->version, $stable['version']) == -1 || $isMacOs) {
 			return $stable;
 		}
 
-		return [];	}
+		return [];	
+	}
 
 	private function getLegacyChannel(): ?string {
 		// Outdated platforms (Qt5 era):
