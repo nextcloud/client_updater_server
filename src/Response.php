@@ -103,19 +103,28 @@ class Response {
 
 		$isMacOs = ($this->platform === 'macos' && $this->isSparkle === true);
 
-		if (isset($daily) && $this->channel == 'daily' && (version_compare($this->version, $daily['version']) == -1)) {
-			return $daily;
+		if ($this->channel === 'daily') {
+			if (isset($daily) && version_compare($this->version, $daily['version']) === -1) {
+				return $daily;
+			}
+			return [];
 		}
 
-		if (isset($beta) && $this->channel == 'beta' && (version_compare($stable['version'], $beta['version']) == -1 || $isMacOs)) {
-			return $beta;
+		if ($this->channel === 'beta') {
+			if (isset($beta) && (version_compare($this->version, $beta['version']) === -1 || $isMacOs)) {
+				return $beta;
+			}
+			return [];
 		}
 
-		if (isset($enterprise) && $this->channel == 'enterprise' && (version_compare($this->version, $enterprise['version']) == -1 || $isMacOs)) {
-			return $enterprise;
+		if ($this->channel === 'enterprise') {
+			if (isset($enterprise) && (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs)) {
+				return $enterprise;
+			}
+			return [];
 		}
 
-		if (version_compare($this->version, $stable['version']) == -1 || $isMacOs) {
+		if (version_compare($this->version, $stable['version']) === -1) {
 			return $stable;
 		}
 
