@@ -111,10 +111,10 @@ class Response {
 		}
 
 		if ($this->channel === 'beta') {
-			if (isset($beta) && (version_compare($stable['version'], $beta['version']) === -1 || $isMacOs)) {
+			if (isset($beta) && (version_compare($this->version, $beta['version']) === -1 || $isMacOs)) {
 				return $beta;
 			}
-			return [];
+			// return []; here we do not return empty. if the client is on the beta channel we will deliver stable (default check below) if a newer one is there
 		}
 
 		if ($this->channel === 'enterprise') {
