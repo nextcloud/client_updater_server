@@ -211,6 +211,11 @@ class Response {
 		return $updateVersion[$updateLengthKey];
 	}
 
+	private function getSparkleDownloadUrl(array $updateVersion) : string {
+		$updateUrlKey = $this->isFileProvider ? 'fileProviderDownloadUrl' : 'downloadurl';
+		return $updateVersion[$updateUrlKey];
+	}
+
 	/**
 	 * Builds the response for Sparkle (used by the Mac updater)
 	 *
@@ -222,13 +227,21 @@ class Response {
 		$versionString = $this->getSparkleVersionString($updateVersion);
 		$sparkleSignature = $this->getSparkleUpdateSignature($updateVersion);
 		$sparkleLength = $this->getSparkleUpdateLength($updateVersion);
-		
+		$updateurl = $this->getSparkleDownloadUrl($updateVersion);
+
 		$item = !empty($updateVersion) ? '
 		<item>
 			<title>'.$versionString.'</title>
 			<pubDate>'.$this->getCurrentTimeStamp().'</pubDate>
 			<enclosure url="'.$sparkleUrl.'" sparkle:version="'.$updateVersion['version'].'" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="'.$sparkleSignature.'" length="'.$sparkleLength.'"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>' . $updateurl . '</link>
 		</item>' : '';
 		
 		return '<?xml version="1.0" encoding="utf-8"?>

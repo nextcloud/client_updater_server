@@ -244,6 +244,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg</link>
 		</item>
 	</channel>
 </rss>'
@@ -415,6 +422,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg</link>
 		</item>
 	</channel>
 </rss>'
@@ -506,6 +520,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg</link>
 		</item>
 	</channel>
 </rss>'
@@ -533,6 +554,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg</link>
 		</item>
 	</channel>
 </rss>'
@@ -560,6 +588,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg</link>
 		</item>
 	</channel>
 </rss>'
@@ -683,6 +718,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000.pkg.tbz" sparkle:version="2.0.0.0000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-2.0.0.0000.pkg</link>
 		</item>
 	</channel>
 </rss>'
@@ -870,6 +912,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg.tbz" sparkle:version="2.1.0.2000" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="LEGACYMACSIG==" length="55555555"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-2.1.0.2000.pkg</link>
 		</item>
 	</channel>
 </rss>'
@@ -897,6 +946,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg</link>
 		</item>
 	</channel>
 </rss>'
@@ -924,6 +980,13 @@ class ResponseTest extends TestCase {
 			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
 			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc1.pkg.tbz" sparkle:version="2.2.2-rc2" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
 			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-2.2.2-rc2.pkg</link>
 		</item>
 	</channel>
 </rss>'
