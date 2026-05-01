@@ -37,10 +37,10 @@ $stableQt69VersionFileProviderLength = 373257027;
 //
 // stable
 //
-$stableReleaseDate = '2026-04-27 18:00';
-$stableVersion = '33.0.3';
-$stableVersionSignature = 'wVJdrskFEZbxnxYKoClMGj7jeBS/ewQyvGpm2zaa31LsawMT8Q13l0MfuLiZNtOpgjtCVC8MLTm1+VOIi08UBw==';
-$stableVersionLength = 383482172;
+$stableReleaseDate = '2026-03-31 18:00';
+$stableVersion = '33.0.2';
+$stableVersionSignature = 'eOhMIk4G2sfQEYJguTCDL9Kab+xJPei32NHW8s9Lmcd6eg1gUva1+c+gUBK32mCT5xzZMNtUVEzjXs1eukHGAQ==';
+$stableVersionLength = 383154984;
 
 //
 // enterprise 
