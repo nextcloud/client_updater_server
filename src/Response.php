@@ -112,10 +112,20 @@ class Response {
 		}
 
 		if ($this->channel === 'enterprise' && isset($enterprise)) {
-		    if (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs) {
-		        return $enterprise;
-		    }
-		    return []; // do not fall back to stable in case there is no enterprise update
+			if (version_compare($this->version, $enterprise['version']) === -1) {
+				return $enterprise;
+			}
+
+			if ($this->canUseStableUpdateOnEnterpriseChannel($stable, $enterprise) &&
+				(version_compare($this->version, $stable['version']) === -1 || $isMacOs)) {
+				return $stable;
+			}
+
+			if ($isMacOs) {
+				return $enterprise;
+			}
+
+			return []; // do not fall back to stable in case there is no eligible enterprise update
 		}
 
 		if (version_compare($this->version, $stable['version']) == -1 || $isMacOs) {
@@ -178,6 +188,26 @@ class Response {
 		}
 
 		return null;
+	}
+
+	private function canUseStableUpdateOnEnterpriseChannel(array $stable, array $enterprise): bool {
+		$currentMajor = $this->getMajorVersion($this->version);
+		$stableMajor = $this->getMajorVersion($stable['version']);
+		$enterpriseMajor = $this->getMajorVersion($enterprise['version']);
+
+		if ($currentMajor === null || $stableMajor === null || $enterpriseMajor === null) {
+			return false;
+		}
+
+		return version_compare($currentMajor, $enterpriseMajor) === 1 && $stableMajor === $currentMajor;
+	}
+
+	private function getMajorVersion(string $version): ?string {
+		if (preg_match('/^\d+/', $version, $matches) !== 1) {
+			return null;
+		}
+
+		return ltrim($matches[0], '0') ?: '0';
 	}
 
 	/**

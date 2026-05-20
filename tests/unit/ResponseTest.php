@@ -140,6 +140,19 @@ class ResponseTest extends TestCase {
 		$configThrottle = $config;
 		$configThrottle['nextcloud']['stable']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:m');
 
+		$configEnterpriseLag = $config;
+		$configEnterpriseLag['nextcloud']['stable']['linux']['version'] = '5.1.3';
+		$configEnterpriseLag['nextcloud']['stable']['linux']['versionstring'] = 'Nextcloud Client 5.1.3';
+		$configEnterpriseLag['nextcloud']['stable']['linux']['downloadurl'] = 'https://download.nextcloud.com/desktop/stable/Nextcloud-5.1.3-x64.AppImage';
+		$configEnterpriseLag['nextcloud']['enterprise']['linux']['version'] = '4.0.10';
+		$configEnterpriseLag['nextcloud']['enterprise']['linux']['versionstring'] = 'Nextcloud Client 4.0.10';
+		$configEnterpriseLag['nextcloud']['enterprise']['linux']['downloadurl'] = 'https://download.nextcloud.com/desktop/stable/Nextcloud-4.0.10-x64.AppImage';
+
+		$configEnterpriseLagNextMajor = $configEnterpriseLag;
+		$configEnterpriseLagNextMajor['nextcloud']['stable']['linux']['version'] = '6.0.1';
+		$configEnterpriseLagNextMajor['nextcloud']['stable']['linux']['versionstring'] = 'Nextcloud Client 6.0.1';
+		$configEnterpriseLagNextMajor['nextcloud']['stable']['linux']['downloadurl'] = 'https://download.nextcloud.com/desktop/stable/Nextcloud-6.0.1-x64.AppImage';
+
 		return [
 			// #0 Update segment is already allowed
 			[
@@ -990,6 +1003,38 @@ class ResponseTest extends TestCase {
 		</item>
 	</channel>
 </rss>'
+			],
+			// #42 enterprise channel allows stable patch/minor updates when client already runs a newer major
+			[
+				'nextcloud',
+				'linux',
+				'5.1.0',
+				'ubuntu',
+				'24.04',
+				'6.8.0',
+				'enterprise',
+				false,
+				false,
+				$configEnterpriseLag,
+				'<?xml version="1.0"?>
+<owncloudclient><version>5.1.3</version><versionstring>Nextcloud Client 5.1.3</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-5.1.3-x64.AppImage</downloadurl><web>https://nextcloud.com/install/#install-clients</web></owncloudclient>
+'
+			],
+			// #43 enterprise channel still blocks automatic upgrades to the next major
+			[
+				'nextcloud',
+				'linux',
+				'5.1.0',
+				'ubuntu',
+				'24.04',
+				'6.8.0',
+				'enterprise',
+				false,
+				false,
+				$configEnterpriseLagNextMajor,
+				'<?xml version="1.0"?>
+<owncloudclient/>
+'
 			],				
         ];
 	}
