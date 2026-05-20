@@ -122,6 +122,7 @@ class Response {
 			}
 
 			if ($isMacOs) {
+				// Sparkle still expects an enterprise feed item when no eligible same-major stable update exists.
 				return $enterprise;
 			}
 
@@ -190,6 +191,14 @@ class Response {
 		return null;
 	}
 
+	/**
+	 * Allows enterprise-channel clients that are already on a newer major release
+	 * to keep receiving stable updates within that same major line.
+	 *
+	 * @param array $stable
+	 * @param array $enterprise
+	 * @return bool
+	 */
 	private function canUseStableUpdateOnEnterpriseChannel(array $stable, array $enterprise): bool {
 		$currentMajor = $this->getMajorVersion($this->version);
 		$stableMajor = $this->getMajorVersion($stable['version']);
@@ -202,6 +211,12 @@ class Response {
 		return version_compare($currentMajor, $enterpriseMajor) === 1 && $stableMajor === $currentMajor;
 	}
 
+	/**
+	 * Extracts the major version component from a version string.
+	 *
+	 * @param string $version
+	 * @return string|null
+	 */
 	private function getMajorVersion(string $version): ?string {
 		if (preg_match('/^\d+/', $version, $matches) !== 1) {
 			return null;
