@@ -138,7 +138,7 @@ class ResponseTest extends TestCase {
 		];
 
 		$configThrottle = $config;
-		$configThrottle['nextcloud']['stable']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:m');
+		$configThrottle['nextcloud']['stable']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:i');
 
 		$configEnterpriseLag = $config;
 		$configEnterpriseLag['nextcloud']['stable']['linux']['version'] = '5.1.3';
