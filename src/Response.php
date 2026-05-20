@@ -208,7 +208,7 @@ class Response {
 			return false;
 		}
 
-		return version_compare($currentMajor, $enterpriseMajor) === 1 && $stableMajor === $currentMajor;
+		return version_compare($currentMajor, $enterpriseMajor, '>') && $stableMajor === $currentMajor;
 	}
 
 	/**
