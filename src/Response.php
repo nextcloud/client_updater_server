@@ -207,7 +207,7 @@ class Response {
 			return null;
 		}
 
-		return ltrim($matches[0], '0') ?: '0';
+		return (string) intval($matches[0], 10);
 	}
 
 	/**

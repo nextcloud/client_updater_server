@@ -1035,7 +1035,7 @@ class ResponseTest extends TestCase {
 				'<?xml version="1.0"?>
 <owncloudclient/>
 '
-			],				
+			],
         ];
 	}
 
