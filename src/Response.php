@@ -115,7 +115,12 @@ class Response {
 		    if (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs) {
 		        return $enterprise;
 		    }
-		    return []; // do not fall back to stable in case there is no enterprise update
+		    if (version_compare($this->version, $enterprise['version']) === 1
+		        && version_compare($this->version, $stable['version']) === -1
+		        && $this->hasSameMajorVersion($this->version, $stable['version'])) {
+		        return $stable;
+		    }
+		    return []; // Otherwise do not fall back to stable when there is no enterprise update
 		}
 
 		if (version_compare($this->version, $stable['version']) == -1 || $isMacOs) {
@@ -123,6 +128,10 @@ class Response {
 		}
 
 		return [];
+	}
+
+	private function hasSameMajorVersion(string $currentVersion, string $updateVersion): bool {
+		return explode('.', $currentVersion, 2)[0] === explode('.', $updateVersion, 2)[0];
 	}
 
 	private function getLegacyChannel(): ?string {
