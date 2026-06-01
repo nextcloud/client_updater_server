@@ -112,13 +112,13 @@ class Response {
 		}
 
 		if ($this->channel === 'enterprise' && isset($enterprise)) {
-		    if (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs) {
-		        return $enterprise;
-		    }
 		    if (version_compare($this->version, $enterprise['version']) === 1
 		        && version_compare($this->version, $stable['version']) === -1
 		        && $this->hasSameMajorVersion($this->version, $stable['version'])) {
 		        return $stable;
+		    }
+		    if (version_compare($this->version, $enterprise['version']) === -1 || $isMacOs) {
+		        return $enterprise;
 		    }
 		    return []; // Otherwise do not fall back to stable when there is no enterprise update
 		}
