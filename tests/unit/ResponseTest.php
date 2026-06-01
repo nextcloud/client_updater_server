@@ -140,6 +140,34 @@ class ResponseTest extends TestCase {
 		$configThrottle = $config;
 		$configThrottle['nextcloud']['stable']['release'] = (new \DateTime())->sub(new \DateInterval('PT6H'))->format('Y-m-d H:m');
 
+		$configEnterprisePatchFallback = $config;
+		$configEnterprisePatchFallback['nextcloud']['enterprise']['win32'] = [
+			'version' => '4.0.10',
+			'versionstring' => 'Nextcloud Client 4.0.10',
+			'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-4.0.10-setup.exe',
+		];
+		$configEnterprisePatchFallback['nextcloud']['stable']['win32'] = [
+			'version' => '33.0.5',
+			'versionstring' => 'Nextcloud Client 33.0.5',
+			'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-33.0.5-setup.exe',
+		];
+		$configEnterprisePatchFallback['nextcloud']['enterprise']['macos'] = array_merge(
+			$configEnterprisePatchFallback['nextcloud']['enterprise']['macos'],
+			[
+				'version' => '4.0.10',
+				'versionstring' => 'Nextcloud Client 4.0.10',
+			]
+		);
+		$configEnterprisePatchFallback['nextcloud']['stable']['macos'] = array_merge(
+			$configEnterprisePatchFallback['nextcloud']['stable']['macos'],
+			[
+				'version' => '33.0.5',
+				'versionstring' => 'Nextcloud Client 33.0.5',
+				'downloadurl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-33.0.5.pkg',
+				'sparkleDownloadUrl' => 'https://download.nextcloud.com/desktop/stable/Nextcloud-33.0.5.pkg.tbz',
+			]
+		);
+
 		return [
 			// #0 Update segment is already allowed
 			[
@@ -990,7 +1018,89 @@ class ResponseTest extends TestCase {
 		</item>
 	</channel>
 </rss>'
-			],				
+			],
+			// #43 Manually upgraded enterprise client gets stable patches from its current major version
+			[
+				'nextcloud',
+				'win32',
+				'33.0.2',
+				'',
+				'11',
+				'10.0.26080',
+				'enterprise',
+				false,
+				false,
+				$configEnterprisePatchFallback,
+				'<?xml version="1.0"?>
+<owncloudclient><version>33.0.5</version><versionstring>Nextcloud Client 33.0.5</versionstring><downloadurl>https://download.nextcloud.com/desktop/stable/Nextcloud-33.0.5-setup.exe</downloadurl></owncloudclient>
+'
+			],
+			// #44 Enterprise fallback does not move a manually upgraded client to another major version
+			[
+				'nextcloud',
+				'win32',
+				'32.0.2',
+				'',
+				'11',
+				'10.0.26080',
+				'enterprise',
+				false,
+				false,
+				$configEnterprisePatchFallback,
+				'<?xml version="1.0"?>
+<owncloudclient/>
+'
+			],
+			// #45 Manually upgraded macOS enterprise client gets stable patches via Sparkle
+			[
+				'nextcloud',
+				'macos',
+				'33.0.2',
+				'',
+				'14.0',
+				'22.00.00',
+				'enterprise',
+				true,
+				false,
+				$configEnterprisePatchFallback,
+				'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Download Channel</title>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
+			<title>Nextcloud Client 33.0.5</title>
+			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
+			<enclosure url="https://download.nextcloud.com/desktop/stable/Nextcloud-33.0.5.pkg.tbz" sparkle:version="33.0.5" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.nextcloud.com/desktop/stable/Nextcloud-33.0.5.pkg</link>
+		</item>
+	</channel>
+</rss>'
+			],
+			// #46 Enterprise fallback does not offer an update when the stable patch is already installed
+			[
+				'nextcloud',
+				'win32',
+				'33.0.5',
+				'',
+				'11',
+				'10.0.26080',
+				'enterprise',
+				false,
+				false,
+				$configEnterprisePatchFallback,
+				'<?xml version="1.0"?>
+<owncloudclient/>
+'
+			],
         ];
 	}
 
