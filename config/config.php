@@ -46,12 +46,12 @@ $stableVersionLength = 153293724;
 // enterprise 
 // should point to that stable version, that was branded to the customers
 //
-$enterpriseReleaseDate = '2026-08-31 10:00';
-$enterpriseVersion = '34.0.3';
-$enterpriseVersionSignature = 'Gu9b0aCCJ7rXnWWZIa7iaSW8/GfzAX/lYdpZleL0xSM7HgsfE8Vpy0u5m3X/lO8/zi33Jo7xgRdv3XoilekLAA==';
-$enterpriseVersionLength = 153112302;
-$enterpriseVersionFileProviderSignature = 'Gu9b0aCCJ7rXnWWZIa7iaSW8/GfzAX/lYdpZleL0xSM7HgsfE8Vpy0u5m3X/lO8/zi33Jo7xgRdv3XoilekLAA==';
-$enterpriseVersionFileProviderLength = 153112302;
+$enterpriseReleaseDate = '2026-09-16 15:00';
+$enterpriseVersion = '34.0.4';
+$enterpriseVersionSignature = '1a4IqlRPSqi41RuzrFJ201O6AQuQPBUTG5CZuW02/PZMh2OWXM8NS2eJlS+GDlPmqqkaWH/SNKLbFV0NfrxlDw==';
+$enterpriseVersionLength = 153293724;
+$enterpriseVersionFileProviderSignature = '1a4IqlRPSqi41RuzrFJ201O6AQuQPBUTG5CZuW02/PZMh2OWXM8NS2eJlS+GDlPmqqkaWH/SNKLbFV0NfrxlDw==';
+$enterpriseVersionFileProviderLength = 153293724;
 
 //
 // stable Qt5 (legacy)
