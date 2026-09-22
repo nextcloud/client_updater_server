@@ -85,10 +85,15 @@ class ResponseTest extends TestCase {
 					'macos' => [
 						'version' => '2.2.2.3472',
 						'versionstring' => 'Nextcloud Client 2.2.2 (build 3472)',
+						'fileProviderVersionString' => 'Nextcloud Client 2.2.2 (build 3472)',
 						'downloadurl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg',
+						'fileProviderDownloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg',
 						'sparkleDownloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
+						'fileProviderSparkleDownloadUrl' => 'https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz',
 						'signature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
 						'length' => 62738920,
+						'fileProviderSignature' => 'MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=',
+						'fileProviderLength' => 62738920,
 					]
 				],
 				'beta' => [
@@ -1100,6 +1105,40 @@ class ResponseTest extends TestCase {
 				'<?xml version="1.0"?>
 <owncloudclient/>
 '
+			],
+			// #47 macOS enterprise File Provider uses the published universal package
+			[
+				'nextcloud',
+				'macos',
+				'1.9.0',
+				'',
+				'14.0',
+				'22.00.00',
+				'enterprise',
+				true,
+				true,
+				$config,
+				'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Download Channel</title>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
+			<title>Nextcloud Client 2.2.2 (build 3472)</title>
+			<pubDate>Wed, 13 July 16 21:07:31 +0200</pubDate>
+			<enclosure url="https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg.tbz" sparkle:version="2.2.2.3472" type="application/octet-stream" sparkle:installationType="package" sparkle:edSignature="MC0CFQDmXR6biDmNVW7TvMh0bfPPTzCvtwIUCzASgpzYdi4lltOnwbFCeQwgDjY=" length="62738920"/>
+			<sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+			<sparkle:informationalUpdate>
+				<sparkle:version>33.0.0</sparkle:version>
+				<sparkle:version>33.0.0.0</sparkle:version>
+				<sparkle:version>33.0.1</sparkle:version>
+				<sparkle:version>33.0.1.0</sparkle:version>
+			</sparkle:informationalUpdate>
+			<link>https://download.owncloud.com/desktop/stable/ownCloud-2.2.2.3472.pkg</link>
+		</item>
+	</channel>
+</rss>'
 			],
         ];
 	}
